@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="time">关掉定时器1</button>
+
+    <button class="begin">开启定时器2</button>
+    <button class="stop">停止定时器2</button>
+    <script>
+        // setTimeout() 定时器
+        // setTimeout(调用函数, [延迟的毫秒数])  定时器在定时器到期后执行调用函数。
+        setTimeout(function () {
+            alert('peng')
+        }, 3000)
+        function callback() {
+            alert('pengpeng')
+        }
+        var time1 = setTimeout(callback, 6000)   // 可以用函数名额形式，  // 可以给定时器取个标识符（名字）
+
+        // clearTimeout() 停止定时器
+        var btn = document.querySelector('.time');
+        btn.addEventListener('click', function () {
+            clearTimeout(time1)    // 括号内加定时器的标识符
+        })
+
+
+
+        // setInterval() 定时器
+        // setInterval(调用函数, [间隔的毫秒数]) 重复调用一个函数，每隔这个时间，就去调用一次函数。
+        setInterval(function () {
+            console.log('持续输出');
+        }, 2000)
+
+        // clearInterval() 停止定时器
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        var timer = null;
+        begin.addEventListener('click', function () {
+            timer = setInterval(function () {
+                console.log('计时开始');
+            }, 1000)
+        })
+        stop.addEventListener('click', function () {
+            clearInterval(timer, 1000)   // 函数内的变量是局部变量
+        })
+
+
+
+        // this指向
+        // 全局作用域或者普通函数中this指向全局对象window（注意定时器里面的this指向window)
+
+        // 方法中谁调用this指向谁
+
+        // 构造函数中 this指向 new出来的实例
+
+        // js 执行机制
+        // 1.先执行执行栈中的同步任务。
+        // 2.当有异步任务时，提交给对应的 异步进程处理异步任务（回调函数， 当点击触发了事件或定时器时间到了）就放入任务队列中。
+        // 3.一旦执行栈中的所有同步任务全部执行完毕，系统就会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入主执行栈，开始执行。
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个promise对象
+        const p = new Promise((resolve, reject) => {
+            resolve('用户数据')
+        })
+        async function fn() {
+            try {
+                // await 要放在 async函数里面去 
+                // await 这个语句的返回结果是他右边promise对象他成功的值
+                let result = await p;
+                console.log(result);    // 用户数据
+            } catch (e) {         // 如果失败就用 catch方法可以得到失败状态的值
+                console.log(e);
+            }
+        }
+        fn();
+    </script>
+</body>
+
+</html>

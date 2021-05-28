@@ -1,0 +1,17 @@
+// 变量名区分大小写  @color @Color是两个不同的变量
+// 定义为 @color~a  @1color 就是错误的，不能加特殊符号不能以数字开头
+@color1: pink;
+@color: deeppink;
+@font1: 20px;
+body {
+    background-color: @color1;
+    font-size: @font1;
+}
+div {
+    width: 200px;
+    height: 200px;
+    background-color: @color;
+}
+a {
+    font-size: @font1;
+}

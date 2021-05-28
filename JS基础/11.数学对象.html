@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math() 数学对象 ,不是构造函数，不需要new来调用，直接使用里面的属性和方法
+        // Math.max() 返回一组数中的最大值， 参数中至少有一个参数无法被转换成数字，则会返回 NaN
+        console.log(Math.max(2, 5, 8, 33, 43));   // ---43
+        console.log(Math.max(2, 5, 8, 'as', 43));   // ---NaN
+
+        // Math.abs() 绝对值
+        console.log(Math.abs(-9));   // ---9
+        console.log(Math.abs(9));   // ---9
+        console.log(Math.abs('-9'));   // ---9  会隐式转换 把字符串'-1'转换为数字型-1
+
+        // Math.floor() 向下取整   // 往最小了取值
+        console.log(Math.floor(1.1));   // ---1
+        console.log(Math.floor(1.9));   // ---1
+        // Math.ceil() 向下取整   // 往最大了取值
+        console.log(Math.ceil(1.1));   // ---2
+        console.log(Math.ceil(1.9));   // ---2
+        // Math.round() 四舍五入 
+        console.log(Math.round(1.1));   // ---1
+        console.log(Math.round(1.9));   // ---2
+        // Math.random() 返回随机数，这个数是浮点数在0(包括0)和1(不包括1)之前的数 ,括号不写参数
+        ////  例： 得到两个数的随机整数 ，包括这两个数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandom(4, 44));;
+        // 随机点名
+        var arr = ['张三', '李四', '王五', '赵六', '白七'];
+        console.log(arr[getRandom(0, arr.length - 1)]);
+    </script>
+</body>
+
+</html>

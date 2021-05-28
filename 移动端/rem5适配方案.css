@@ -1,0 +1,10 @@
+@media screen and (min-wudht: 320px) {
+  html {
+    font-size: 21.33px;
+  }
+}
+@media screen and (min-wudht: 750px) {
+  html {
+    font-size: 50px;
+  }
+}

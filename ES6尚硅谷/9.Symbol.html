@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Symbol
+        // 凡是属性名属于 Symbol 类型，就都是独一无二的，最大的用法是用来定义对象的唯一属性名，不会与其他属性名产生冲突
+
+        // Symbol函数前不能使用new命令，否则会报错
+
+        // 创建Symbol
+        // ① let s = Symbol();
+        // console.log(s, typeof s);   // 报错
+        let s2 = Symbol('小明');
+        let s3 = Symbol('小明');
+        // ② Symbol.for 创建
+        let s4 = Symbol.for('小明');
+        let s5 = Symbol.for('小明');
+
+        // Symbol()括号里不加参数，它们在控制台的输出都是Symbol()，不利于区分。有了参数以后，就等于为它们加上了描述，输出的时候就能够分清，到底是哪一个值，Symbol函数的参数只是表示对当前 Symbol 值的描述，因此相同参数的Symbol函数的返回值是不相等的
+
+        // 不能与其他数据进行运算
+        //    let result = s + 100;
+        //    let result = s > 100;
+        //    let result = s + s;
+
+        // 向对象中添加方法
+        // 在对象的内部，使用 Symbol 值定义属性时，Symbol 值必须放在[]方括号之中
+        let langrebsha = {
+            name: "狼人杀",
+            [Symbol('say')]: function () {
+                console.log("我可以发言")
+            },
+            [Symbol('zibao')]: function () {
+                console.log('我可以自爆');
+            }
+        }
+        console.log(langrebsha)
+
+        let game = {
+            name: '俄罗斯方块',
+            up: function () { },
+            down: function () { }
+        };
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        };
+        game[methods.up] = function () {
+            console.log("我可以改变形状");
+        }
+        game[methods.down] = function () {
+            console.log("我可以快速下降!!");
+        }
+        console.log(game);
+
+        // Symbol内置值
+
+        // Symbol.haslnstance  ---当其他对象使用instanceof运算符，判断是否为该对象的实例时，会调用这个方法
+        // class Person{
+        //     static [Symbol.hasInstance](param){
+        //         console.log(param);
+        //         console.log("我被用来检测类型了");
+        //         return false;
+        //     }
+        // }
+        // let o = {};
+        // console.log(o instanceof Person);
+
+        // Symbol.isConcatSpreadable  ---对象的 Symbol.isConcatSpreadable属性等于的是一个布尔值，表示该对象用于Array.prototype.concat()时，是否可以展开
+        // const arr = [1,2,3];
+        // const arr2 = [4,5,6];
+        // arr2[Symbol.isConcatSpreadable] = false;
+        // console.log(arr.concat(arr2));
+
+        // ...
+    </script>
+</body>
+
+</html>

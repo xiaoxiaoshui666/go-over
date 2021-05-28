@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组方法
+        // 创建数组
+        // 1. 用字面量创建
+        // 2. 用new关键字创建
+        var arr2 = new Array(4);   // 括号里面表示数组长度是4，创建了四个空的数组元素 
+        console.log(arr2);  // 
+        var arr3 = new Array(1, 4, 6, 9)  // [1, 4, 6, 9]
+        console.log(arr3);
+
+        // 检查是否为数组
+        // 1. 数组 instanceof Array  (运算符)    是数组就返回true 不是就返回false
+        var arr4 = [];
+        var obj1 = {};
+        console.log(arr4 instanceof Array);   // true
+        console.log(obj1 instanceof Array);   // false
+        // 2. Array.isArray(参数)     H5新增    是数组就返回true 不是就返回false
+        console.log(Array.isArray(arr4));   // true
+        console.log(Array.isArray(obj1));   // false
+
+        // 添加删除数组
+        // push(参数1..)   末尾添加一个或多个元素，注意修改原数组  并返回新数组的长度
+        var arr5 = [1, 3, 5, 7];
+        console.log(arr5.push(9, '11'));    // 6     返回新数组的长度
+        console.log(arr5);    // [1, 3, 5, 7, 9, "11"]
+        // unshift(参数1..)  向数组的开头添加一个或更多元素，注意修改原数组   并返回新的长度
+        var arr6 = [1, 3, 5, 7];
+        console.log(arr6.unshift(9, '11'));    // 6     返回新数组的长度
+        console.log(arr6);    // [9, "11", 1, 3, 5, 7]
+        // pop()  删除数组最后一个元素括号无参数，把数组长度减1、修改原数组  返回它删除的元素的值
+        console.log(arr5.pop());    // '11'   返回删除的元素
+        console.log(arr5);    // [1, 3, 5, 7, 9]
+        // shift()     删除数组的第一个元素，数组长度减1无参数、修改原数组    并返回第一个元素的值
+        console.log(arr6.shift());   // 9
+        console.log(arr6);     // ['11', 1, 3, 5, 7]
+
+        // 翻转数组
+        var arr7 = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        arr7.reverse();
+        console.log(arr7); // ["星期六", "星期五", "星期四", "星期三", "星期二", "星期一", "星期日"]
+
+        // 冒泡排序
+        var arr8 = [1, 0, 18, 175, 130, 12, 3]
+        arr8.sort(
+            function (a, b) {
+                return a - b;  // 按照升序的顺序排列  越来越大
+                // return b - a;  // 按照降序的顺序排列  越来越小
+            }
+        )
+        console.log(arr8);  // [0, 1, 3, 12, 18, 130, 175]
+
+        // 获取数组元素的索引号的方法  indexOf()  lastindexOf()
+        // 返回数组元素索引号的方法， indexOf(数组元素) 作用就是返回改数组元素的索引号
+        // 只返回第一个满足条件的索引号
+        var arr9 = ['blue', 'red', 'pink', 'orange', 'hotpink', 'red']
+        console.log(arr9.indexOf('red'));   // 1
+        console.log(arr9.indexOf('block'));  // -1   找不到该元素就返回-1
+        // lastindexOf()从后往前查找第一个满足的索引号
+        console.log(arr9.lastIndexOf('red'));   // 5
+        console.log(arr9.lastIndexOf('block'));  // -1   找不到该元素就返回-1
+
+        ////  例：  数组去重案例
+        function unique(oldarr) {
+            var newArr = [];
+            for (var i = 0; i < oldarr.length; i++) {  // 遍历旧数组
+                if (newArr.indexOf(oldarr[i]) == -1) { // 数组.indexOf(数组元素）如果返回时–1就说明新数组里面没有改元素
+                    newArr.push(oldarr[i]); // 将旧数组没出现过的数组元素，添加到新数组中
+                }
+            }
+            return newArr
+        }
+        console.log(unique([3, 5, 23, 5, 45, 10, 5, 3, 5]));
+
+        // 把数组转换为字符创
+        // 1. toString() 将数组转换为字符串
+        var arr10 = [1, 3, 4];
+        console.log(arr10.toString()); // 1,3,4
+
+        // 2. join(分隔符)
+        var arr11 = ['blue', 'red', 'pink', 'orange', 'hotpink', 'red']
+        console.log(arr11.join('?'));  // blue?red?pink?orange?hotpink?red
+        console.log(arr11.join('&'));  // blue&red&pink&orange&hotpink&red
+        // 字符串之间用分隔符号分隔  别忘记了符号加''
+
+        // 删除数组元素 splice()
+        // 数组删除splice(第几个开始,要删除个数)  返回被删除项目的新数组注意，这个会影响原数组
+        var arr12 = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        arr12.splice(3, 3);   // 删除数组元素中从索引为3(包括)的开始删，删除3个，
+        console.log(arr12);  // ["星期日", "星期一", "星期二", "星期六"]
+    </script>
+</body>
+
+</html>

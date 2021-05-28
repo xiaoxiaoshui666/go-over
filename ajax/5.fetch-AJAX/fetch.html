@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>发送</button>
+    <script>
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            // 直接在url后面跟参数
+            fetch('http://127.0.0.1:8000/fetch-server?name=xiaowang&age=28', {
+                //请求类型
+                method: 'POST',
+                //请求头
+                headers: {
+                    today: 'bianlidian',
+                    time: '11:30'
+                },
+                //请求体
+                body: 'username=daliang&password=1377132'
+            }).then(response => {
+                // return response;
+                // return response.text();
+                // 如果服务端返回的是json类型 就要用json()方法 就会把数据自动解析成js对象
+                return response.json();
+            }).then(response => {
+                console.log(response);
+            });
+        })
+    </script>
+</body>
+
+</html>

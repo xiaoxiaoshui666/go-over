@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* @media可以针对不同的屏幕尺寸设置不同的样式 */
+        /* 当重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面 */
+
+        /* 媒体类型 ：screen  用于电脑屏幕，平板电脑，智能手机等 */
+        /* 关键字: and 可将多个媒体特性连接在一起，相当于 '且' 的意思 */
+        /* 值():  width 可见区域的宽度   max-width 最大可见区域宽度   min-width 最小可见区域宽度 */
+        @media screen and (max-width:800px) {
+            body {
+                background-color: pink;
+            }
+        }
+
+        /* max-width 小于等于800 最大不能大于800 */
+        /* 在我们的屏幕上，并且最大的宽度是 800像素 设置我们想要的样式 */
+
+        @media screen and (max-width:500px) {
+            body {
+                background-color: purple;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

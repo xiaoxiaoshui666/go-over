@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+            width: 60%;
+            height: 150px;
+            background-color: red;
+            margin: 0 auto;
+        }
+
+        section div:nth-child(1),
+        section div:nth-child(3) {
+            width: 100px;
+            height: 150px;
+            background-color: green;
+        }
+
+        section div:nth-child(2) {
+            /* flex属性定义子项目分配剩余空间，用flex来表示占多少份数。 */
+            flex: 1;
+            background-color: hotpink;
+        }
+
+        p {
+            display: flex;
+            width: 60%;
+            height: 150px;
+            background-color: red;
+            margin: 100px auto;
+        }
+
+        p span {
+            flex: 1;
+            border: 1px solid black;
+        }
+
+        span:nth-child(2) {
+            /* 数值越大分配的越多，0就是没有分配 */
+            flex: 2;
+            /* 把section父盒子分给了3个子元素 ，其中1盒子和3盒子占1份，2盒子占2份 */
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+    <p>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </p>
+</body>
+
+</html>

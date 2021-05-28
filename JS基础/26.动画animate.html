@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: hotpink;
+        }
+
+        button {
+            position: absolute;
+            top: 200px;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>div</div>
+    <span>span</span>
+    <button>按钮</button>
+    <script>
+        // 实现动画必须添加定位
+        // 利用定时器不断重复当前位置加1个移动距离
+        function animate(obj, target, callback) {
+            // 当不断的点击按钮，元素的速度会越来愉快，因为开启了太多的定时器  解决方案 让元素只有一个定时器
+            clearInterval(obj.timer)   // 先把原先的定时器清除再开启新的定时器，就永远是一个定时器了
+            obj.timer = setInterval(function () {   // 给不同的定时器指定了不同的定时器，参数也是一个对象，用对象赋值属性的方式储存定时器，避免定时器声明新变量浪费内存
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);   // 停止动画就是停止定时器
+                }
+                var step = (target - obj.offsetLeft) / 10  // (目标值 - 现在的位置) / 10 作为每次移动的距离
+                // obj.style.left = obj.offsetLeft + 1 + 'px';   // 这是匀速的    + 固定的值
+                obj.style.left = obj.offsetLeft + step + 'px';      // 这是缓动的  + 变化的值
+            }, 30)
+            callback && callback()   // 如果参数有回调函数就调用没有就不调用
+        }
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        btn.addEventListener('click', function () {
+            animate(div, 600)
+            animate(span, 500, function () {
+                span.style.backgroundColor = 'green';
+            })
+        })
+
+    </script>
+</body>
+
+</html>

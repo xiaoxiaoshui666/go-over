@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES5 构造函数的写法
+        function Phone(uname, color) {
+            this.uname = uname;
+            this.color = color;
+        }
+        Phone.prototype.callup = function () {
+            console.log('歪，妖妖灵嘛');
+        }
+        var hw = new Phone('HUAWEI', 'blue');
+        hw.callup()
+        console.log(hw);
+
+        // ES6 class写法
+        class IPhone {
+            constructor(uname, color) {
+                this.uname = uname;
+                this.color = color;
+            }
+            callup() {
+                console.log('歪，妖妖久嘛');
+            }
+        }
+        var iphoneX = new IPhone('苹果', 'red');
+        iphoneX.callup()
+        console.log(iphoneX);
+    </script>
+</body>
+
+</html>

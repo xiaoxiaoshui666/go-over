@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象原型
+        // 对象都会有一个属性__proto__指向构造函数的prototype原型对象，之所以对象可以使用构造函擞prototype原型对象的属性和方法,就是因为对象有__proto__原型的存在。s
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+        Star.prototype.sing = function () {
+            console.log('我会唱歌');
+        }
+        var ldh = new Star('刘德华', 18);
+        var zxy = new Star('张学友', 19);
+        ldh.sing();
+        // 为什么实例化的对象 ldh 可以访问构造函数 Star原型对象里面的方法？
+        // 实际就等价于ldh.__proto__.sing() 而ldh.__proto__有等价于Star.prototype 而构造函数里面的Star.prototype有sing函数 ，所以ldh.sing()就可以调用构造函数原型对象里面的函数
+        console.log(ldh.__proto__.sing() === ldh.sing());              // true等价
+        console.log(ldh.__proto__.sing() === Star.prototype.sing());   // true等价
+        console.log(ldh.sing() === Star.prototype.sing());             // true等价
+        // 方法的查找规则: 首先先看ldh对象身上是否有sing方法, 如果有就执行这个对象上的sing,如果没有sing 这个方法,因为有__proto__的存在,就去构造函数原型对象prototype身上去查找sing这个方法
+        zxy.sing();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: hotpink;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            transition: all 1s;
+        }
+
+        .current {
+            font-size: 50px;
+            border: 1px solid black;
+        }
+
+        .current1 {
+            padding-left: 300px;
+        }
+
+        .box22 {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box1">box1</div>
+    <div class="box2">类名</div>
+    <script>
+        $(function () {
+            // 参数只写属性名 返回对应的属性值  100px
+            console.log($(".box").css("width"));
+
+            // 参数是('属性名', '属性值')  修改      值是数字可以不用加引号和单位
+            $(".box").css("height", 200);
+
+            // 参数可以是对象  修改    属性名不用加引号 属性值不是数字要加引号
+            $(".box1").css({
+                width: 1000,
+                height: 200,
+                fontSize: '20px',    // fontSize 复合属性用驼峰命名法 不能以css的方式写
+                backgroundColor: 'red'
+            });
+
+            // 修改类名   方法里面的()不要加点!!!
+            // 添加类  addClass()   // 追加 不影响以前的类
+            $('.box2').addClass('current').addClass('current1')
+
+            // 删除类  removeClass()
+            $('.box2').removeClass('current1')
+
+            // 切换类  toggleClass()   没有这个类就加上，如果有了就清除
+            $('.box2').click(function () {
+                $('.box2').toggleClass('box22')
+            })
+        })
+    </script>
+</body>
+
+</html>

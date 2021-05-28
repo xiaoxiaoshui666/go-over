@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+body {
+    overflow-x: hidden;
+    max-width: 540px;
+    min-width: 320px;
+    font: 400 16px/1.5 PingFangSC-regular,Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    margin: 0 auto;
+    background: #fafafc;
+    color: #000;
+    vertical-align: middle
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+em {
+    font-style: normal;
+}
+div,
+a {
+    /* 用盒模型就不用计算了 */
+    box-sizing: border-box;
+}
+/* search-index搜索模块 */
+.search-index {
+    display: flex;
+    /* 固定定位和父级没有关系 ，他一屏幕为主 */
+    position: fixed;
+    top: 0;
+    /* 固定定位实现水平居中显示，可以写left为0，也可以写left50%然后向左移动自身宽度的一半也可 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 固定的盒子必须有宽度 */
+    width: 100%;
+    max-width: 540px;
+    min-width: 320px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    flex: 1;
+    position: relative;
+    height: 28px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgb(0, 0, 0,.2);
+    margin-left: 10px;
+    background-color: #fff;
+}
+.search::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 35px;
+    height: 100%;
+    background: url(../images/user.png) no-repeat 15px 7px;
+    background-size: 21px auto;
+}
+
+.search span {
+    line-height: 26px;
+    margin-left: 44px;
+    font-size: .94rem;
+}
+.user {
+    display: flex;
+    flex-direction: column;
+    width: 51px;
+    height: 44px;
+    padding-right: 4px;
+    justify-content: center;
+    align-items: center;
+}
+.user::before {
+    display: flex;
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: url(../images/user.png) no-repeat 1px -36px;
+    background-size: 21px auto;
+}
+.user span {
+    color: #fff;
+    font-size: .75rem;
+    line-height: 1;
+}
+
+/* focus焦点图 */
+.focus img {
+    width: 100%;
+}
+
+.local-nav {
+    position: relative;
+    height: 64px;
+    margin: -54px 12px 14px;
+    padding: 4px 0  8px;
+    background-color: #fff;
+    border-radius: 8px;
+    z-index: 10;
+}
+.local-nav ul {
+    display: flex;
+
+}
+.local-nav ul li {
+    flex: 1;
+}
+.local-nav li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.local-nav a::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../images/local-nav.png) no-repeat;
+    background-size: 40px auto;
+}
+.local-nav li:nth-child(2) a::before {
+    background-position: 0 -40px;
+}
+.local-nav li:nth-child(3) a::before {
+    background-position: 0 -80px;
+}
+.local-nav li:nth-child(4) a::before {
+    background-position: 0 -120px;
+}
+.local-nav li:nth-child(5) a::before {
+    background-position: 0 -160px;
+}
+.local-nav a span {
+    font-size: .75rem;
+    color: #222;
+    line-height: 1;
+}
+
+.nav {
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0 12px 1px;
+}
+.nav-common {
+    display: flex;
+    height: 65px;
+}
+.nav-common a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+}
+.nav .nav-common:nth-child(1) {
+    background: linear-gradient(to right,#fa5956,#fb8650 54%);
+}
+.nav .nav-common:nth-child(2) {
+    background: linear-gradient(to right,#4b8fed,#53bced);
+    margin: 1px 0;
+}
+.nav .nav-common:nth-child(3) {
+    background: linear-gradient(to right,#34c2aa,#6cd557);
+}
+.nav-common a:nth-child(1) {
+    flex: 0 1 31%;
+    align-items: flex-start;
+    padding-left: 12px;
+}
+.nav-common .nav-items-hotel {
+    background: url(../images/hotel1.png) no-repeat right bottom;
+    background-size: 73px auto;
+}
+.nav-common .nav-items-minsu {
+    background: url(../images/hotel2.png) no-repeat left bottom;
+    background-size: 37px auto;
+}
+.nav-common .nav-items-jhj {
+    /* background: -webkit-linear-gradient(to right,#ffbc49,#ffd252);  */
+    background: url(../images/hotel3.png) no-repeat  right bottom;
+    background-size: 100% auto;
+    border-left: 1px solid #f2f2f2;
+    color: #a05416;
+    flex: 0 1 46%;
+}
+.nav-items {
+    border-left: 1px solid #f2f2f2;
+    flex: 0 1 23%;
+}
+.nav-items-flight {
+    background: url(../images/flight.png) no-repeat right bottom;
+    background-size: 79px auto;
+}
+.nav-items-travel {
+    background: url(../images/travel.png) no-repeat right bottom;
+    background-size: 94px auto;
+}
+
+.subnav-entry ul {
+    display: flex;
+    margin: 0 12px 12px;
+    flex-wrap: wrap;
+}
+.subnav-entry ul li {
+    flex: 20%;
+}
+.subnav-entry li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #222;
+    font-size: .63rem;
+}
+.subnav-entry li a::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: url(../images/subnav-icon.png) no-repeat;
+    background-size: 28px auto;
+    margin-top: .63rem;
+    margin-bottom: .31rem;
+}
+.subnav-entry li:nth-child(2) a::before {
+    background-position:0 -28px;
+}
+.subnav-entry li:nth-child(3) a::before {
+    background-position:0 -56px;
+}
+.subnav-entry li:nth-child(4) a::before {
+    background-position:0 -84px;
+}
+.subnav-entry li:nth-child(5) a::before {
+    background-position:0 -112;
+}
+.subnav-entry li:nth-child(6) a::before {
+    background-position:0 -140px;
+}
+.subnav-entry li:nth-child(7) a::before {
+    background-position:0 -168px;
+}
+.subnav-entry li:nth-child(8) a::before {
+    background-position:0 -196px;
+}
+.subnav-entry li:nth-child(9) a::before {
+    background-position:0 -224px;
+}
+.subnav-entry li:nth-child(10) a::before {
+    background-position:0 -252px;
+}
+/* footer nav栏 */
+
+.tool-box {
+    text-align: center;
+}
+.tool-cn {
+    display: flex;
+    padding: 10px 0;
+    background-color: #fff;
+    border-top: 1px solid #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+    margin-bottom: 5px;
+}
+.tool-cn a{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #333;
+}
+.tool-cn a::before {
+    font-family: "iconfont";
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+.tool-cn a:nth-child(1)::before {
+    content: "\e60d";
+}
+.tool-cn a:nth-child(2)::before {
+    content: "\e616";
+}
+.tool-cn a:nth-child(3):before {
+    content: "\e60c";
+}
+.tool-ver {
+    color: #999;
+}
+.tool-ver a {
+    font-size: 12px;
+    color: #666;
+}
+
+.tool-ver a:nth-child(2) span {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: url(../images/qunqiu.png) no-repeat 0 -160px;
+    background-size: 30px auto;
+    margin-right: 2px;
+}
+.tool-ver a:nth-child(2)::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+    transform: rotate(45deg);
+    margin: 0 8px 0 2px;
+}
+.tool-box p {
+    font-size: 12px;
+    color: #999;
+    margin-top: 8px;
+}
+.tool-box p a {
+    color: #999;
+}
+

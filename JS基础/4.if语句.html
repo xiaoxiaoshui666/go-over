@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // if (条件表达式) {
+        //      执行语句1
+        // } else {
+        //      执行语句2
+        // }
+        // 执行思路
+        // 如果if条件表达式结果为真 true 则执行大括号里面的执行语句1，
+        // 如果if条件表达式结果为假 false 则不执行语句1，则执行执行语句2
+        // var age = prompt('请输入您的年龄');
+        // if (age >= 18) {
+        //     alert('您成年了，可以进去')
+        // } else {
+        //     alert('滚出去')
+        // }
+
+        // if (条件表达式) {
+        //      执行语句1
+        // } else if (条件表达式2) {
+        //      执行语句2
+        // } else {
+        //      执行语句3
+        // }
+        // 执行思路
+        // 如果条件表达式1 满足就执行语句1执行完毕后，退出整个if 分支语句
+        // 如果条件表达式1不满足，则判断条件表达式2，若满足的话，执行语句2以此类推
+        // 如果上面的所有条件表达式都不成立，则执行else里面的语句
+        var num = prompt('输入你要查询的份数')
+        if (num >= 90) {
+            alert('A')
+        } else if (num >= 80) {
+            alert('B')
+        } else if (num >= 70) {
+            alert('C')
+        } else if (num >= 60) {
+            alert('D')
+        } else {
+            alert('E')
+        }
+
+        // 三元运算符  有三元运算符组成的式子我们成为三元表达式
+        // 条件表达式 ? 表达式1 : 表达式2
+        // 如果条件表达式结果为真则返回表达式1的值   如果条件表达式结果为假则返回表达式2的值
+        var num1 = 10;
+        console.log(num1 > 5 ? '是的' : '不是');
+
+        // switch多分支语句
+        /* switch (表达式) {
+            case value1:
+                执行语句1;
+                break;
+            case value2:
+                执行语句2;
+                break;
+            ...
+            default:
+                最后的执行语句;
+        } */
+        switch (2) {
+            case '2':
+                console.log('第一'); // 必须是全等
+                break;
+            case 1:
+                console.log('第二');
+                break;
+            case 2:
+                console.log('第三');  // ---第三
+                break;
+            default:
+                console.log('第四');
+        }
+        // 表达式与value值相匹配 ，匹配成功执行value下的执行语句，都没匹配上就执行default
+        // 用于特定已经确定值的选项的时候 如 已明确具体的值2 用switch较多
+        // 我们开发里面表达式我们经常写成变量
+        // num的值和 case里面的值相匹配的时候是全等,必须是值和数据类型一致才可以 num === 1
+        // break 如果当前的case里面沿有break则不会退出switch 是继续执行下一个case
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

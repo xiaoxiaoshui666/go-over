@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 当屏幕小于540像素，背景颜色变为蓝色( x<=539 ) */
+        @media screen and (max-width:530px) {
+            body {
+                background-color: blue;
+            }
+        }
+
+        /* @media screen and (max-width:969px) and (min-width:530px) {
+            body {
+                background-color: green;
+            }
+        } */
+        /* 当屏幕大于等于540像素并且小于等于969像素的时候背景颜色为绿色(540=<x<= 969 ) */
+        /* 利用css层叠性的性质，第三档把第二档层叠掉了，所以我们以后写代码按照从大到小的顺序写 */
+        @media screen and (min-width:530px) {
+            body {
+                background-color: green;
+            }
+        }
+
+        /* 当屏幕大于等于970像素的时候，背景颜色为红色( x >= 970 ) */
+        @media screen and (min-width:970px) {
+            body {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

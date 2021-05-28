@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        //声明变量
+        let a;
+        let b, c, d;
+        let e = 100;
+        let f = 521, g = 'iloveyou', h = [];
+
+        //1. 变量不能重复声明
+        // let star = '罗志祥';
+        // let star = '小猪';
+
+        //2. 块儿级作用域  全局, 函数, eval
+        // if else while for 
+        // {
+        //     let girl = '周扬青';
+        // }
+        // console.log(girl);    // 报错
+
+        //3. 不存在变量提升
+        // console.log(song);    // 报错
+        // let song = '恋爱达人';
+
+        //4. 不影响作用域链
+        {
+            let num = 10;
+            function fn() {
+                console.log(num);    // 10
+            }
+            fn();
+        }
+
+        // 5. 使用let关键字声明的变量具有暂时性死区特性
+        // var num1 = 10
+        // if (true) {
+        //     console.log(num1);   // 报错   在块级作用域下声明的变量，会和块级作用域向绑定不受外部作用域影响
+        //     let num1 = 20;
+        // }
+
+
+        var lis = document.querySelector('.nav').querySelectorAll('li');
+        console.log(lis);
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                console.log(i);
+                lis[i].innerHTML = 5;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

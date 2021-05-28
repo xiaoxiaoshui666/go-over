@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link crossorigin="anonymous" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">jQuery发送AJAX请求 </h2>
+        <button class="btn btn-primary">GET</button>
+        <button class="btn btn-danger">POST</button>
+        <button class="btn btn-info">通用型方法ajax</button>
+    </div>
+    <script>
+        $('button').eq(0).click(function () {
+            // $.get(url, {参数}, function() {成功的回调}, 响应体类型)
+            $.get('http://127.0.0.1:8000/jquery-server', { name: 'xiaohong', b: 18 }, function (data) {
+                console.log(data);   // data就是服务器返回的数据，即响应体
+            }, 'json');  // 后面跟个json表示 响应体是一个json格式处理后的数据了
+        });
+
+        // post请求
+        $('button').eq(1).click(function () {
+            $.post('http://127.0.0.1:8000/jquery-server', { name: 'xiaoming', age: 20 }, function (data) {
+                console.log(data);   // data就是服务器返回的数据，即响应体
+            });
+        });
+
+        // 通用
+        $('button').eq(2).click(function () {
+            $.ajax({
+                url: 'http://127.0.0.1:8000/jquery-all-server',
+                data: { name: 'ldh', age: 22 },   // 设置要发送的参数
+                type: 'GET',      // 设置请求类型
+                dataType: 'json',     // 设置响应体类型 设置为了JSON类型就可以自动转换了
+
+                success: function (data) {    // 设置成功的回调
+                    console.log(data);
+                },
+                timeout: 2000,    // 设置请求超时的时间
+                error: function () {   // 请求超时的回调
+                    console.log('请求已经超时');
+                },
+                Headers: {   // 自定义请求头
+                    a: 100,
+                    b: 200
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

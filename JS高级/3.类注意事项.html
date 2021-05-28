@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        var that;   // 1. 声明一个全局变量
+        var _that;
+        class Star {
+            constructor(uname, age) {
+                // constructor 里面的this 指向的是 创建的实例对象
+                that = this;   // 2. 让实例对象里面的this 保存给 全局变量that 
+                console.log(this);
+
+                this.uname = uname;
+                this.age = age;
+                // this.sing();
+                this.btn = document.querySelector('button');
+                this.btn.onclick = this.sing;    // 不要加sing () 加了就是直接调用了就不是点击了
+            }
+            sing() {
+                // 当点击 btn时 this 就改为指向的是 btn 这个按钮, 因为这个按钮调用了这个函数
+                console.log(this);
+                console.log(that.uname); // 3. that里面存储的是constructor里面的this
+            }
+            dance() {
+                // 这个dance里面的this 指向的是实例对象 ldh 因为ldh 调用了这个函数
+                _that = this;
+                console.log(this);
+            }
+        }
+        var ldh = new Star('刘德华');
+        console.log(that === ldh);
+        ldh.dance();
+        console.log(_that === ldh);
+
+        // 1. 在 ES6 中类没有变量提升，所以必须先定义类，才能通过类实例化对象
+
+        // 2. 类里面的共有的属性和方法一定要加this使用.
+    </script>
+</body>
+
+</html>

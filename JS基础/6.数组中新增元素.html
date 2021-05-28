@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 新增数组元素
+        // 1. 修改数组的长度
+        var arr = ['red', 'green', 'orange', 'blue'];
+        console.log(arr.length);
+        arr.length = 5;  // 把我们数组的长度修改为了5里面应该有5个元素
+        console.log(arr[4]); // undefined
+
+        // 2. 修改索引号
+        var arr1 = ['green', 'orange', 'pink']
+        arr1[3] = 'red';   // 索引号没占用就是追加元素
+        console.log(arr1);  // ["green", "orange", "pink", "red"]
+        arr1[0] = 'hotpink';  // 索引号占用了就是替换元素
+        console.log(arr1);   // ["hotpink", "orange", "pink", "red"]
+
+        // 求数组中的最大值
+        var star = [2, 10, 0, 6, 22, 9, 12, 2, 41];
+        var arr2 = []
+        for (var i = 0; i < star.length; i++) {
+            if (star[i] >= 10) [
+                arr2[arr2.length] = star[i]
+            ]
+        }
+        console.log(arr2);
+
+        // 交换位值
+        var star1 = [2, 10, 0, 6, 22, 9, 0, 0, 12, 2, 41];
+        var arr3 = []
+        for (var i = star1.length - 1; i >= 0; i--) {
+            arr3[arr3.length] = star1[i]
+        }
+        console.log(arr3);
+
+        var star2 = [2, 10, 0, 6, 22, 9, 0, 0, 12, 2, 41];
+        var arr4 = []
+        for (var i = 0; i < star2.length; i++) {
+            arr4[arr4.length] = star2[star2.length - 1 - i]
+        }
+        console.log(arr4);
+
+        // 冒泡排序
+        var arr5 = [3, 6, 11, 7, 2];
+        for (var i = 0; i <= arr5.length - 1; i++) {  // 一共交换了多少趟
+            for (var j = 0; j <= arr5.length - 1 - i; j++) {  // 每趟交换了多少次
+                // 比较两个数 拿前一个和后一个相比较
+                if (arr5[j] > arr5[j + 1]) {
+                    // 前一个值和它后一个值位置交换 ，可以向把一个值赋给变量，参考青苹果和红苹果 
+                    var temp = arr5[j];
+                    arr5[j] = arr5[j + 1];
+                    arr5[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr5);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

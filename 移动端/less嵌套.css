@@ -1,0 +1,18 @@
+.box {
+  width: 200px;
+  height: 300px;
+  background-color: red;
+}
+.box a {
+  font-size: 14px;
+  color: #fff;
+}
+.box a:hover {
+  color: blue;
+}
+.nav::before {
+  content: "我是伪元素";
+}
+.nav .logo {
+  color: red;
+}

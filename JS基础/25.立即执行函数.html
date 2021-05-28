@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 立即执行函数
+        // (function() {})()    
+        // (function() {}())    
+        (function fn(a, b) {     // 可以取函数名
+            console.log(a + b);     // 3
+        })(1, 2);    // 多个立即执行函数中间用 ; 隔开
+
+        (function sum(a, b) {
+            console.log(a + b);     // 7
+            var num = 10;    // 局部变量
+        }(3, 4))
+
+        // 立即执行函数最大的作用就是独立创建了一个作用域， 里面的变量就是局部变量，不会有命名的冲突
+    </script>
+    </script>
+</body>
+
+</html>

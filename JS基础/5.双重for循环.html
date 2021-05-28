@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 双重for循环
+        // for (外层的初始化变量; 外层的条件表达式; 外层的操作表达式) {
+        //     for (里层的初始化变量; 里层的条件表达式; 里层的造作表达式) {
+        //         执行语句
+        //     }
+        // }
+
+        var star1 = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = i; j <= 9; j++) {
+                star1 = star1 + '※';
+            }
+            star1 = star1 + '\n'
+        }
+        console.log(star1);
+
+        console.log('----------------------------------------');
+
+        var star = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                star = star + '※';
+            }
+            star = star + '\n'
+        }
+        console.log(star);
+
+        console.log('-----------------------------------------------');
+
+        var sum = ''  // 表示的用字符串拼接在这一行显示的所有内容
+        for (var i = 1; i <= 9; i++) {      // i代表的是第几行
+            for (var j = 1; j <= i; j++) {  // j代表的是此行中的第几个
+                sum = sum + j + '×' + i + '=' + j * i + '\t'
+                // 在每行中每循环一次就拼一次
+            }
+            sum = sum + '\n' // 每结束一行都要给此行换行
+        }
+        console.log(sum);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

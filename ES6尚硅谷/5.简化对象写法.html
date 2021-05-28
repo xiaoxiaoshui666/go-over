@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ES6 允许在大括号里面，直接写入变量和函数，作为对象的属性和方法。
+        let uname = '刘德华';
+        let age = 18;
+        let song = function () {
+            console.log('冰雨');
+        }
+        /* const ldh = {
+            uname: uname,
+            age: age,
+            song: song,
+            dance: function () {             // 一般在对象添加一个新方法
+                console.log('方法简化了')
+            }
+        } */
+        const ldh = {
+            uname,                           // 简化了 属性名：变量
+            age,
+            song,
+            dance() {                        // 简化了方法的定义 
+                console.log('方法简化了');
+            }
+        }
+        console.log(ldh);  // 对象
+        ldh.song();  // 冰雨
+        ldh.dance();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="father1">
+        <span class="son1">子节点</span>
+    </div>
+    <div class="father2">
+        <span class="son2">子节点</span>
+    </div>
+    <div class="father3">
+        <span>二儿子</span>
+    </div>
+    <div class="father4">
+        <span>一儿子</span>
+        <span>二儿子</span>
+        <span>三儿子</span>
+    </div>
+    <button class="btn4">删除节点</button>
+    <div class="father5">
+        <span>1儿子</span>
+        <span>2儿子</span>
+        <span>3儿子</span>
+    </div>
+    <script>
+        // 节点操作
+        //  父节点   parentNode
+        var son1 = document.querySelector('.son1');
+        var father1 = son1.parentNode;
+        console.log(father1);   //   可以拿到离他最近的父级，没找到返回为null
+
+        //  子节点   children
+        var father2 = document.querySelector('.father2');
+        var son2 = father2.children;
+        console.log(son2);
+        // firstElementChild  返回第一个子元素节点
+        // lastElementChild  返回最后一个子元素节点
+        // children[i]   返回子元素里面第i个节点
+        // father2.children[0]   返回第一个子元素节点
+        // father2.children[father2.children.length - 1]   返回最后一个子元素节点
+
+        // 动态添加新节点  先创建再添加
+        var father3 = document.querySelector('.father3')
+        // 1. 创建节点   createElement()
+        var son4 = document.createElement('span')
+        son4.innerHTML = '小儿子'
+        // 2. 添加节点   node.appendChild(child)    node 父级    child 子级  后面追加元素
+        father3.appendChild(son4);    // 在在父级的子元素的后面追加了一个元素
+        console.log(father3);
+        // 2. (2) 在子元素指定的地方添加   node.insertBefore(child, 指定元素);
+        var son3 = document.createElement('span')  // 创建节点
+        son3.innerHTML = '大儿子'
+        father3.insertBefore(son3, father3.children[0]); // 在父级的第一个子元素的前面添加
+        console.log(father3);
+
+        // 删除节点 node.removeChild()    删除子节点，返回这个删除的节点
+        var father4 = document.querySelector('.father4');
+        var btn4 = document.querySelector('.btn4')
+        btn4.onclick = function () {
+            if (father4.children.length == 0) {
+                this.disabled = true;   // 如果删除的子元素没有了就让按钮禁用
+            } else {
+                father4.removeChild(father4.children[0])    // 删除父级里面第一个子元素
+            }
+        }
+
+        // 复制节点   cloneNode()
+        var father5 = document.querySelector('.father5');
+        // 浅拷贝  括号参数为空或者为false，只克隆复制节点本身，不克隆里面的子节点。
+        var son5 = father5.children[0].cloneNode();  // 先复制节点 复制父级的第一个子元素
+        father5.appendChild(son5);
+        // 深拷贝  括号参数为true，会复制节点本身以及里面所有的子节点。
+        var son6 = father5.children[0].cloneNode(true);  // 先复制节点 复制父级的第一个子元素
+        father5.appendChild(son6);
+        console.log(father5);
+    </script>
+</body>
+
+</html>

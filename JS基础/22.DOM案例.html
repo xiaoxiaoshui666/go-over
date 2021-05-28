@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 活动器倒计时案例 */
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 活动器倒计时案例 -->
+    <div>
+        <span class="hour">00</span>
+        <span class="minute">00</span>
+        <span class="second">00</span>
+    </div>
+
+    <!-- 发送短信倒计时重新发送 -->
+    手机号码： <input type="number"> <button class="tel">发送</button>
+    <script>
+        // 活动器倒计时案例
+        var hour = document.querySelector('.hour')
+        var minute = document.querySelector('.minute')
+        var second = document.querySelector('.second')
+        var inputTime = +new Date('2021-4-1 22:00');   // 用户输入的毫秒数
+        // 调用定时器
+        countDowm(); // 先调用一次函数防止页面刷新有空白
+        setInterval(countDowm, 1000)
+        function countDowm() {
+            var nowTime = +new Date();   // 现在总的毫秒数
+            if (inputTime >= nowTime) {   // 防止时间到了成负数
+                var times = (inputTime - nowTime) / 1000;   // 剩余的毫秒数
+                var h = parseInt(times / 60 / 60 % 24);  // 时
+                h = h < 10 ? '0' + h : h;
+                hour.innerHTML = h          // 把剩余的小时 给小时盒子   
+                var m = parseInt(times / 60 % 60);   // 分
+                m = m < 10 ? '0' + m : m;
+                minute.innerHTML = m          // 把剩余的分钟 给分钟盒子   
+                var s = parseInt(times % 60);     // 秒
+                s = s < 10 ? '0' + s : s;
+                second.innerHTML = s          // 把剩余的秒数 给秒数盒子
+            }
+        }
+
+        // 发送短信倒计时重新发送
+        var tel = document.querySelector('.tel');
+        var num = 6;    // 全局变量
+        tel.addEventListener('click', function () {
+            tel.disabled = true;
+            var times = setInterval(function () {
+                if (num == 0) {    // 当数字为0时，说明倒计时需要结束了 
+                    tel.disabled = false;     // 让按钮禁用取消掉
+                    clearInterval(times);     // 停止定时器    // 函数内可以访问函数外的变量
+                    tel.innerHTML = '发送';   // 恢复按钮的初始文字
+                    num = 6;
+                } else {
+                    tel.innerHTML = '还剩' + num + '秒才能再次发送';
+                    num--;         // 只要num不为0则让num每秒减减
+                }
+            }, 1000)
+
+        })
+    </script>
+</body>
+
+</html>

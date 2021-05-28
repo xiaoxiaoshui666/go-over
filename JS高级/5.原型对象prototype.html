@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数通过原型分配的函数是所有对象所共享的。
+
+        // JavaScript规定，每一个构造函数都有一个prototype属性，指向另一个对象。注意这个prototype就是一个对象，这个对象的所有属性和方法，都会被构造函数所拥有。
+
+        // 原型对象是什么：        // 一个对象，prototype为原型对象
+        // 原型对象的作用是什么：   // 共享方法
+
+        function Star(uname, age) {
+            this.uname = uname;                  // 公共属性定义到构造函数里面
+            this.age = age;
+            // 1. 之前创建的实例就算内容都相同，都是指向的不同地址，浪费内存
+            /* this.sing = function() {   
+                console.log('我会唱歌');
+            } */
+        }
+        // 2. 原型对象就是用来存储公共的东西，一个内存地址就可以了，不需要再开辟内存空间
+        Star.prototype.sing = function () {      // 公共的方法放到原型对象身上
+            console.log('我会唱歌');
+        }
+        var ldh = new Star('刘德华', 18);
+        var zxy = new Star('张学友', 19);
+        console.log(ldh.sing === zxy.sing);
+        // console.dir(Star);
+        ldh.sing();   // 实际就等价于ldh.__proto__.sing() 而ldh.__proto__有等价于Star.prototype 而构造函数里面的Star.prototype有sing函数 ，所以ldh.sing()就可以调用构造函数原型对象里面的函数
+        console.log(ldh.__proto__.sing() === ldh.sing());              // true等价
+        console.log(ldh.__proto__.sing() === Star.prototype.sing());   // true等价
+        console.log(ldh.sing() === Star.prototype.sing());             // true等价
+        zxy.sing();
+
+        // 对象原型
+        // 对象都会有一个属性__proto__指向构造函数的prototype原型对象，之所以我们对象可以使用构造函擞prototype原型对象的属性和方法,就是因为对象有__proto__原型的存在。
+    </script>
+</body>
+
+</html>

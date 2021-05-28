@@ -1,0 +1,13 @@
+/* 想让html用less文件时，需要给vscode安装插件 Easy Less 每次保存就会自动生成一个css文件 */
+body {
+  background-color: pink;
+  font-size: 20px;
+}
+div {
+  width: 200px;
+  height: 200px;
+  background-color: deeppink;
+}
+a {
+  font-size: 20px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // catch() 用来指定Promise对象失败的回调
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject('错误')
+            }, 1000)
+        })
+        // p.then(value => {
+        //     console.log(value);
+        // }, reason => {
+        //     console.log(reason);
+        // })
+        // catch是then方法里面不指定第一个参数，结果和第二个参数是一样
+        // catch方法 是 promise对象失败状态的一个语法糖
+        p.catch(reason => {
+            console.log(reason);
+        })
+    </script>
+</body>
+
+</html>

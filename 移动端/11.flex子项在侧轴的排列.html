@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 80%;
+            height: 300px;
+            background-color: red;
+            /* 沿着侧轴的底部对齐 */
+            /* align-items: flex-end; */
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: hotpink;
+            margin-right: 5px;
+        }
+
+        /* 要求只让3盒子沿着侧轴的底部对齐，其他盒子不变 */
+        div span:nth-child(3) {
+            align-self: flex-end;
+        }
+
+        /* 把 2盒子放在 1盒子的前面 但不能改标签结构 */
+        div span:nth-child(2) {
+            /* 默认是0， -1 比 0 小所以在前面 */
+            order: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

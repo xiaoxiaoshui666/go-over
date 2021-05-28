@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // fn.call() 可以改变这个函数的this指向   
+        // ()括号里第一个是要改变此函数的this指向谁 ，后面的是函数的参数
+
+
+        // 1. 父构造函数
+        function Father(uname, age) {
+            // this 指向父构造函数的对象实例
+            this.uname = uname;
+            this.age = age;
+        }
+        Father.prototype.money = function () {
+            console.log(100000);
+        };
+        // 2 .子构造函数 
+
+        // 借用父构造函数继承属性
+        // ① 原理就是在子构造函数里面把父构造函数调用过来
+        // ② 同时通过call把父构造函数里面的this指向子构造函数的this
+        function Son(uname, age, score) {
+            // this 指向子构造函数的对象实例
+            Father.call(this, uname, age);    // 把Father中的this指向Son构造函数的this
+            this.score = score;
+        }
+        var son = new Son('刘德华', 18, 100);
+        console.log(son);
+
+        // 借用父构造函数继承方法 
+        // ① 让子原型对象 指向 父构造函数的实例对象 
+        // ② 因为 父原型对象 有money方法，又因为 父实例对象的对象原型 指向 父原型对象
+        // ③ 所以 子原型对象 就可以访问 父原型对象
+        // 注意：子原型对象 是赋值 所以记得把 子constructor 指向 子构造函数
+
+        // Son.prototype = Father.prototype;  这样直接赋值会有问题,如果修改了子原型对象,父原型对象也会跟着一起变化
+        Son.prototype = new Father();
+        // 如果利用对象的形式修改了原型对象,别忘了利用constructor 指回原来的构造函数
+        Son.prototype.constructor = Son;
+        // 这个是子构造函数专门的方法
+        Son.prototype.exam = function () {
+            console.log('孩子要考试');
+
+        }
+        var son = new Son('刘德华', 18, 100);
+        console.log(son);
+        console.log(Father.prototype);
+        console.log(Son.prototype.constructor);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+@baseFont: 50px;
+@border: 5px  + 5;
+html {
+    font-size: @baseFont;
+}
+div {
+    width: 200px  - 50;
+    // 实际就是150px了
+    height: 200px * 2;
+    // 实际就是400px了
+    border: @border solid red;
+    // 此时的border的边框就为10px
+}
+p {
+    width: (200px + 50px ) * 2;
+    // width: 500px;
+    height: (200px / 4);
+    // height: 50px;
+    // 除法的时候要记得带括号
+    border: @border solid red;
+}
+
+// 1. 符号之前必须用空格隔开
+// 2．两个数参与运算如果只有一个数有单位，则最后的结果就以这个单位为准
+
+img {
+    width: (82rem / @baseFont);
+    // width: 1.64rem;
+    height: (82rem / @baseFont);
+    // hright: 1.64rem;
+    // 3. 如果两个数参与运算，两个数都有单位 ，则结果取第一个单位   
+}

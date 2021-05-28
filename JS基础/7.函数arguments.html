@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fn(params) {
+            // 只有函数才有arguments对象而且是每个函数都内置好了这个arguments
+            console.log(arguments);  // 里面存储了所有传过来的实参
+        }
+        fn(1, 2, 3)
+        // arguments 是个伪数组
+        // 具有数组的length 长度的属性
+        // 有索引
+        // 没有正常数组的方法 如pop() push()
+
+        // 求任意输入的最大值
+        function getmax() {
+            var max = arguments[0]
+            for (var i = 0; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i]
+                }
+            }
+            return max
+        }
+        console.log(getmax(1, 4, 5));
+        console.log(getmax(1, 32, 54, 5));
+        console.log(getmax(1, 43, 42, 55, 3, 2, 5));
+        console.log(getmax(1, 4, 3, 9, 5));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

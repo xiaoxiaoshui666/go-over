@@ -1,0 +1,45 @@
+// 首页的样式less文件
+@import "rem苏宁common";
+// @import 导入的意思 可以把一个样式文件导入另一个样式文件里面
+// 写了这句话可以直接将 公共样式 rem苏宁common.css 里面的所有样式导入到 rem苏宁index.css 里面去
+
+// link是把一个样式文件引入到htm1页面里面
+@baseFont: 50;
+body {
+    min-width: 320px;
+    // 设计稿给的是750px  ， 750px下html字体1rem为50px  所以就是 750px / 50px = 50rem
+    // 或者理解，750px 分成了15等份 每份是50px 所以满屏就是所有等份的之和 就是15rem
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background: #f2f2f2;
+}
+// 页面元素rem计算公式： 页面元素的px / html 字体大小 50
+// search-content
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: (88rem / @baseFont);
+    background: #ffc001;
+}
+.classify {
+    width: (44rem / @baseFont);
+    height: (70rem / @baseFont);
+    background-color: pink;
+    margin: (11rem / @baseFont) (25rem / @baseFont) (7rem / @baseFont) (24rem / @baseFont);
+}
+.search {
+    flex: 1;
+    background-color: purple;
+}
+.login {
+    width: (75rem / @baseFont);
+    height: (70rem / @baseFont);
+    background-color: blue;
+    margin: (9rem / @baseFont);
+}

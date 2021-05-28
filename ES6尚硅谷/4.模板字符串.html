@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6 引入新的声明字符串的方式 『``』 '' "" 
+        //1. 声明
+        // let str = `我也是一个字符串哦!`;
+        // console.log(typeof str);
+        // 1. 和普通字符串一样声明
+        let uname = '小明';
+        let myname = `小红`;
+        console.log(uname);
+        console.log(myname);
+
+        // 2. 内容中可以直接出现换行符
+        let lis = `
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>`;
+        console.log(lis);
+
+        // 3. 变量拼接   ${}
+        let age = 18;
+        let mine = `${uname}的年纪是${age}岁`;   // 小明的年纪是18岁
+        console.log(mine);
+    </script>
+</body>
+
+</html>

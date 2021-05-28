@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        .container .row [class^="col"] {
+            border: 1px solid #ccc;
+        }
+
+        .container .row:nth-child(1) div {
+            background-color: orange;
+        }
+
+        /* 小列中在嵌套内容 */
+        .row:nth-child(5)>div .row div {
+            background-color: pink;
+        }
+
+        /* 列偏移  */
+        .row:nth-child(6) div {
+            height: 50px;
+            background-color: red;
+        }
+
+        /* 隐藏列 */
+        .row:nth-child(8) div {
+            height: 50px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 栅格系统就是有许多大的container盒子（页面布局），把内容包含进去，把页面内容划分若干分，列变大宽就变大，内容就变大
+    Bootstrap提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口(viewport )尺寸的增加，系统会自动分为最多12列。 -->
+    <!-- Bootstrap里面container宽度是固定的，但是不同屏幕下，container的宽度不同，我们再把container划分为12等份 -->
+
+    <!-- 栅格系统用于通过一系列的行和列的组合来创建页面布局 -->
+    <!-- 行（row）必须放到container布局容器里面 -->
+    <!-- 给列来进行平均划分，需要给每个列添加列前缀 -->
+    <!-- 大屏( >=1200px)宽1170px ：.col-lg-
+         中屏( >=992px)宽度定为970px : .col-sm-
+         小屏(>=768px)宽度定为750px : .col-md-
+         超小屏(100%) : .col-xl-   -->
+    <!-- 每个列默认有左右15像素的padding -->
+    <div class="container">
+        <div class="row">
+            <!-- 大屏幕下每个container盒子能装4份 则列盒子占3分 -->
+            <!-- 中屏幕下每个container盒子能装3份 则列盒子占4分  -->
+            <!-- 小屏幕下每个container盒子能装2份 则列盒子占6分  -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">1</div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">2</div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">3</div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">4</div>
+        </div>
+        <div class="row">
+            <!-- 子元素相加份数为12，则子元素能占满整个container宽度 -->
+            <div class="col-lg-6">1</div>
+            <div class="col-lg-2">2</div>
+            <div class="col-lg-2">3</div>
+            <div class="col-lg-2">4</div>
+        </div>
+        <div class="row">
+            <!-- 子元素相加份数 小于12时，则子元素不占满整个container宽度  会有空白-->
+            <div class="col-lg-6">1</div>
+            <div class="col-lg-2">2</div>
+            <div class="col-lg-2">3</div>
+            <div class="col-lg-1">4</div>
+        </div>
+        <div class="row">
+            <!-- 子元素相加份数 大于12，则多余的列会另起一行显示 -->
+            <div class="col-lg-6">1</div>
+            <div class="col-lg-2">2</div>
+            <div class="col-lg-2">3</div>
+            <div class="col-lg-3">4</div>
+        </div>
+
+        <!-- 小列中在嵌套内容 可以把小列在看成是一个container容器-->
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <!-- 列嵌套最好加1个行row这样可以取消父元素的padding值而且高度自动和父级一样高 -->
+                <div class="row">
+                    <div class="col-md-4">a</div>
+                    <div class="col-md-8">b</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">2</div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">3</div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">4</div>
+        </div>
+
+
+        <!-- 列偏移 把盒子往两侧的边对齐 中间空着-->
+        <!-- 使用.col-md-offset-*类可以将列向右侧偏移。这些类实际是通过使用*选择器为当前元素增加了左侧的边距( margin ) 。 -->
+        <div class="row">
+            <div class="col-md-3">左侧</div>
+            <!-- 偏移的份数等于 12总份 - 这两个盒子的份数 3 - 5 = 4 -->
+            <div class="col-md-5 offset-md-4">右侧</div>
+        </div>
+        <div class="row">
+            <!-- 只有一个盒子切要实现水平居中对齐  中间的；两边设置一样宽的盒子 (12总份 - 这个盒子的份数) / 2 = 2-->
+            <div class="col-md-6 offset-md-3">中间</div>
+        </div>
+
+        <!-- 隐藏列 -->
+        <div class="row">
+            <div class="col-md-3">11</div>
+            <!-- 在中等屏幕md 时候2号列隐藏 -->
+            <div class="col-md-3">22</div>
+            <div class="col-md-3">33</div>
+            <div class="col-md-3">44</div>
+        </div>
+    </div>
+</body>
+
+</html>

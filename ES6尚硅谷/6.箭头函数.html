@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮">
+    <script>
+        // 箭头函数
+        // 用  =>  定义函数
+        // 声明一个函数
+        function f() {              // 之前的函数
+            console.log(11);
+        }
+        let fn = function (a, b) {   // 之前的函数
+            return a + b;  // 5
+        }
+        console.log(fn(2, 3));
+
+        let fn1 = (a, b) => {        // 箭头函数
+            return a + b;   // 9
+        }
+        console.log(fn1(4, 5));
+
+        // 1. 箭头函数的 this 是静态的 this 始终指向函数声明时所在作用域下的 this 的值
+        // 可以理解箭头函数自己没有this，要用外层的代码块的this
+        let that;
+        let that1;
+        function getName() {
+            that = this;
+            console.log(this.name);
+        }
+        let getName2 = () => {
+            that1 = this;
+            console.log(this.name);
+        }
+        //设置 window 对象的 name 属性
+        window.name = '小明';
+        const school = {
+            name: "明世隐"
+        }
+        //直接调用
+        getName();              // 小明
+        getName2();             // 小明
+        //call 方法调用   改变this指向
+        getName.call(school);   // 明世隐    改变了this
+        getName2.call(school);  // 小明      没被改变this
+        console.log(that);      // scholl对象
+        console.log(that1);     // window   
+
+        //2. 不能作为构造实例化对象
+        // let Person = (name, age) => {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // let me = new Person('xiao',30);
+        // console.log(me);
+
+        //3. 不能使用 arguments 变量
+        // let fn = () => {
+        //     console.log(arguments);
+        // }
+        // fn(1,2,3);
+
+        //4. 箭头函数的简写
+        //1) 省略小括号, 当形参有且只有一个的时候
+        // let add = n => {
+        //     return n + n;
+        // }
+        // console.log(add(9));
+        //2) 省略花括号, 当代码体只有一条语句的时候, 此时 return 必须省略
+        // 而且语句的执行结果就是函数的返回值
+        let pow = n => n * n;
+
+        console.log(pow(8));
+
+
+
+        // 案例
+        //绑定事件         以前是在外声明一个that _this等变量接收内部的作用域的this
+        let btn = document.querySelector('input');
+        btn.addEventListener('click', function () {
+            setTimeout(() => {
+                console.log(11);
+                this.value = '已开启';   // 箭头函数下的this依旧指向它本身所在的作用域也就是btn
+            }, 2000)
+        })
+
+        //需求-2  从数组中返回偶数的元素
+        const arr = [1, 6, 9, 10, 100, 25];
+        // const result = arr.filter(function(item){
+        //     if(item % 2 === 0){
+        //         return true;
+        //     }else{
+        //         return false;
+        //     }
+        // });
+
+        const result = arr.filter(item => item % 2 === 0);
+
+        console.log(result);
+
+        // 箭头函数适合与 this 无关的回调. 定时器, 数组的方法回调
+        // 箭头函数不适合与 this 有关的回调.  事件回调, 对象的方法
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn1">location对象案例</button>
+    <div></div>
+    <button class="btn2">location.assign方法</button>
+    <button class="btn3">location.replace方法</button>
+    <script>
+        // URL
+        // 统一资源定位符(Uniform Resource Locator, URL)是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎必处理它。
+
+        // protocol: // host[ :port]/path/[ ?query]#fragment
+        // http://www.itcast.cn/index.html?name=andy&age=18#link
+
+        // protocol ： 通信协议  常用的http,ftp,maito等
+        // host     ： 主机(域名)  www.itheima.com
+        // port     ： 端口号可选，省略时使用方案的默认端口  如http的默认端口为80
+        // path     ： 路径 由零或多个/符号隔开的字符串，一般用来表示主机的一个目录或文件地址
+        // query    ： 参数  ?后  以键值对的形式  通过 & 符号分隔开来
+        // fragment ： 片段  #后  内容常见于链接锚点
+
+        // location对象
+        // location.href        ： 获取或者设置整个URL
+        // location. host       ： 返回主机(域名) www.itheima.com
+        // location.port        ： 返回端口号 如果未写返回空字符串
+        // location.pathname    ： 返回路径
+        // location.search      ： 返回参数
+        // location.hash        ： 返回片段 #后面内容常见于链接锚点
+
+        // 案例：5秒钟之后自动跳转新浪页面
+        var btn1 = document.querySelector('.btn1');
+        var div = document.querySelector('div');
+        var num = 4;
+        btn1.addEventListener('click', function () {
+            fn();
+            setInterval(fn, 1000)
+        })
+        function fn() {
+            if (num == 0) {
+                location.href = 'https://www.sina.com.cn';
+                num = 4;
+            } else {
+                div.innerHTML = '你将在' + num + '秒之后跳转页面'
+                num--;
+            }
+        }
+
+        // location方法
+        // location.assign()     ：跟href一样，可以跳转页面（也称为重定向页面)
+        // location.replace()    ：替换当前页面，因为不记录历史，所以不能后退页面
+        // location.reload()     ：重新加载页面，相当于刷新按钮或者f5如果参数为true 强制刷新ctrl+f5
+        var btn2 = document.querySelector('.btn2');
+        var btn3 = document.querySelector('.btn3');
+        btn2.addEventListener('click', function () {
+            location.assign('https://www.baidu.com');
+        })
+        btn3.addEventListener('click', function () {
+            location.replace('https://www.baidu.com');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 100px auto;
+            background-color: hotpink;
+            transition: all .5s;
+        }
+
+        .box:hover {
+            width: 300px;
+            height: 200px;
+        }
+
+        .mi {
+            display: block;
+            position: relative;
+            width: 55px;
+            height: 55px;
+            background-color: #ff6700;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .mi::before,
+        .mi::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 55px;
+            height: 55px;
+            transition: all .2s;
+        }
+
+        .mi::before {
+            background: url(./images/mi-home.png) no-repeat 50% 50%;
+            /* 利用外边距负55px的位置使两个子盒子完全贴在一起 */
+            margin-left: -55px;
+        }
+
+        .mi::after {
+            background: url(./images/mi-logo.png) no-repeat 50% 50%;
+        }
+
+        .mi:hover::after,
+        .mi:hover::before {
+            left: 55px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <a href="#" class="mi">
+
+    </a>
+</body>
+
+</html>

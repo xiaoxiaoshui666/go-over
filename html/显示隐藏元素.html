@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box,
+        .box1,
+        .box2 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .box {
+            /* display: none;  隐藏不再占有原来的位置 */
+            /* display: block; 转为块级元素;显示元素 */
+            background-color: pink;
+        }
+
+        .box1 {
+            /* visibility: hidden; 隐藏切占有原来的位置 */
+            /* visibility: visible;  元素可视*/
+            background-color: skyblue;
+        }
+
+        .box2 {
+            /* overflow: visible; */
+            /* overflow: hidden; 溢出隐藏 */
+            /* overflow: scroll; 溢没溢出的都显示滚动条 */
+            /* overflow: auto; 若溢出的部分显示滚动条 */
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">123</div>
+    <div class="box1">123</div>
+    <div class="box2">
+        122222222222222222222222223
+    </div>
+</body>
+
+</html>

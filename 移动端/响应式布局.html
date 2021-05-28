@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 150px;
+            background-color: orange;
+            margin: 0 auto;
+        }
+
+        /* 超小屏幕下（手机，小于768px )  布局容器的宽度为 100% */
+        @media screen and (max-width: 670px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        /* 小屏幕下（平板，大于等于768px )  布局容器改为750px */
+        @media screen and (min-width: 768px) {
+            .container {
+                width: 750px;
+            }
+        }
+
+        /* 中等屏幕下（桌面显示器，大于等于992px) 布局容器修改为 970px */
+        @media screen and (min-width: 992px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        /* 大屏幕下(大桌面显示器，大于等于1200px) 布局容器修改为 1170px */
+        @media screen and (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 响应式需要一个父级做为布局容器，来配合子级元素来实现变化效果。 -->
+    <!-- 原理就是在不同屏幕下，通过媒体查询来改变这个布局容器的大小，再改变里面子元素的排列方式和大小，从而实现不同屏幕下，看到不同的页面布词和样式变化。 -->
+
+    <!-- 响应式开发首先需要一个布局容器 -->
+    <!-- 布局容器的优点是宽度是固定死的，根据不同的档位设置不同的宽度在屏幕的正中央 -->
+    <div class="container"></div>
+</body>
+
+</html>

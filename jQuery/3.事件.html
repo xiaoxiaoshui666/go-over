@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .current {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>事件处理on</div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <ol>
+
+    </ol>
+    <span>解绑事件</span>
+    <input type="text">
+    <button class="btn">事件对象</button>
+    <script>
+        // 事件： 
+        // mouseenter()  鼠标经过
+
+        // mouseleave()  鼠标离开
+
+        // change(function() {})    当当表单发生变化触发事件
+
+        // hover 就是鼠标经过和离开的复合写法   
+        // $("li").hover(function() {}, function() {})   // hover(鼠标经过函数, 鼠标离开函数)
+
+        // scroll()  页面滚动事件
+        // $("window").scroll(function() {})
+
+
+        // 事件处理 on()
+        // 1. 一个元素多个不同的事件
+        $("div").on({
+            click: function () {           // 鼠标点击
+                $(this).css('background', 'red')
+            },
+            mouseenter: function () {      // 鼠标经过
+                $(this).css('background', 'pink')
+            },
+            mouseleave: function () {      // 鼠标离开
+                $(this).css('background', 'green')
+            }
+        })
+
+        // 2. 不同的事件触发相同的函数
+        $("div").on("mouseenter mouseleave", function () {
+            $(this).toggleClass("current");
+        });
+
+        // 3. on可以实现事件委托（委派）   事件委派的定义就是，把原来加给子元素身上的事件绑定在父元素身上，就是把事件委派给父元素。
+        // $("ul li").click();
+        $("ul").on("click", "li", function () {
+            alert(11);
+            console.log($(this));      // li    this指向触发的li
+        });    // click 是绑定在ul 身上的，但是 触发的对象是 ul 里面的小li
+
+        // 4. on可以给未来动态创建的元素绑定事件
+        // $("ol li").click(function() {
+        //     alert(11);
+        // })
+        $("ol").on("click", "li", function () {
+            alert(11);
+        })
+        var li = $("<li>我是后来创建的</li>");
+        $("ol").append(li);
+
+        // 事件解绑  off 
+        $("span").on({
+            click: function () {
+                console.log("我点击了");
+            },
+            mouseover: function () {
+                console.log('我鼠标经过了');
+            }
+        });
+        $("ul").on("click", "li", function () {
+            alert(11);
+        });
+        // $("span").off();  // 这个是解除了span身上的所有事件
+        $("span").off("click"); // 这个是解除了span身上的点击事件
+        $("ul").off("click", "li"); // 解除事件委托
+
+        // one() 但是它只能触发事件一次
+        $("p").one("click", function () {
+            alert(11);
+        })
+
+        $("input").on('click', function () {
+            console.log(11);
+        })
+        // $("input").click();
+        // $("input").trigger("click");
+        $("input").triggerHandler("click");    // 不会触发元素的默认事件
+
+        // 事件对象
+        $(".btn").on("click", function (e) {
+            console.log(e);
+        })
+    </script>
+</body>
+
+</html>

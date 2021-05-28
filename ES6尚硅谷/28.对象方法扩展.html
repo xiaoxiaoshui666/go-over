@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. Object.is 判断两个值是否完全相等 
+        // console.log(Object.is(120, 120));// === 
+        // console.log(Object.is(NaN, NaN));// === 
+        // console.log(NaN === NaN);// === 
+
+        //2. Object.assign 对象的合并
+        // const config1 = {
+        //     host: 'localhost',
+        //     port: 3306,
+        //     name: 'root',
+        //     pass: 'root',
+        //     test: 'test'
+        // };
+        // const config2 = {
+        //     host: 'http://atguigu.com',
+        //     port: 33060,
+        //     name: 'atguigu.com',
+        //     pass: 'iloveyou',
+        //     test2: 'test2'
+        // }
+        // console.log(Object.assign(config1, config2));
+
+        //3. Object.setPrototypeOf 设置原型对象  Object.getPrototypeof
+        const school = {
+            name: '素质教学',
+            subject: ['语文', '数学', '体育']
+        }
+        const cities = {
+            cities: ['北京', '上海', '深圳']
+        }
+        Object.setPrototypeOf(school, cities);
+        console.log(Object.getPrototypeOf(school));
+        console.log(school);
+
+
+
+        // 3. Object.getOwnPropertyDescriptors(对象名)   对象属性的描述
+        console.log(Object.getOwnPropertyDescriptors(school));  // 结果就是 对象 属性的 描述对象
+
+        // const obj = Object.create(null, {
+        //     name: {      // Object.getOwnPropertyDescriptors(obj) 属性后面的值就是此name对象里面的这个对象
+        //         //设置值 
+        //         value: '尚硅谷',  
+        //         //属性特性
+        //         writable: true,        // 是否可写
+        //         configurable: true,    // 是否可以删除
+        //         enumerable: true       // 是否可以枚举
+        //     } 
+        // });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        // rest 参数，用于获取函数的实参，用来代替 arguments
+        function fn() {
+            console.log(arguments);    // 伪数组   （有length，有索引，没得数组的一些方法）
+            console.log(arguments instanceof Array);    // false（是个对象）
+        }
+        fn('小明', '小红', '小王');
+        function date(...args) {
+            console.log(args);         // 数组
+            console.log(args instanceof Array);          // true  
+        }
+        date('小张', '小刘', '小水');
+
+        // rest 参数必须要放到参数最后
+        function thenum(a, b, c, ...args) {
+            console.log(a);          // 1
+            console.log(b);          // 1
+            console.log(c);          // 1
+            console.log(args);       // [10, 12, 34, 23]
+        }
+        thenum(1, 4, 6, 10, 12, 34, 23)
+
+        // ----------------------------------------------------------------------------
+
+        // 『...』扩展运算符能将『数组』转换为逗号分隔的『参数序列』
+        const TFboys = ['小王', '小凯', '千禧'];
+        console.log(...['小王', '小凯', '千禧']);    // '小王', '小凯', '千禧'
+        console.log(...TFboys);                     // '小王', '小凯', '千禧'
+        function Star() {
+            console.log(arguments);
+        }
+        // Star(TFboys);
+        Star(...TFboys);  // 等同于 Star('小王', '小凯', '千禧')
+
+        // 扩展运算符的运用
+        // 1. 数组的合并
+        const student = ['小利', '小肖'];
+        const teacher = ['老毅', '老玲'];
+        // const school = student.concat(teacher);
+        const school = [...student, ...teacher];
+        console.log(school);  // ['小利', '小肖', '老毅', '老玲']
+
+        // 2. 数组的克隆
+        const hua = ['E', 'G', 'M'];
+        const myhua = [...hua];//  ['E','G','M']
+        console.log(myhua);
+
+        //3. 将伪数组转为真正的数组
+        const divs = document.querySelectorAll('div');
+        const divArr = [...divs];
+        console.log(divArr);  // ['div', 'div', 'div']
+
+        // ----------------------------------------------------------------------------
+
+        //Rest 参数与 spread 扩展运算符在 ES6 中已经引入，不过 ES6 中只针对于数组，在 ES9 中为对象提供了像数组一样的 rest 参数和扩展运算符
+        //rest 参数
+        function connect({ host, port, ...user }) {
+            console.log(host);
+            console.log(port);
+            console.log(user);
+        }
+
+        connect({
+            host: '127.0.0.1',
+            port: 3306,
+            username: 'root',
+            password: 'root',
+            type: 'master'
+        });
+
+        // ----------------------------------------------------------------------------
+
+        //对象合并
+        const skillOne = {
+            one: '如意金箍',
+            theone: '免疫伤害'
+        }
+        const skillTwo = {
+            two: '筋斗云'
+        }
+        const skillThree = {
+            three: '定海神针'
+        }
+        const skillFour = {
+            four: '七十二变'
+        }
+        const sunwukong = { ...skillOne, ...skillTwo, ...skillThree, ...skillFour };
+        console.log(sunwukong)
+        // ...skillOne   =>  q: '天音波', w: '金钟罩'
+    </script>
+</body>
+
+</html>

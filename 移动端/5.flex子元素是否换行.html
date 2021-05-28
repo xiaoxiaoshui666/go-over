@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 600px;
+            height: 400px;
+            background-color: red;
+            /* 默认的所有的项目即子元素都是沿着轴线排列的 */
+            /* 默认是不换行的 若装不开就会缩小子元素的宽度 */
+
+            /* flex-wrap: nowrap; 默认不换行 */
+            flex-wrap: wrap;
+            /* 换行 */
+        }
+
+        span {
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <video src=""></video>
+    <script>
+        // 1. js库
+        // 就是一个js文件，里面存放了许多的函数，这些函数为了实现某些功能，是原生js封装的
+
+        // jQuery
+        // j js   Query 查询     把js中的DOM操作做了封装，我们可以快速的查询使用里面的功能
+
+        // $(function() { })
+        // 等DOM渲染完毕就执行内部代码   可以把script写在代码的前面
+        $(function () {
+            $("div").hide();
+        })
+
+        // $   入口函数 是jQuery的顶级对象
+
+        // jQuery对象      ！！！ DOM对象和jQuery对象不能混用
+        console.log($("video"));   // 伪数组形式    利用$对DOM对象包装产生的对象
+
+        // jQuery对象和DOM对象的转换
+        // 直接获取jQuery对象
+        // $('video')
+        // 1. DOM对象转换为jQuery对象   ： $(DOM对象)
+        var myvideo = document.querySelector('video');
+        $(myvideo)
+        // 2. 把 jQuery对象转换为DOM对象
+        console.log($("video")[0]);        // DOM对象
+        console.log($("video").get(0));    // DOM对象 
+    </script>
+    <div></div>
+</body>
+
+</html>

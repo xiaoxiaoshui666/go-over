@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字符串
+        // 基本包装类型就是把简单数据类型包装成为复杂数据类塑，这样基本数据类型就有了属性和方法 所以字符串可以用length检测长度
+        // 字符串的不可变  ：指的是里面的值不可变，虽然看上去可以改变内容，但其实是地址变了，内存中新开辟了一个内存空间。
+        // 所以一般不要大量的修改字符串 // 字符串的所有的方法都不会修改字符串本身，操作返回的是新的字符串
+
+        // 字符串对象 根据字符串返回位置
+        var str = '他大舅他二舅都是他舅';
+        console.log(str.indexOf('舅'));  // 2
+        console.log(str.indexOf('舅', 3));  // 5 后面加逗号表示从索引号是三的开始找满足条件的
+        ////  例： 查找字符串中的某个字符出现的次数和位置
+        var str1 = 'asdasofhfsofeeohfoeooseoeifoodhsfoe'
+        function inputNum(mynum) {
+            var index = str1.indexOf(mynum);
+            var num = 0;
+            while (index != -1) {  // 如果o在str里面就是true ，则while一直循环
+                console.log('位置在第' + index + '个');;    // 每找到一次打印一次num
+                num++;
+                index = str1.indexOf(mynum, index + 1)  // 找到一次就是让索引号加1赋值给num，继续找
+            }
+            console.log('o一共输出了' + num + '次');
+        }
+        inputNum('o');
+
+        // 根据位置返回字符
+        var str2 = 'xiaoming'
+        console.log(str2.charAt(1));   // 'i'    // 返回指定位置的字符    根据字符串的索引号
+        console.log(str2.charCodeAt(1));   // 105   // 返回指定位置的字符的ASCII码 
+        console.log(str2[1]);   // 'i'    // 返回指定位置的字符   H5新增
+        ////  例：  统计在字符串里出现最多次数的字符
+        // 核心算法:利用charAt(）遍历这个字符串
+        // 把每个字符都存储给对象，如果对象没有该属性，就为1,如果存在了就+1
+        // 遍历对象，得到最大值和该字符
+        var str3 = 'sodjaeofsooewfsfoew'
+        var mymax = {}
+        for (var i = 0; i < str3.length; i++) {
+            var chars = str3.charAt(i);  // 通过索引号来遍历字符串的每个字符
+            if (mymax[chars]) {  // 对象属性名
+                mymax[chars]++;  // 谁出现一次谁属性值就加1 
+            } else {
+                mymax[chars] = 1;  // 对象属性不存在就赋值为1
+            }
+            // 1. 把每个字符通过 对象名['属性'] 作为对象的属性的方式 如果if(true)成立来判断是否包含这个对象属性如果不包含就让 对象名['属性'] 属性值为1 ，相当于每个字符没重复之前都赋值对象的属性值为1 ，
+            // 2. 当 对象名['属性'] 存在时，则 if成立 再使此属性值加1，直到遍历完所有的字符
+        }
+        console.log(mymax);  // {a: 1, d: 1, e: 3, f: 3, j: 1, o: 5, s: 3, w: 2}
+        // 遍历这个mymax对象  遍历对象用(for in )
+        var max = 0;  // 声明一个最大值的方法，
+        var ch = ''   // k在for里才有效出了，所以要声明一个变量用来存k
+        for (var k in mymax) {
+            // 遍历对象    k 是属性名    mymax[k] 是属性值
+            if (mymax[k] > max) {  // 求最大值的方式
+                max = mymax[k]
+                ch = k;  // k是属性名，(也就是最大属性值的属性名) 赋值给外面的ch
+            }
+        }
+        console.log(max);
+        console.log(ch);
+
+        // 截取字符串
+        // substr('截取的起始位置', '截取几个字符');
+        var str4 = '他大舅他二舅都是他舅';
+        console.log(str4.substr(3, 4));   // 他二舅都  // 从第三个索引号开始截取4个字符
+
+        // 替换字符串
+        var str5 = '他大舅他二舅都是他舅';
+        console.log(str5.replace('舅', '姑')); // 他大姑他二舅都是他舅    // 只替换第一个
+        // 替换所有的舅
+        while (str5.indexOf('舅') !== -1) {
+            str5 = str5.replace('舅', '姑')
+        }
+        console.log(str5);      // 他大姑他二姑都是他姑
+
+        // 将字符串转换为数组
+        var str6 = '星期一,星期二,星期三,星期四,星期五,星期六,星期日';
+        console.log(str6.split(','));    // ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
+        var str7 = '星期一&星期二&星期三&星期四&星期五&星期六&星期日';
+        console.log(str7.split('&'));    // ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
+    </script>
+</body>
+
+</html>

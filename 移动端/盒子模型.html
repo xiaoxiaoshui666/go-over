@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box,
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+            border: 10px solid red;
+        }
+
+        .box {
+            /* 这是传统的盒子模型 */
+            box-sizing: content-box;
+        }
+
+        .box1 {
+            /* 盒子的宽高已经有确定时，内边距和边框等不会撑开盒子 */
+            /* 内边距和边框越大时，内容就会越小 */
+            box-sizing: border-box;
+            /* 此时如果想设置文字垂真居中对齐，line-height的值需要减去上下的border和paddling */
+        }
+
+        .box2 {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+
+        .box2-son {
+            /* 需求子盒子宽度永远比父盒子小30像素 */
+            width: calc(100% - 30px);
+            height: 30px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2">
+        <div class="box2-son"></div>
+    </div>
+</body>
+
+</html>

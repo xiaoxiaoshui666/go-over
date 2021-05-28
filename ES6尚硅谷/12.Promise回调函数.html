@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // Promise是一个构造函数  实例化Promise对象  
+        // 实例化函数时接收一个函数类型的值，函数有2个形参（都是个函数）  ，函数体里面是一个异步代码
+        const p = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                let data = '我是数据';
+                // 在异步体里面可以调用这两个参数函数，进而改变promise的状态
+                // 当调用resolve函数时 promise的状态就为成功
+                resolve(data);      // 成功
+                // reject(data);    // 失败
+            }, 2000)
+        })
+        // 实例化对象里面有个 then方法，  then方法接收两个参数（也就是函数），每个函数都里面都有一个形参，成功的形参value，失败的形参reason        p.then(function (value) {
+        p.then(function (value) { // 当promise对象状态为成功时，then方法就会执行里面的第一个回调函数代码
+            console.log(value);
+        }, function (reason) {    // 当promise对象状态为失败时，then方法就会执行里面的第二个回调函数代码
+            console.error(reason);
+        })
+    </script>
+</body>
+
+</html>

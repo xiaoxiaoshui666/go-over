@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        const result = document.querySelector('#result');
+        result.addEventListener('mouseover', () => {
+            // 1. 创建对象
+            const xhr = new XMLHttpRequest();
+            // 2. 初始化
+            xhr.open('POST', 'http://127.0.0.1:8000/server');
+            // 设置请求头  在 open方法后面设置方法调用
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            // xhr.setRequestHeader('name', 'atguigu'); 自定义的请求头需要在服务端也设置请求头
+            // 3. send()发送    POST请求设置参数 在 send方法里面
+            xhr.send('name=小明&age=18&like=mm')
+            // 4. 事件绑定
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // 处理服务端返回的结果
+                        result.innerHTML = xhr.response;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <style>
+        .slideDiv {
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+        }
+
+        .fadeDiv {
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+        }
+
+        .animateDiv {
+            position: absolute;
+            top: 380px;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: fuchsia;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="slide">下拉滑动</button>
+    <button class="slide">上拉滑动</button>
+    <button class="slide">切换滑动</button>
+    <div class="slideDiv"></div>
+
+    <button class="fade">淡入效果</button>
+    <button class="fade">淡出效果</button>
+    <button class="fade">淡入淡出切换</button>
+    <button class="fade">修改透明度</button>
+    <div class="fadeDiv"></div>
+
+    <button class="animate">动画动起来</button>
+    <div class="animateDiv"></div>
+    <script>
+        $(function () {
+            // 滑动         
+            // ()括号里面有三个参数，速度(毫秒数)  方式(swing 可用linear)  回调函数(动画完成执行)
+            $(".slide").eq(0).click(function () {
+                // 下滑动 slideDown()   
+                $(".slideDiv").slideDown(500);
+            })
+            $(".slide").eq(1).click(function () {
+                // 上滑动 slideUp()
+                $(".slideDiv").slideUp(500);
+            })
+            $(".slide").eq(2).click(function () {
+                // 滑动切换 slideToggle()
+                $(".slideDiv").slideToggle(500);
+            });
+
+            // stop() 停止动画或效果   写在动画的前面!!  
+            // 防止多次触发动画动画一直执行  相当于停止上次动画
+            // $(".slideDiv").stop().slideToggle(500);
+
+            // 淡入淡出
+            $(".fade").eq(0).click(function () {
+                // 淡入 fadeIn()
+                $(".fadeDiv").fadeIn(1000);
+            })
+            $(".fade").eq(1).click(function () {
+                // 淡出 fadeOut()
+                $(".fadeDiv").fadeOut(1000);
+
+            })
+            $(".fade").eq(2).click(function () {
+                // 淡入淡出切换 fadeToggle()
+                $(".fadeDiv").fadeToggle(1000);
+
+            });
+            $(".fade").eq(3).click(function () {
+                //  修改透明度 fadeTo() 这个速度和透明度要必须写
+                $(".fadeDiv").fadeTo(1000, 0.5);
+            });
+
+            // 动画  animate()
+            // animate({ 更改的样式（对象形式） }, 速度, 切换效果, 回调函数)
+            $(".animate").click(function () {
+                $(".animateDiv").animate({
+                    width: 800,
+                    top: '100px',
+                    left: '400px',
+                    backgroundColor: 'green'
+                }, 700)
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 800px;
+            height: 400px;
+            background-color: red;
+            /*         单行找align-items             多行找align-content         */
+            flex-direction: row;
+            /* x 轴为主轴 */
+
+            /* 主轴的内容居中显示 */
+            flex-wrap: wrap;
+            /* 多行 */
+            /* 因为有了换行，是侧轴是多行了，侧轴上控制子元素对齐的方式要用align-content */
+
+            align-content: flex-start;
+            /* 在多行中与侧轴头对齐 */
+            align-content: flex-end;
+            /* 在多行中与侧轴尾部对齐 */
+            align-content: center;
+            /* 在多行中与侧轴中间对齐 */
+            align-content: space-around;
+            /* 在多行中与侧轴剩余的空白处平局分 */
+            align-content: space-between;
+            /* 在多行中与侧轴两边对齐在平分剩余的空白处 */
+        }
+
+        span {
+            width: 150px;
+            height: 100px;
+            background-color: green;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+</body>
+
+</html>

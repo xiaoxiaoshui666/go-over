@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 当你传了实参的值就用实参的值，若没有传递实参的值，就用形参默认的值
+        function add(a, b, c = 20) {    // c默认等于20
+            return a + b + c
+        }
+        console.log(add(2, 3));      // 没传c值 就是 25
+        function add(a, b, c = 20) {
+            return a + b + c
+        }
+        console.log(add(2, 3, 10));  // 传了c值 就是15
+
+        /* function student({ ming, hu, uzi, mxlg }) {
+            console.log(ming);
+            console.log(hu);
+            console.log(uzi);
+            mxlg();
+        } */
+        function student({ ming = 'xiaobai', hu, uzi, mxlg }) {
+            console.log(ming);   // 如果没有第一个参数就用默认给的这个参数
+            console.log(hu);
+            console.log(uzi);
+            mxlg();
+        }
+        student({
+            // ming: 'xiaoming',
+            hu: 'xiaohu',
+            uzi: 'xiaogou',
+            mxlg() {
+                console.log('盲僧');
+            }
+        })
+    </script>
+</body>
+
+</html>

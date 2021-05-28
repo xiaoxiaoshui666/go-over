@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="times">今天是</div>
+    <button id="btn">传统事件方式</button>
+    <button id="btn1">方法监听注册方式</button>
+    <br>
+    <span>删除事件1</span>
+    <span>删除事件2</span>
+    <span>删除事件3</span>
+    <a href="www.baidu.com" class="obj1">事件对象</a>
+    <script>
+        // 事件三要素    事件源  事件类型  事件处理程序
+        // 传统的事件类型 以on开头的事件     注册事件的唯一性
+        // 同一个元素同一个事件只能设置一个处理函数，最后注册的处理函数将会覆盖前面注册的处理函数
+        var div = document.querySelector('.times')
+        var btn = document.querySelector('#btn');
+        console.log(btn);
+        btn.onclick = function () {
+            div.innerText = getTime()
+        }
+        function getTime() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var dates = date.getDate();
+            var arr = ['日', '一', '二', '三', '四', '五', '六']
+            var day = arr[date.getDay()];
+            return '今天是：' + year + '年' + month + '月' + dates + '日' + '星期' + day;
+        }
+
+        // 表单事件
+        // 获得焦点事件  onfocus
+        // 失去焦点事件  onblur
+
+        // 表单.focus() 方法可以获得表单焦点      表单.select() 方法使文本框的文字处于选定状态
+
+        // 鼠标事件
+        // 鼠标双击事件  ondblclick
+        // 鼠标经过事件  onmouseover      进过自身和子元素都会触发
+        // 鼠标经过事件  onmouseenter     只会经过盒子触发
+        // 鼠标离开事件  onmouseout
+        // 鼠标移动事件  onmousemove
+        // 鼠标按下事件  onmousedown
+        // 鼠标松开事件  onmouseup
+
+        // 键盘事件
+        // 键盘按键按下  onkeydown
+        // 键盘按键按下  onkeypress       // 不识别功能键 如ctrl  shift 等
+        // 键盘按键弹起  onkeyup
+
+        // 方法监听注册方式    addEventListener()方法
+        // 同一个元素同一个事件可以注册多个监听器
+        var btn1 = document.querySelector('#btn1');
+        btn1.addEventListener('click', function () {    // 事件类型是字符串要加引号不带on
+            div.innerText = getTime()
+        })
+        btn1.addEventListener('click', function () {    // 事件类型是字符串要加引号不带on
+            alert('为您报时')
+        })
+
+        // 删除事件
+        var span = document.querySelectorAll('span');
+        // 传统方式删除事件
+        span[0].onclick = function () {
+            alert('111');
+            span[0].onclick = null;
+        }
+        // 方法监听删除事件    removeEventListener
+        span[1].addEventListener('click', fn)    // 里面的函数不需要加小括号调用
+        function fn() {
+            alert('222');
+            span[1].removeEventListener('click', fn);    // 必须告诉要移除的哪个函数
+        };
+
+        // 事件流
+        // 冒泡阶段如果addEventListener第三个参数是 false或者省略那么则处于冒泡阶段逐渐向上传播，son -ather ->body -> html -> document
+        // 有些事件是没有冒泡的，比如onblur、onfocus、onmouseerter、onmouseleave
+
+        // 事件对象
+        var obj1 = document.querySelector('.obj1');
+        obj1.addEventListener('click', function (e) {
+            console.log(e);
+            console.log(e.target);    // 触发事件的对象或元素    点击谁返回谁
+            console.log(this);        // 绑定事件的对象         谁绑定了事件就返回谁
+            console.log(e.type);      // click   返回的是事件类型 不带on
+            e.preventDefault();       // 阻止默认行为  如链接a的跳转，表单的默认提交等
+            e.stopPropagation();      // 阻止冒泡
+        })
+        // 1. event 就是一个事件对象写到我们侦听函数的小括号里面当形参来看
+        // 2．事件对象只有有了事件才会存在，它是系统给我们自动创建的，不需要我们传递参数
+        // 3. 事件对象是我们事件的一系列相关数据的集合跟事件相关的比如鼠标点击里面就包含了鼠标的相关息，鼠标坐标啊，如果是键盘事件里面就包含的键盘事件的信息比如 判断用户按下了那个键
+        // 4. 可以命名event ， evt  ， e
+
+        // 事件委托的核心原理: 给父节点添加侦听器，利用事件冒泡影响每一个子节点
+
+        // 鼠标事件对象
+        document.addEventListener('click', function (e) {
+            console.log(e.clientX);   // 鼠标在可视区的x轴
+            console.log(e.clientY);   // 鼠标在可视区的y轴
+            console.log(e.pageX);     // 鼠标在页面文档的y轴
+            console.log(e.pageY);     // 鼠标在页面文档的y轴
+        })
+
+        //  键盘事件对象
+        document.addEventListener('keyup', function (e) {
+            // keyup不区分大小写   keypress区分大小写 
+            console.log(e.keyCode);   // 得到按的对应键的ASCII码值 
+        })
+    </script>
+</body>
+
+</html>

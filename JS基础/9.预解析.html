@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(num);
+        var num = 10;
+        // 相当于
+        /* var num;   // 所有的变量声明提升到当前的作用域最前面
+        console.log(num);
+        num = 10; */     // 再赋值操作
+
+        fun()
+        var fun = function () {
+            console.log(11);
+        }
+        // 相当于
+        /* var fun;    // 所有的变量声明提升到当前的作用域最前面
+        fun();
+        fun = function () {          // 再赋值操作
+            console.log(11);
+        } */
+
+        fn();
+        function fn() {  // 把所有的函数声明提升到当前作用域的最前面
+            console.log(22);
+        }
+        // 相当于
+        /* function fn() {
+            console.log(22);
+        }
+        fn() */
+        // 1．js引擎运行js分为两步: 预解析   代码执行
+        // (1)．预解析js引擎会把js里面所有的var还有function提升到当前作用域的最前面
+        // (2)．代码执行按照代码书写的顺序从上往下执行
+        // 2．预解析分为变量预解析（变量提升）和函数预解析（函数提升)
+        // (1) 变量提升就是把所有的变量声明提升到当前的作用域最前面不提升赋值操作
+        // (2) 函数提升就是把所有的函数声明提升到当前作用域的最前面不调用函数
+
+        // 例
+        var box = 10;
+        fun()
+        function fun() {
+            console.log(box);
+            var box = 20;
+            console.log(box);
+        }
+        // 相当于
+        /* var box;
+        function fun() {
+            var box;
+            console.log(box);
+            box = 20;
+            console.log(box);
+        }
+        box = 10;
+        fun(); */
+
+
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+        function f1() {
+            var a = b = c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        function f1() {
+            var a;
+            a = b = c = 9;
+            // var a = 9; b = 9; c = 9    b和c属于直接赋值 没有var声明 当全局变量看
+            // 集体声明应该是 var a = 9, b = 9, c = 9;
+            console.log(a);  // ---9 
+            console.log(b);  // ---9
+            console.log(c);  // ---9
+        }
+        f1();
+        console.log(c);  // ---9   没var声明的c当全局变量
+        console.log(b);  // ---9   没var声明的b当全局变量
+        console.log(a);  // ---报错    全局里面没有a
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

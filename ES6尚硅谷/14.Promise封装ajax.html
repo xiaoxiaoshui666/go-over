@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        const btn = document.querySelector('button');
+        const divv = document.querySelector('div');
+        btn.addEventListener('click', function () {
+            const p = new Promise(function (resolve, reject) {
+                axios.post('http://127.0.0.1:8000/asiox-server', {
+                    username: 'daliang',
+                    password: 181212
+                }, {
+                    params: {
+                        name: 'xiaogang',
+                        age: 18
+                    },
+                    Headers: {
+                        today: 'bianlidian',
+                        time: '11:30'
+                    }
+                }).then(value => {
+                    resolve(value.data)
+                })
+            })
+            p.then(function (value) {
+                console.log(value);
+            }, function (reason) {
+                console.log(reason);
+            })
+        })
+
+    </script>
+</body>
+
+</html>

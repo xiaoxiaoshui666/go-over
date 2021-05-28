@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_2357762_7jda3dw6fll.css">
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        /* 在父元素里面的内容的最前面插入一个行内元素 */
+        /* 权重为 10+1=11 */
+        .box::before {
+            content: "我";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+        }
+
+        /* 在父元素里面的内容的最后面插入一个行内元素 */
+        .box::after {
+            content: "小明";
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background-color: pink;
+        }
+
+        /* 伪元素和标签选择器一样权重为1 */
+        /* ::befor  ::eafter 里面必须有content属性表示内容 ，内容空则为content: "" */
+        /* 属于行内元素 */
+
+        .box1 {
+            position: relative;
+            margin: 200px auto;
+            width: 300px;
+            height: 40px;
+            border: 1px solid #333;
+        }
+
+        .box1::after {
+            content: "\e665";
+            position: absolute;
+            top: 14px;
+            right: 20px;
+            font-family: "iconfont";
+        }
+
+        span {
+            /* font-family: "iconfont" 这个一定要写 */
+            font-family: "iconfont";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>是</span>
+    </div>
+    <div class="box1">
+        <span>&#xe638;</span>
+    </div>
+
+    <!-- iconfont icon-arrow-down -->
+</body>
+
+</html>

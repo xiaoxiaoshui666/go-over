@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: block;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: orange;
+        }
+
+        /* marigin: 0 auto 只能是块级元素  行内块元素不可以实现 */
+
+        /* 行内元素或者行内块元素水平居中给其父元素添加 text-align:center即可 */
+
+        /* 行内元素尽量只设置左右内外边距，不要设置上下内外边距，但是转换为块级和行内块
+        元素就可以了 */
+
+        /* 如果盒子本生没有指定width/height属性，则此时padding不会撑开盒子大小 */
+
+        /* margin: -1px; 巧妙运用外边距负一可以使盒子往左移动，案例如浮动盒子的边框重合 */
+    </style>
+</head>
+
+<body>
+
+    <span>我是小明</span>
+
+</body>
+
+</html>

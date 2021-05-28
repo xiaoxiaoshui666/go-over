@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //生成器其实就是一个特殊的函数
+        //异步编程
+        function* gen() {
+            // console.log(111);
+            yield '一只没有耳朵';    // yield 函数代码的分隔符
+            // console.log(222);
+            yield '一只没有尾部';
+            // console.log(333);
+            yield '真奇怪';
+            // console.log(444);
+        }
+        let iterator = gen();
+        console.log(iterator);    // 迭代器对象   里面有next() 方法
+        console.log(iterator.next());   // 每一次调用的返回结果是yield后面的字面量的值
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        //遍历
+        // for(let v of gen()){
+        //     console.log(v);
+        // }
+
+        function* gen1(arg) {
+            console.log(arg);       // 说明可以正常传参
+            let one = yield 111;
+            console.log(one);       // 'BBB'  相当于 yield 111 = 'BBB'
+            let two = yield 222;
+            console.log(two);
+            let three = yield 333;
+            console.log(three);
+        }
+
+        //执行获取迭代器对象
+        let iterator1 = gen1('AAA');
+        console.log(iterator1.next());         //next方法可以传入实参
+        console.log(iterator1.next('BBB'));   // 第二次方法调用传入参数，这参数将作为第一个 yield语句整体的返回结果
+        console.log(iterator1.next('CCC'));
+        console.log(iterator1.next('DDD'));
+
+
+        // 案例
+        // 异步编程 
+        //模拟获取  用户数据  订单数据  商品数据 
+        function getUsers() {
+            setTimeout(() => {
+                let data = '用户数据';
+                //调用 next 方法, 并且将数据传入
+                iterator2.next(data);
+            }, 1000);
+        }
+        function getOrders() {
+            setTimeout(() => {
+                let data = '订单数据';
+                iterator2.next(data);
+            }, 1000)
+        }
+        function getGoods() {
+            setTimeout(() => {
+                let data = '商品数据';
+                iterator2.next(data);
+            }, 1000)
+        }
+        function* gen2() {
+            let users = yield getUsers();
+            console.log(users);
+            let orders = yield getOrders();
+            console.log(orders);
+            let goods = yield getGoods();
+            console.log(goods);
+        }
+        //调用生成器函数
+        let iterator2 = gen2();
+        iterator2.next();
+    </script>
+</body>
+
+</html>

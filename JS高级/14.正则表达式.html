@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 正则表达式   是用于匹配字符串中字符组合的模式。在JavaScript中，正则表达式也是对象。
+
+        // 1. 利用 RegExp对象来创建 正则表达式
+        var regexp = new RegExp(/123/);
+        console.log(regexp);
+
+        // 2. 利用字面量创建 正则表达式
+        var rg = /^123&/;
+        // ^ ----匹配行首的文本，以谁开始
+        // $ ----匹配行尾的文本，以谁结束
+
+        // 3. test()  方法用来检测字符串是否符合正则表达式要求的规范   返回true 或者fasle
+        console.log(rg.test(123));   // turw
+        console.log(rg.test('abc'));   // false
+        console.log('----------------------1');
+
+        // 字符类: [] 表示有一系列字符可供选择，只要匹配其中一个就可以了
+        var rg = /[abc]/; // 只要包含有a 或者 包含有b 或者包含有c 都返回为true
+        console.log(rg.test('andy'));      // true
+        console.log(rg.test('baby'));      // true
+        console.log(rg.test('color'));     // true
+        console.log(rg.test('red'));       // false
+        var rg1 = /^[abc]$/; // 三选一 只有是a 或者是 b  或者是c 这三个字母才返回 true
+        console.log(rg1.test('aa'));       // false  
+        console.log(rg1.test('a'));        // true
+        console.log(rg1.test('c'));        // true
+        console.log(rg1.test('abc'));      // false
+        console.log('------------------2');
+
+        var reg = /^[a-z]$/; // 26个英文字母任何一个字母返回 true  - 表示的是a 到z 的范围  
+        console.log(reg.test('f'));       // true
+        console.log(reg.test(1));         // false
+        console.log(reg.test('A'));       // false
+        // 字符组合
+        var reg1 = /^[a-zA-Z0-9_-]$/; // 26个英文字母(大写和小写都可以)任何一个字母返回 true  
+        console.log(reg1.test('a'));       // true
+        console.log(reg1.test('B'));       // true
+        console.log(reg1.test(8));         // true
+        console.log(reg1.test('-'));       // true
+        console.log(reg1.test('!'));       // false 
+        console.log('----------------3');
+        // 如果中括号里面有^ 表示取反的意思 千万和 我们边界符 ^ 别混淆
+        var reg2 = /^[^a-zA-Z0-9_-]$/;
+        console.log(reg2.test('a'));       // false
+        console.log(reg2.test('B'));       // false
+        console.log(reg2.test(8));         // false
+        console.log(reg2.test('-'));       // false
+        console.log(reg2.test('!'));       // true
+
+
+    </script>
+</body>
+
+</html>

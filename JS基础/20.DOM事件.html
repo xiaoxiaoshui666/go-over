@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 它是一个全局对象。定义在全局作用域中的变量、函数都会变成window对象的属性和方法。
+        var a = 10;
+        console.log(window.a);    // 10
+        console.log(window);
+
+        // 页面加载事件    可以把js放在页面的任意位置
+        // load 等页面内容全部加载完毕，包括页面dom元素 图片 falsh css 等
+        window.addEventListener('load', function () {
+            console.log('a');
+        })
+        // DOMContentLoaded 是DOM 加载完毕 不包括 图片 falsh css 等就可以执行， 所以比load快
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('b');
+        })
+
+        // 窗口大小事件        是调整窗口大小加载事件，当触发时就调用的处理函数。
+        window.addEventListener('resize', function () {
+            console.log('窗口改变了');
+        })
+        // 我们经常利用这个事件完成响应式布局。window.innerWidth当前屏幕的宽度
+    </script>
+</body>
+
+</html>

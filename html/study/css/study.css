@@ -1,0 +1,275 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+em {
+    font-style: normal;
+}
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+} 
+.header {
+    height: 70px;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+.logo {
+    float: left;
+    width: 196px;
+    height: 42px;
+}
+.nav {
+    float: left;
+    margin: 0 70px 0 60px;
+}
+.nav ul li {
+    float: left;
+
+}
+.nav ul li a {
+    display: inline-block;
+    margin-right: 24px;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    color: #050505;
+    font-size: 18px;
+
+}
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+.search {
+    float: left;
+}
+.search input {
+    float: left;
+    width: 360px;
+    height: 38px;
+    padding-left: 20px;
+    color: #bfbfbf;
+    border: 1px solid #00a4ff;
+}
+.search button {
+    float: left;
+    width: 50px;
+    height: 40px;
+    border: 0;
+    background:url(../images/搜素_03.png);
+}
+.user {
+    float: left;
+    margin: 8px 0 0 30px;
+    line-height: 30px;
+    color: #666;
+}
+.user .tou {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user span {
+    float: left;
+    margin-left: 6px;
+}
+
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+}
+
+.banner .w {
+    width: 1200px;
+    height: 420px;
+    background: url(../images/banner2.png);
+}
+
+.subnav {
+    float: left;
+    width: 190px;
+    height: 420px;
+    background: rgb(0,0,0,.4);
+}
+.subnav ul li {
+    padding: 0 20px;
+    line-height: 45px;
+}
+
+.subnav ul li a span {
+    float: right;
+}
+.subnav ul li a {
+    color: #fff;
+}
+.subnav ul li a:hover {
+    color: #00b4ff;
+}
+
+.course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: #fff;
+}
+.course h4 {
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    background-color: #9bceea;
+}
+.course .bd ul  {
+    margin-top: 10px;
+}
+.course .bd ul li {
+    margin: 0 18px;
+    height: 62px;
+    width: 192px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.course .bd ul li h5 {
+    padding-top: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4e4e4e;
+}
+
+.course .bd ul li span {
+    font-size:12px;
+    color: #a5a5a5;
+}
+
+.course .more a {
+    display: inline-block;
+    margin: 6px 14px 0;
+    width: 198px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    border: 1px solid #00a4ff;
+    font-size: 16px;
+    color: #00a4ff;
+}
+.course .more a:hover {
+    background-color: #00a4ff;
+    color: #fff;
+}
+
+.goods {
+    margin-top: 8px;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 5px 5px -4px rgb(0,0,0,.1);
+}
+.goods h4 {
+    float: left;
+    width: 132px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+.goods .goods-item ul li {
+    float: left;
+    line-height: 60px;
+}    
+
+.goods .goods-item ul li a {
+    color: #050505;
+    font-size: 16px;
+    padding: 0 34px;
+    border-left: 1px solid #bfbfbf;
+}
+.goods .goods-item ul li a:hover {
+    color: #00a4ff;
+}
+.goods .mod {
+    float:right;
+    margin-right: 24px;
+    line-height: 60px;
+}
+.goods .mod a {
+    color: #00a4ff;
+}
+
+
+.box-hd h3 {
+    float: left;
+    height: 42px;
+    margin-top: 34px;
+    color: #494949;
+    font-size: 20px;
+    font-weight: 400;
+}
+.box-hd p a {
+    float:right;
+    margin: 44px 32px 0 0 ;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.box-bd ul {
+    width: 1215px;
+}
+.box-bd ul li {
+    position:relative;
+    float: left;
+    width: 228px;
+    height: 270px;
+    margin: 0 15px 15px 0;
+    background-color: #fff;
+}
+.box-bd ul li a h5 {
+    width: 184px;
+    margin: 24px 20px 12px 24px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #050505;
+    line-height: 20px;
+}
+.box-bd ul li a p {
+    margin-left: 24px;
+    font-size: 12px;
+}
+.box-bd ul li a p span{
+    margin-right: 10px;
+    color: #ff7c2d;
+}
+.box-bd ul li a p em {
+    color: #999;
+}
+.box-bd ul li a .hot {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}

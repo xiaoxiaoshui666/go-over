@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 700px;
+            height: 300px;
+            background-color: pink;
+            flex-direction: row;
+            /* 默认的主轴是 x 轴 row */
+
+            /* justify-content: flex-strat; 默认 */
+            /* 设置主轴上的排列方式 默认从主轴的头对齐 */
+
+            /* justify-content: flex-end; 从主轴的尾对齐 */
+
+            /* justify-content: center; */
+            /* 从主轴居中或者水平对齐 */
+
+            /* justify-content: space-around; */
+            /* 平分剩余的空间 */
+
+            justify-content: space-between;
+            /* 先两边贴边再平分剩余的空间 */
+        }
+
+        span {
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

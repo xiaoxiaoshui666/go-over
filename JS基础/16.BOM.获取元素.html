@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_2357762_ebjss72o8uf.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .pass {
+            position: relative;
+            margin-left: 500px;
+            width: 300px;
+            border-bottom: 1px solid orange;
+        }
+
+        #inpu {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            height: 18px;
+            border: 0;
+            font-size: 20px;
+            outline: none;
+        }
+
+        #passw {
+            position: absolute;
+            right: 20px;
+            top: 4px;
+            font-family: "iconfont" !important;
+        }
+
+        #btn2 {
+            background-color: orange;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 50px;
+            color: #fff;
+            background-color: orange;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 100px;
+            color: #333;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="time">2021-3-01</div>
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ol id="ol">
+        <li class="lli">11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ol>
+    <p>我是innertext</p>
+    <p>我是innhtml</p>
+    <img src="./imegs/男.jpg" alt="">
+    <input type="text" value="输入内容">
+    <button id="btn1">点击</button>
+    <div class="pass">
+        <input type="password" id="inpu">
+        <span id="passw">&#xe61d;</span>
+    </div>
+    <button id="btn2">请点击我我就改颜色</button>
+    <div class="box1" id="box">请改我的类名</div>
+    <div id="demo" data-index="1">自定义属性</div>
+    <script>
+        // document 元素      get 获得      Element 元素     By 通过   驼峰命名法
+        // 返回额是一个对象
+        // getElementById
+        var time = document.getElementById('time');
+        console.log(time);
+        // console.dir  打印返回的元素对象，查看里面的属性和方法
+        console.dir(time)
+
+        // getElementsByTagName 返回带有指定标签名的对象的集合  以伪数组的形式存储的,没有该标签返回的是空的伪数组
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+        // 获取父元素ul中里面的li
+        // 父元素必须是单个对象(必须指明是哪一个元素对象).获取的时候不包括父元素自己。
+        var ol = document.getElementById('ol');
+        var liss = ol.getElementsByTagName('li');
+        console.log(liss);
+        console.log(liss[3]);
+
+        // getElementsByClassName   根据类名
+        var lli = document.getElementsByClassName('lli');
+        console.log(lli);
+
+        // querySelector   返回选择器的第一个元素对象 ，括号里面加 类选择器. ID选择器# 等符号
+        var firstli = document.querySelector('li')
+
+        // querySelectorAll  返回指定选择器的所有元素对象集合
+        var allli = document.querySelectorAll('li');
+        console.log(allli);
+
+        // 获取body 和 html 元素
+        var ele = document.body;
+        console.log(ele);
+        var htmlele = document.documentElement;
+        console.log(htmlele);
+
+        // 修改文字
+        var p = document.querySelector('p');
+        // innerText  从起始位置到终止位置的内容,但它去除html标签，同时空格和换行也会去掉
+        // p.innerText = '<i>嘻嘻</i>'
+        // innerHtml  起始位置到终止位置的全部内容，包括html标签，同时保留空格和换行
+        p.innerHTML = '<i>嘿嘿</i>';
+
+        // 修改属性
+        var btn1 = document.querySelector('#btn1');
+        var inp = document.querySelector('input');
+        var img = document.querySelector('img')
+        btn1.onclick = function () {
+            inp.value = "我被点击了";
+            img.src = './imegs/女.jpg'
+            // 如果想要某个表单被禁用不能再点击disabled 我们想要这个按钮 button禁用
+            btn1.disabled = true;
+        }
+        var passw = document.querySelector('#passw');
+        var inpu = document.querySelector('#inpu');
+        // input 密码的隐藏和显示
+        passw.onclick = function () {
+            if (inpu.type == 'text') {
+                inpu.type = 'password';
+                passw.innerHTML = '&#xe61d;'
+            } else if (inpu.type == 'password') {
+                inpu.type = 'text';
+                passw.innerHTML = '&#xe6cc;'
+            }
+        }
+
+        // 修改样式属性   生成的是行内样式
+        var btn2 = document.querySelector('#btn2');
+        btn2.onclick = function () {
+            btn2.style.backgroundColor = 'yellow';
+        }
+
+        // 更改元素样式   className 会直接更改元素的类名，会覆盖原先的类名。
+        var box = document.querySelector('#box');
+        box.onclick = function () {
+            box.className = 'box2'
+        }
+
+        // 自定义属性
+        // 自定义属性要以data-开头
+        var divdemo = document.querySelector('#demo');
+        // 1. 获取元素的属性值
+        // (1) element.属性   
+        console.log(divdemo.id);   // demo
+        // (2). element.getAttribute('属性')   get 获得   Attribute 属性   自定义属性 index
+        console.log(divdemo.getAttribute('id'));   // demo
+        console.log(divdemo.getAttribute('data-index'));   // 1
+
+        // 2. 设置修改元素属性值
+        // (1)divdemo.id = 'test';
+        divdemo.className = 'navs';
+        // (2) element.setAttribute('属性','值');  主要针对自定义属性
+        divdemo.setAttribute('data-index', 2);
+        console.log(divdemo.getAttribute('data-index'));   // 2
+
+        // 3. 移除属性 removeAttribute(属性)
+        divdemo.removeAttribute('data-index');
+        console.log(divdemo.getAttribute('data-index'));   // null
+    </script>
+</body>
+
+</html>

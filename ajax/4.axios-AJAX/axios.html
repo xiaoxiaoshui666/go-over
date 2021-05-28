@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <button>通用</button>
+    <script>
+        const btn = document.querySelectorAll('button');
+
+        // 配置baseURL   可以对路径做简化，之后的代码就不用写这个路径了
+        axios.defaults.baseURL = 'http://127.0.0.1:8000';
+
+        // get请求    axios.get(url[, config])    axios.get(url,{配置})
+        btn[0].onclick = function () {
+            axios.get('/asiox-server', {
+                // 设置url参数
+                params: {
+                    name: 'xiaoming',
+                    age: 18
+                },
+                // 请求头信息
+                Headers: {
+                    today: 'bianlidian',
+                    time: '11:30'
+                }
+                // 基于promise
+            }).then(value => {
+                console.log(value);
+                console.log(value.data);   // 响应体    这里是响应体解析json之后的结果了
+                console.log(value.headers);   // 请求头
+                console.log(value.request);   // 请求的原生ajax对象
+            })
+        }
+
+        // post请求    axios.post(url[, data[, config]])   axios.post(url,请求体,{配置})
+        btn[1].onclick = function () {
+            axios.post('/asiox-server', {
+                username: 'daliang',
+                password: 181212
+            }, {
+                params: {
+                    name: 'xiaogang',
+                    age: 18
+                },
+                Headers: {
+                    today: 'bianlidian',
+                    time: '11:30'
+                }
+            }).then(value => {
+                console.log(value.data);
+            })
+        }
+
+        // 通用方式
+        btn[2].onclick = function () {
+            axios({
+                // 请求类型
+                method: 'POST',
+                // 设置url
+                url: '/asiox-server',
+                // 设置url参数
+                params: {
+                    name: 'xiaowang',
+                    age: 28
+                },
+                // 设置请求头
+                Headers: {
+                    today: 'bianlidian',
+                    time: '11:30'
+                },
+                // 设置post请求体
+                data: {
+                    username: 'daliang',
+                    password: 1377132
+                }
+            }).then(response => {
+                console.log(response);
+                console.log(response.data);
+            })
+        }
+
+    </script>
+</body>
+
+</html>

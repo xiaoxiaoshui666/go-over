@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            width: 300px;
+            height: 100px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        const result = document.querySelector('#result');
+        window.addEventListener('keydown', () => {
+            // 发送请求
+            const xhr = new XMLHttpRequest();
+            // 也可以设置在响应体数据的类型
+            xhr.responseType = 'json';
+            // 初始化
+            xhr.open('GET', 'http:/127.0.0.1:8000/JSON-server');
+            // 发送
+            xhr.send()
+            // 事件绑定
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // 手动对数据转化
+                        // console.log(xhr.response);   // 是个JSON转化的字符串格式
+                        // let data = JSON.parse(xhr.response);  // 利用JSON再转化的对象格式
+                        // console.log(data);
+
+                        // 自动对数据转化    // 先设置响应体为json类型
+                        console.log(xhr.response);
+                        result.innerHTML = xhr.response.name;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

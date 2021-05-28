@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            /* 去掉移动端的高亮显示 */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        input {
+            /* 去掉外观的亮光效果了 这样可以手动的书写样式了 */
+            -webkit-appearance: none;
+        }
+
+        a,
+        img {
+            /* 禁用长按页面时的弹出菜单 */
+            -webkit-touch-callout: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">小明</a>
+    <input type="button" value="按钮">
+</body>
+
+</html>

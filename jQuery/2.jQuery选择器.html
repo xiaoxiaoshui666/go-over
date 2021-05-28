@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+
+<body>
+    <!-- // $('选择器')  -->
+    <div></div>
+    <div class="nav"></div>
+    <p>p</p>
+
+    <!-- 给四个li设置背景颜色 设置样式 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <!-- 筛选选择器 -->
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <!-- 筛选选择器方法 -->
+    <div class="father1">
+        <p>儿子</p>
+        <div class="son1">
+            <span>孙子</span>
+        </div>
+    </div>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li class="box">3</li>
+        <li>4</li>
+    </ol>
+    <script>
+        $(function () {
+            // $('选择器')  
+            console.log($(".nav"));     // 类选择器
+            console.log($("ul>li"));    // 亲儿子选择器
+            console.log($("ul li"));    // 后代选择器
+
+            // 给四个li设置背景颜色
+            $("ul li").css("background", "red")
+
+            // 隐式迭代
+            // 遍历内部DOM元素（伪数组形式储存）的过程
+            // 给匹配到的所有元素在内部进行循环遍历，执行相应的方法，而不用我们再进行循环，简化我们的操作，方便我们调用
+
+            // 筛选选择器
+            // :first  选择ul里面第一个li
+            $("ul li:first").css("color", "blue")
+
+            // :eq(index)  选择ul里面第index个li
+            $("ul li:eq(1)").css("color", "yellow")
+
+            // :eq(odd)  选择ul里面奇数li     :eq(even)  选择ul里面偶数个li
+
+            // 筛选选择器方法
+            // parent()     选择器最近一级的父级元素 亲爸爸
+            console.log($('.son').parent());
+
+            // parents("")   选择指定此元素所有的祖先元素 ，爸爸爷爷以上都可以
+
+            // children()  子代选择器  
+            $('.father1').children("p").css("color", "red")
+            // $('.father1>p').css("color", "red")        等同于 ul>li
+
+            // find()      指定里面所有的元素 包括孩子孙子   类似后代选择器
+            $('.father1').find("span").css("color", "green")
+            // $('.father1 span').css("color", "green")   等同于 .father1 span
+
+            // siblings()  兄弟元素  除了自身以外所有的亲兄弟
+            $("ol .box").siblings("li").css("color", "pink")
+
+            // eq(index)   选择第index个元素
+            // $("ol li:eq(2)").css("background", "pink")
+            $("ol li").eq(3).css("background", "pink")   // 都可以实现但是推荐使用第二种
+
+            // :checked
+            // $("input:checked")  返回所有被选中的选框 是伪数组  加.length是个数
+        })
+    </script>
+</body>
+
+</html>

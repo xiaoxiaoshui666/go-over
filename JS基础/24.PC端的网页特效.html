@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            /* position: relative; */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 50px;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin-left: 45px;
+        }
+
+        .w {
+            height: 200px;
+            background-color: skyblue;
+            margin: 0 auto 50px;
+            padding: 10px;
+            border: 15px solid red;
+        }
+
+        .login-header {
+            width: 100%;
+            text-align: center;
+            height: 30px;
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        ul,
+        li,
+        ol,
+        dl,
+        dt,
+        dd,
+        div,
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .login {
+            display: none;
+            width: 512px;
+            height: 280px;
+            position: fixed;
+            border: #ebebeb solid 1px;
+            left: 50%;
+            top: 50%;
+            background: #ffffff;
+            box-shadow: 0px 0px 20px #ddd;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+        .login-title {
+            width: 100%;
+            margin: 10px 0px 0px 0px;
+            text-align: center;
+            line-height: 40px;
+            height: 40px;
+            font-size: 18px;
+            position: relative;
+            cursor: move;
+        }
+
+        .login-input-content {
+            margin-top: 20px;
+        }
+
+        .login-button {
+            width: 50%;
+            margin: 30px auto 0px auto;
+            line-height: 40px;
+            font-size: 14px;
+            border: #ebebeb 1px solid;
+            text-align: center;
+        }
+
+        .login-bg {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: rgba(0, 0, 0, .3);
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .login-button a {
+            display: block;
+        }
+
+        .login-input input.list-input {
+            float: left;
+            line-height: 35px;
+            height: 35px;
+            width: 350px;
+            border: #ebebeb 1px solid;
+            text-indent: 5px;
+        }
+
+        .login-input {
+            overflow: hidden;
+            margin: 0px 0px 20px 0px;
+        }
+
+        .login-input label {
+            float: left;
+            width: 90px;
+            padding-right: 10px;
+            text-align: right;
+            line-height: 35px;
+            height: 35px;
+            font-size: 14px;
+        }
+
+        .login-title span {
+            position: absolute;
+            font-size: 12px;
+            right: -20px;
+            top: -30px;
+            background: #ffffff;
+            border: #ebebeb solid 1px;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="w"></div>
+
+    <!-- 拖动模态框 -->
+    <div class="login-header"><a id="link" href="javascript:;">点击，弹出登录框</a></div>
+    <div id="login" class="login">
+        <div id="title" class="login-title">登录会员
+            <span><a id="closeBtn" href="javascript:void(0);" class="close-login">关闭</a></span>
+        </div>
+        <div class="login-input-content">
+            <div class="login-input">
+                <label>用户名：</label>
+                <input type="text" placeholder="请输入用户名" name="info[username]" id="username" class="list-input">
+            </div>
+            <div class="login-input">
+                <label>登录密码：</label>
+                <input type="password" placeholder="请输入登录密码" name="info[password]" id="password" class="list-input">
+            </div>
+        </div>
+        <div id="loginBtn" class="login-button"><a href="javascript:void(0);" id="login-button-submit">登录会员</a></div>
+    </div>
+    <!-- 遮盖层 -->
+    <div id="bg" class="login-bg"></div>
+    <script>
+        // offset 元素偏移量
+        // element.offsetParent
+        // 返回作为该元素带有定位的父级元素如果父级都没有定位则返回body
+
+        // element.offsetTop
+        // 返回元素相对带有定位父元素上方的偏移
+
+        // element.offsetLeft
+        // 返回元素相对带有定位父元素左边框的偏移
+
+        // element.offsetWidth
+        // 返回自身包括padding 、边框、内容区的宽度，返回数值不带单位
+
+        // element.offsetHeight
+        // 返回自身包括padding、边框、内容区的高度，返回数值不带单位 
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        // 1.可以得到元素的偏移 位置 返回的不带单位的数值  
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+        // 它以带有定位的父亲为准  如果么有父亲或者父亲没有定位 则以 body 为准
+        console.log(son.offsetLeft);
+        var w = document.querySelector('.w');
+        // 2.可以得到元素的大小 宽度和高度 是包含padding + border + width 
+        console.log(w.offsetWidth);
+        console.log(w.offsetHeight);
+        // 3. 返回带有定位的父亲 否则返回的是body
+        console.log(son.offsetParent); // 返回带有定位的父亲 否则返回的是body
+        console.log(son.parentNode); // 返回父亲 是最近一级的父亲 亲爸爸 不管父亲有没有定位
+
+        // offsetWidth  任意样式表  没有单位 包含的内容+padding+border  只读不能赋值
+        // style.width  行内样式表  有单位   包含的内容                 可读写能赋值
+        // clientWidth  包含的内容+padding  不包含边框
+        // 只获取获取元素的大小用offsetWidth     给元素修改值用 style.width
+
+        // scrollTop    返回被卷去的上侧距离，返回数值不带单位
+        // pageYoffset  文档被卷去的部分
+
+
+        // 案例 ：拖动模态框
+        // 1. 获取元素
+        var link = document.querySelector('#link');
+        var bg = document.querySelector('#bg');
+        var login = document.querySelector('#login');
+        var closeBtn = document.querySelector('#closeBtn');
+        var title = document.querySelector('#title');
+        link.addEventListener('click', function () {
+            // 2. 点击弹出层这个链接 link  让mask 和login 显示出来
+            bg.style.display = 'block';
+            login.style.display = 'block';
+        })
+        closeBtn.addEventListener('click', function () {
+            // 3. 点击 closeBtn 就隐藏 mask 和 login 
+            bg.style.display = 'none';
+            login.style.display = 'none';
+            login.style.left = '50%';    // 同时回复模态框的初始位置便于下次显示的位置
+            login.style.top = '50%';
+        })
+        // 4. 开始拖拽
+        title.addEventListener('mousedown', function (e) {  // 当鼠标按下
+            var x = e.pageX - login.offsetLeft;  // 鼠标到模态框的距离 为 鼠标到屏幕的距离 - 模态框到屏幕的距离
+            var y = e.pageY - login.offsetTop;
+            document.addEventListener('mousemove', move)  // 当在文档中鼠标移动时
+            function move(e) {
+                login.style.left = e.pageX - x + 'px';    // 模态框到屏幕的距离就是 鼠标到屏幕的距离 -  鼠标到模态框的距离
+                login.style.top = e.pageY - y + 'px';     // 因为鼠标在拖动时， 鼠标到框的距离是一直不变的，而鼠标到模态框的距离是时刻改变的
+            }
+            document.addEventListener('mouseup', function () {   // 在文档中鼠标弹起时
+                document.removeEventListener('mousemove', move);   // 删除鼠标移动事件
+            })
+        })
+    </script>
+</body>
+
+</html>

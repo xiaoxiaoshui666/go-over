@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 把屏幕划分为15等份  划分的标准不一 可以是10等份20等份都可 */
+        /* 当屏幕最小为320px时 html的字体 为总宽度的15等份 也就是21.33px */
+        @media screen and (min-wudht: 320px) {
+            html {
+                font-size: 21.33px;
+            }
+        }
+
+        /* 当屏幕最小为750px时 html的字体 为总宽度的15等份 也就是50px */
+        @media screen and (min-wudht: 750px) {
+            html {
+                font-size: 50px;
+            }
+        }
+
+        div {
+            width: 1.64rem;
+            /* 页面元素的rem值=页面元素值( px ) /（屏幕宽度 / 划分的份数) */
+            /* 屏幕宽度/划分的份数就是html font-size的大小 */
+            /* 页面元素的rem值=页面元素值( px ) / html font-size字体大小 */
+            /* width: 82 / (750 / 15); */
+            height: 1.64rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 当屏幕不同，则盒子的 宽和高 或者盒子的距离 ，字体啊 也会等比例的一些变化 适配不同屏幕下-->
+    <!-- 媒体查询可以检查设备的宽度，根据设备的宽度不同，来设置html的字体的大小，然后用页面中所有的元素用rem作为尺寸单位，当html的字体发生变化时，元素的尺寸也会发生变化从而达到等比例缩放的适配 -->
+
+    <!-- 1. 按照设计稿与设备宽度的比例，动态计算并设置html 根标签的font-size大小;（媒体查询) -->
+    <!-- 2. CSS中，设计稿元素的宽、高、相对位置等取值，按照同等比例换算为rem为单位的值; -->
+    <div></div>
+</body>
+
+</html>

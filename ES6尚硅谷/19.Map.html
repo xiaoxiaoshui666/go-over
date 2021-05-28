@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Map数据结构。它类似于对象，也是键值对的集合。但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。Map也实现了iterator接口，所以可以使用「扩展运算符』和『 for...of...』进行遍历。Map的属性和方法:
+        //声明 Map
+        let m = new Map();
+
+        //添加元素
+        m.set('uname', '小明');
+        m.set('song', function () {
+            console.log('小白兔');
+        });
+        let obj = {
+            myname: '小红',
+        }
+        m.set(obj, ['小梁', '小白', '小张']);
+
+        // size
+        console.log(m);
+        console.log(m.size);   // 3
+
+        //删除
+        m.delete('uname');
+        console.log(m);
+
+        // 获取
+        console.log(m.get('song'));    // 函数
+        m.get('song')()                // 小白兔
+        console.log(m.get(obj));       // ["小梁", "小白", "小张"]
+
+        //清空
+        // m.clear();
+
+        //遍历
+        for (let v of m) {
+            console.log(v);
+        }
+
+        console.log('---------------------------------------');
+        // ES6新增对象方法 Object.entries
+        // 返回一个数组，而数组的每个成员也是一个数组，数组包含属性名和属性值
+        const mine = {
+            uname: '陈冠希',
+            age: 18,
+            live: ['拍照', '拍电影', '耍帅'],
+            song() {
+                console.log('我正在唱歌');
+            }
+        }
+        console.log(Object.entries(mine));  // [["uname", "陈冠希"], ["age", 18], ["live", ["拍照", "拍电影", "耍帅"]], ["song", song()]]
+        const ma = new Map(Object.entries(mine))
+        console.log(ma.get('uname'));   // 陈冠希
+        console.log(ma.get('age'));     // 18
+        console.log(ma.get('live'));    // ['拍照', '拍电影', '耍帅']
+        ma.get('song')();               //  我正在唱歌
+    </script>
+</body>
+
+</html>

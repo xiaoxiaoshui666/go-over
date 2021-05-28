@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 新的数据结构set| I集合)。它类似于数组，但成员的值都是唯一的,集合实现了iterator 接口，所以可以使用「扩展运算符』和「 for...of...』进行遍历,集合的属性和方法:
+        //声明一个 set
+        let s = new Set();
+        let s2 = new Set(['大事儿', '小事儿', '好事儿', '坏事儿', '小事儿']);
+
+        //元素个数
+        console.log(s2.size);             // 4
+        //添加新的元素
+        s2.add('喜事儿');
+        //删除元素
+        s2.delete('坏事儿');
+        //检测
+        console.log(s2.has('糟心事'));     // false
+        //清空
+        // s2.clear();
+        // console.log(s2);
+
+        for (let v of s2) {
+            console.log(v);
+        }
+
+        let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        //1. 数组去重
+        let result1 = [...new Set(arr)];
+        console.log(result1);       // [1, 2, 3, 4, 5]
+        //2. 交集
+        let arr1 = [2, 6, 324, 21, 16, 6, 10];
+        let arr2 = [2, 16, 24, 1, 16, 6, 4];
+        let results = [...new Set(arr1)].filter(i => new Set(arr2).has(i))
+        // 1. 先把数组转换为set类型就会自动去重，在...扩展运算符转为数组
+        // 2. 用数组filter方法过滤数组产生新数组，
+        // 3. 遍历arr1每个数组元素i都去检测 把arr2转为set类型用他的has方法检测元素返回true 
+        console.log(results);
+
+        //3. 并集
+        // let union = [...new Set([...arr, ...arr2])];
+        // console.log(union);
+
+        //4. 差集
+        let diff = [...new Set(arr)].filter(item => !(new Set(arr2).has(item)));
+        console.log(diff);
+    </script>
+</body>
+
+</html>

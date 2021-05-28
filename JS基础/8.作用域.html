@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // JS作用域：就是在代码名字（变量）的某个范围内起作用和效果
+        // 目的：为了提高程序的可靠性，更重要的是减少命名的冲突
+        // JS的作用域(ES6之前) ； 全局作用域      局部作用就
+        // 全局作用域：整个script标签或者是一个单独的js文件var num = 10;
+        var num = 10;
+        var num = 20
+        console.log(num);  // ---20
+        // 局部作用域：在函数内部就是局部作用域这个代码的名字只在函数内部起效果和作用
+        function fn() {
+            var num = 30;
+            console.log(num);   // ---30
+        }
+        fn();
+        var num = 40;
+        console.log(num);   // ---40
+
+        // 变量的作用域   ；根据作用域的不同变量分为全局变量和局部变量  
+        // 全局变量： 在全局作用域下的变量 在全局下都可以用
+        // 注意:如果在函数内部没有声明直接赋值的变量也属于全局变量
+        var num1 = 10;
+        function fun() {
+            console.log(num1);  // ---10
+        }
+        fun();
+        // 局部变量： 在局部作用域下的变量 在函数内部的变量就是局部变量
+        // 注意： 函数的形参就是局部变量
+        // console.log(aru);     // 报错 
+        function fun1() {  // function fun1(aru) {}
+            var num2 = 10;   // 就是局部变量
+            num3 = 20;
+        }
+        fun1()
+        console.log(num3);   // ---20  函数内部没有声明直接赋值的变量也属于全局变量
+        // console.log(num2);   // 报错
+        // 区别：
+        // 全局变量只有在浏览器关闭的时候才会销毁，比较占内存资源
+        // 局部变量 当程序执行完毕就会销毁， 比较节约内存资源 
+
+        // 作用域链: 内部函数访问外部函数的变量，采取的是链式查找的方式来决定取那个值，这种结构叫作用域链
+        var box = 10;
+        function fn1() {
+            var box = 20;
+            function fn2() {
+                console.log(box);  // ---20
+            }
+            fn2()
+        }
+        fn1()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES5的继承
+        function Phone(uname, color) {
+            this.uname = uname;
+            this.color = color;
+        }
+        // 添加父级的方法
+        Phone.prototype.callup = function () {
+            console.log('打电话');
+        }
+        // 实例化对象父级
+        let mi = new Phone('xiaomi', 'blue');
+        mi.callup();
+        console.log(mi);
+
+        // 子级
+        function SmartPhone(uname, color, size, width) {
+            Phone.call(this, uname, color);
+            this.size = size;
+            this.width = width;
+        }
+        //设置子级构造函数的原型
+        SmartPhone.prototype = new Phone;   // 这样子级的实例对象就有父级的方法
+        // SmartPhone.prototype = Object.create(Phone.prototype);
+        SmartPhone.prototype.constructor = SmartPhone;
+        // 子级的方法
+        SmartPhone.prototype.plays = function () {
+            console.log('打游戏');
+        }
+        SmartPhone.prototype.listener = function () {
+            console.log('听歌');
+        }
+
+        let oppo = new SmartPhone('oppo', 'red', 'big', 2000)
+        console.log(oppo);
+        oppo.callup();
+        oppo.plays();
+        oppo.listener();
+
+
+
+        console.log('------------------------------------------------');
+        // ES6 class继承
+        class School {
+            constructor(uname, age) {
+                this.uname = uname;
+                this.age = age;
+            }
+            // 父级的方法
+            sing() {
+                console.log('音乐课');
+            }
+        }
+
+        // 子级
+        class Classroom extends School {
+            constructor(uname, age, uheight, grades) {
+                super(uname, age);
+                this.uheight = uheight;
+                this.grades = grades;
+            }
+            plays() {
+                console.log('打游戏');
+            }
+        }
+        let xiaoming = new Classroom('小明', 16, '170cm', '良');
+        console.log(xiaoming);
+        xiaoming.sing();
+        xiaoming.plays();
+    </script>
+</body>
+
+</html>

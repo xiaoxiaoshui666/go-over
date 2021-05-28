@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <div id="result"></div>
+    <script>
+        const btn = document.querySelector('button')
+        const result = document.querySelector('#result')
+        btn.addEventListener('click', () => {
+            const xhr = new XMLHttpRequest();
+            // 当请求发出后 等待接受响应的时间，没响应就认为超时      在等待响应多少毫秒之后终止  
+            xhr.timeout = 3000;
+            // 如果在规定的时间内浏览器没有收到响应，也就是当等待超时后触发事件
+            xhr.ontimeout = () => {
+                alert('网络请求失败，请检查');
+            };
+            //当网络异常触发事件
+            xhr.onerror = () => {
+                alert('网络异常')
+            }
+            xhr.open('get', 'http:/127.0.0.1:8000/delay');
+            xhr.send();
+            xhr.addEventListener('readystatechange', () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        console.log(xhr);
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
