@@ -8,6 +8,13 @@ const app = express();
 // request 是对请求报文的封装
 // response 是对响应报文的封装
 
+app.use((request, response, next) => {
+    console.log('请求资源是：', request.url);
+    console.log('请求来源于：', request.get('Host'));
+    console.log("已请求服务器");
+    next()
+})
+
 // get格式请求
 app.get('/server', (request, response) => {
     // 设置响应头 允许跨域
@@ -23,9 +30,28 @@ app.post('/server', (request, response) => {
 // JSON格式请求
 app.all('/JSON-server', (request, response) => {
     response.setHeader('Access-Control-Allow-Origin', '*')
-    const data = {
+    /* const data = {
         name: '小红',
         age: 19
+    } */
+    const data = {
+        "message": [
+            {
+                "id": 1,
+                "name": "xiaoxiaoshui",
+                "age": "18"
+            },
+            {
+                "id": 2,
+                "name": "xiaoshuishui",
+                "age": "21"
+            },
+            {
+                "id": 3,
+                "name": "xiaoxingxing",
+                "age": "24"
+            }
+        ]
     }
     // 想把这个 data对象 传给 json.html文件中   send()方法里面可以接受字符串不能接受对象
     // 所以这里需要对这个对象进行字符串的转换
@@ -79,7 +105,7 @@ app.all('/asiox-server', (request, response) => {
     // 自定义设置响应头
     response.setHeader('Access-Control-Allow-Headers', '*')
     //设置响应
-    const star = { namea: 'ldh', nameb: 'gfc' };
+    const star = [{ namea: '小明', nameb: 'gfc' }, { namea: '小光', nameb: 'gfc' }, { namea: '小华', nameb: 'gfc' }];
     response.send(JSON.stringify(star));
 });
 // fetch方法
@@ -95,5 +121,5 @@ app.all('/fetch-server', (request, response) => {
 
 //4. 监听端口启动服务
 app.listen(8000, () => {
-    console.log("服务已经启动, 8000 端口监听中....");
+    console.log("服务已经启动, 8000 端口监听中.... 地址为：http://localhost:8000");
 });

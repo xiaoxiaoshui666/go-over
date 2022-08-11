@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>基本使用</h2>
+        <button>发送GET请求</button>
+        <button>发送POST请求</button>
+        <button>发送PUT请求</button>
+        <button>发送DELETE请求</button>
+    </div>
+    <script>
+        const btns = document.querySelectorAll('button')
+        // 默认配置
+        axios.defaults.method = 'GET'  // 设置默认的请求类型为get
+        axios.defaults.baseURL = 'http://localhost:3000'  // 设置基础url 公共部分   
+        axios.defaults.timeout = 1000  // 设置默认的超时时间   
+
+        // 拦截器
+        /* 请求拦截器 */
+        axios.interceptors.request.use(config => {
+            console.log('请求拦截器成功');    // config 可以在请求拦截时拿到配置对象
+            return config
+        }, error => {
+            console.log('请求拦截器失败');
+            return Promise.reject(error)
+        })
+        /* 响应拦截器 */
+        axios.interceptors.response.use(response => {
+            console.log('响应拦截器成功');
+            return response.data      // 可以处理响应过来的数据 
+        }, error => {
+            console.log('响应拦截器失败');
+            return Promise.reject(error)
+        })
+
+        // GET 请求
+        btns[0].onclick = function () {
+            axios({
+                method: 'GET',     //类型
+                url: '/posts/1',   // url地址
+                // baseURL:'http://localhost:3000/posts',   // url公共部分 会自动和url结合
+                // headers:  {'X-Requested-With': 'XMLHttpRequest'}, // 请求头信息
+                // params: { a: 100, b: 200},      // url参数
+                // timeout: 1000,                  // 超时时间
+                // data: {}      // 请求体设置 若为对象会转换成json格式字符串传递 若为字符串可直接传递
+            }).then(response => {    // 是promise对象 ，需要用then来接收成功和失败的回调
+                console.log(response);
+            }).catch(reason => {
+                console.log('失败回调');
+            })
+        }
+        // POST 请求
+        btns[1].onclick = function () {
+            axios({
+                method: 'POST',
+                url: 'http://localhost:3000/posts',
+                data: {    // 可给服务端传递数据，要在data中传入数据
+                    title: 'asd',
+                    author: 'xiao'
+                }
+            }).then(response => {
+                console.log(response);
+            })
+        }
+        // PUT 请求
+        btns[2].onclick = function () {
+            axios({       // 可修改数据要传递id 并在data中传入要修改的值
+                method: 'PUT',
+                url: 'http://localhost:3000/posts/3',
+                data: {
+                    title: 'dsa',
+                    author: 'da'
+                }
+            }).then(response => {
+                console.log(response);
+            })
+        }
+        // 也可以用axios身上的一些方法发送请求， 比如 axios.get(url[, config])， axios.post(url[, data[, config]])
+
+    </script>
+</body>
+
+</html>

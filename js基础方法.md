@@ -56,6 +56,7 @@
         return
     })---返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值
     Array.includes(参数)---判断参数是否存在数组中，存在返回true，不存在返回fasle 类似indexOf
+    Array.reduce(function(),当前元素)---方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值  【可以专门用来做条件统计的，比如年纪大于18岁的有几个，订单金额在一万块钱的有几个】
 
 ### 9, 字符串对象
     根据字符串的不变性，字符串的所有的方法都不会修改字符串本身，操作返回的是新的字符串
@@ -67,6 +68,8 @@
     String.replace(被替换的字符,替换为的字符)---替换字符， 只替换第一个字符
     String.split('&')---将字符串转换为数组   (以字符串中出现的&为分隔)
     String.trim()---从一个字符串的两端删除空白符 ， 不影响元字符串本身，返回的是一个新的字符串
+    String.padStart(num, '') | padEnd()---某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全     'x'.padStart(5, 'ab')--'ababx'
+    6.toString().padStart(2, '0')--'06'可用于倒计时，时分秒中的分秒前面补0
 
 ### 10, 对象 
     Object.defineProperty(对象名, '属性名', {
@@ -80,7 +83,7 @@
     Object.entries(对象名)---返回一个数组，而数组的每个成员也是一个数组，数组包含属性名和属性值  [['ID', 1], ['color', 'red'] ,['szie', 'big']]   可结合 map使用
     Object.assign(新对象名, 旧对象名)---把旧对象拷贝给新对象但是是浅拷贝
     Object.is(a, b)---判断a,b两个值是否完全相等 与===类似但是如NaN返回就true，===返回为false
-    Object.assign()
+    Object.assign()---用于对象的合并，如果第一个参数为{}，则可对后面的对象参数进行拷贝
     Object.get()
     Object.create(新创建对象的原型对象名)---方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__  ，返回一个新对象，带着指定的原型对象和属性   可用于实现子继承父的方法
     
@@ -93,5 +96,19 @@
     Number.isInteger(num)---判断一个数是否为整数
     Math.trunc(num)---将数字的小数部分抹掉
     Math.sign(num)---判断一个数到底为正数 负数 还是零    正数返回1 负数返回-1 零返回0
+### 12.JSON
+    JSON.stringify()---方法用于将 JavaScript 值转换为 JSON 字符串。
+
+reduce
 
 
+
+
+### 
+unshift
+filter
+forEach
+shift
+splice
+indexOf
+includes

@@ -9,6 +9,7 @@ const app = express();
 // response 是对响应报文的封装
 app.get('/server', (request, response) => {
     //设置响应
+    // response.setHeader('Access-Control-Allow-Origin', '*')
     response.send('HELLO AJAX');
 });
 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .min {
+            background-color: orange;
+            display: flex;
+            width: 600px;
+            height: 400px;
+            /* 主轴方向   控制主轴方向*/
+            /* 横向排列 默认 */
+            flex-direction: row;
+            /* 纵向排列 */
+            /* flex-direction: column; */
+
+            /* 排列方式  justify-content  对齐是以主轴方向对齐的  */
+            /* 居中  */
+            /* justify-content: center; */
+            /* 剩余空间平均分 */
+            /* justify-content: space-around; */
+            /* 两侧贴边 ，中间空间平均分 */
+            /* justify-content: space-between; */
+
+            /* 排列方式 align-items 对齐是以侧轴方向对齐的  */
+            /* 居中 */
+            /* align-items: center;  */
+            /* 尾部   */
+            /* align-items: flex-end; */
+
+            /* flex-wrap换不换行 默认不换行 ，不换行父元素撑不开多个子元素会导致子元素改变宽高 */
+            /* 换行 */
+            flex-wrap: wrap;
+
+            /* align-content 设置侧轴上的子元素排列方式，多行  在不换行模式下没有效果 */
+            /* align-content: flex-start 侧轴首部排列 */
+            /* align-content: flex-end 侧轴尾部排列 */
+            /* align-content: center 侧轴中间 */
+            /* align-content: space-around 侧轴中间空间平分 */
+            /* align-content: space-between 侧轴先两侧贴边，中间空间平分 */
+
+
+            /* 子项属性 */
+            /* flex  剩余空间 */
+            /* align-self 会覆盖 align-items*/
+            /* align-self：auto 默认 */
+        }
+
+        .flex {
+            width: 140px;
+            height: 50px;
+            border: 1px solid #ccc;
+            background-color: green;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        .flex2 {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="min">
+        <div class="flex">1</div>
+        <div class="flex">2</div>
+        <div class="flex">3</div>
+        <div class="flex">4</div>
+        <div class="flex">5</div>
+        <div class="flex">6</div>
+    </div>
+</body>
+
+</html>
