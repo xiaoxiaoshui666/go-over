@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>快乐</div>
+    <span>风男</span>
+    <script>
+        var div = document.querySelector('div');
+        // nextSibling 下一个兄弟节点 包含元素节点或者 文本节点等等 找不到就返回null
+        console.log(div.nextSibling);               // #text
+        console.log(div.previousSibling);           // #text
+
+        // 2. nextElementSibling 得到下一个兄弟元素节点 IE9以上支持
+        console.log(div.nextElementSibling);        // <span>风男<span>
+        console.log(div.previousElementSibling);    // null
+
+    </script>
+</body>
+
+</html>

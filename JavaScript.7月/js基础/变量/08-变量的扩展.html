@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.变量的层叠，赋予多个值时以最后一个为准
+        var myname = '小明';
+        console.log(myname);
+        myname = '小米';
+        console.log(myname);
+
+        // 2.声明多个变量
+        /*  var myname = '旗木卡卡西';
+         var address = '木叶村';
+         var age = 30; */
+        // （可简写  只用写一个var  多个变量名之间用逗号,隔开   结尾加;）
+        var myname = '旗木卡卡西',
+            address = '木叶村',
+            age = '30';
+
+
+        // 3.声明变量的特殊情况
+        // 3.1 只声明不赋值 结果程序翻译不出来 是undefined 未定义的
+        var sex;
+        console.log(sex);
+
+        // 3.2 不声明 不赋值 直接使用某个变量会报错
+        // console.log(tel);
+
+        // 3.3 不声明直接赋值使用 (可以显示出但是格式不对不提倡)
+        height = 167;
+        console.log(height);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

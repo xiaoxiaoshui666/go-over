@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes move {
+            0% {
+                transform: translate(0);
+            }
+
+            50% {
+                transform: translate(1000px, 0) rotate(45deg);
+            }
+
+            100% {
+                transform: translate(1000px, 300px) scale(1.3);
+            }
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 动画名称 必写！ */
+            animation-name: move;
+            /* 持续时间 默认是0 必写！ */
+            animation-duration: 2s;
+
+            /* 运动曲线 默认ease linear匀速 */
+            animation-timing-function: linear;
+
+            /* 何时开始 默认0s */
+            animation-delay: 1s;
+
+            /* 重复次数 默认1次 iteration重复的  count次数  infinite无限的 */
+            animation-iteration-count: infinite;
+
+            /* 是否反方向循环播放 默认normal alternate逆向播放*/
+            animation-direction: alternate;
+
+            /* 动画结束后的状态 默认是backwards回位  forwards停留结束状态 */
+            /* animation-fill-mode: forwards; */
+
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* 前面两个属性name duration一定要写 */
+            /* 后面的如果是默认的或者是0的这可以省略 */
+            /* animation: move 2s linear 1s infinite alternate forwards; */
+        }
+
+        div:hover {
+            /* 鼠标经过div 让这个div停止，鼠标离开div 动画就继续 */
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

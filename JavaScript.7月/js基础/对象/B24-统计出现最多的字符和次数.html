@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 有一个对象 来判断是否又该属性 对象['属性名']
+        var o = {
+            age: 18
+        }
+        if (o['age']) {
+            console.log('里面有该属性');
+        } else {
+            console.log('没有该属性');
+        }
+        var str = 'abcoefoxyozopp';
+        //  申明一个空的对象
+        var o = {};
+        for (var i = 0; i < str.length; i++) {   // 遍历字符串的每个索引号
+            chear = str.charAt(i);               // 每个索引号对应的值在每次循环中存入chear
+            // 在每个字符值 如a啊b啊c啊等 依次对存入空对象o中当属性，如果o[chear]没有，则else，这个属性的属性值为1，如果有则在这个值上++每次加1，因为原本第一次对象o里面o[chear]属性都没有所以都为1，重复出现的话就o[chear]++加1递增
+            if (o[chear]) {                      // o[chear] 得到的是属性值
+                o[chear]++;
+            } else {
+                o[chear] = 1;
+            }
+        }
+        console.log(o);
+        // 这个的o是一个对象， 需要把里面的属性值取出来， 作比较判断谁出现的次数多
+        // 2. 遍历对象
+        // 初始max值为0;
+        var max = 0;
+        var ch = '';
+        for (var k in o) {
+            /*  console.log([k]);       // 属性名
+                console.log(o[k]);      // 属性值  */
+            // 求最大值, 这里o[k]是遍历对象o所有的属性的属性值，属性值就是出现的次数，经过for循环的遍历每次最大值的都存入max里，遍历完就是最大值了
+            if (o[k] > max) {
+                max = o[k];
+                // k 本身就是属性名的意思，但出了for循环之后就不起作用了所以要赋给一个变量上
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log('最多的字符为' + ch);
+    </script>z
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https：//www.taobao.com">
+        <!-- text 文本框 用户可以在里面输入任何文字 -->
+        <!-- maxlength 规定输入字段最大的字段 -->
+        账号：<input type="text" name="zhanghao" value="请输入账号" maxlength="12"><br />
+
+        <!-- password密码框 用户看不到输入的密码 -->
+        密码：<input type="password" name="mima" maxlength="12"><br />
+
+        <!-- radio单选按钮 可以实现多选一 -->
+        <!-- name 是表单元素名字 这里的性别单选按钮必须有相同的名字name 才可以实现多选一 -->
+        <!-- 单选按钮和复选按钮可以用设置checked属性，当页面打开的时候就可以默认选择这个按钮 -->
+        性别选择：<input type="radio" name="xingbie" value="男的" checked="checked">男的
+        <input type="radio" value="女的" name="xingbie">女的 <input type="radio" value="中性" name="xingbie">中性<br />
+
+        <!-- checkbox 复选框 可以实现多选 -->
+        爱好：<input type="checkbox" value="画画" name="aihao">画画
+        <input type="checkbox" value="打游戏" name="aihao" checked="checked">打游戏 <input type="checkbox" value="撩妹"
+            name="aihao">撩妹<br />
+
+        <!-- 点击提交按钮，可以把 表单域form 里面的表单元素 里面的值 提交给后台服务器 可用value改写内容-->
+        <input type="submit" value="免费注册"><br />
+
+        <!-- 重置表单元素初始时的默认状态 可用value改写内容 -->
+        <input type="reset" value="重新填写">
+
+        <!-- 普通按钮button后期结合js搭配使用 -->
+        <input type="button" value="获取短信验证码"><br />
+
+        <!-- 文件域 使用场景 上传文件 -->
+        上传头像：<input type="file">
+
+        <!-- label标签的for属性应当与相关变单元素的id相同 -->
+        <input type="checkbox" id="tongyi"><label for="tongyi">我已同意并阅读相关规则</label><br />
+        <label for="shurukuang">输入框：</label><input type="text" name="shurukaung" id="shurukuang">
+    </form>
+</body>
+
+</html>

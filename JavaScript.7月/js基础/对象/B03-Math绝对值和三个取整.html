@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 绝对值方法
+        console.log(Math.abs(1));           // 1
+        console.log(Math.abs(-1));          // 1
+        console.log(Math.abs('-1'));        // 1        // 隐式转换 会把字符型的 -1 转换为数字型
+        console.log(Math.abs('快乐'));      // NaN
+
+        // 2. 取三个整数的方法
+        // (1) Math.floor()   向下取整  往最小了取整
+        console.log(Math.floor(1.9));       // 1 
+        console.log(Math.floor(1.1));       // 1 
+
+        // (2). Math.ceil()    向上取整  往最大了取整
+        console.log(Math.ceil(1.9));       // 2
+        console.log(Math.ceil(1.1));       // 2
+
+        // (3). Math.round()    四舍五入
+        console.log(Math.round(1.4));       // 1
+        console.log(Math.round(1.5));       // 2
+        console.log(Math.round(-1.1));      // -1
+        // -.5的四舍五入是往大的取,  .5大的那边是-1所以要往-是、1上取
+        console.log(Math.round(-1.5));      // -1
+        console.log(Math.round(-1.9));      // -2
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

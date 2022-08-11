@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        // substr 截取字符串从第几个开始截取到第几个结束，最后没跟参数就是全部截取
+        var params = location.search.substr(1)     // 1. 先去掉?
+        var arr = params.split('=');               // 2. 把params转化为数组的形式 
+        console.log(arr);                          // ["uname", "qweqwrr"]
+        // 数组的 索引号为1 arr[1] 的就是input输入的值
+        div.innerHTML = arr[1] + ',您好，欢迎光临';
+    </script>
+</body>
+
+</html>

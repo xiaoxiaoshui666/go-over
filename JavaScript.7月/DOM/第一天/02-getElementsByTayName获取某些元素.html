@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>知否知否，应是等你好久1</li>
+        <li>知否知否，应是等你好久2</li>
+        <li>知否知否，应是等你好久3</li>
+        <li>知否知否，应是等你好久4</li>
+    </ul>
+    <ol id="ol">
+        <li>知否知否，应是等你好久5</li>
+        <li>知否知否，应是等你好久6</li>
+        <li>知否知否，应是等你好久7</li>
+        <li>知否知否，应是等你好久8</li>
+    </ol>
+    <script>
+        // 1.返回的是 获取过来元素对象的集合，一位数组的形式存储的
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+
+        // 2. 依次打印里面的元素对象可以采取遍历的方式
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+
+        // 3. 如果页面中只有一个li ，返回的还是伪数组的形式
+        // 4. 如果页面中没有这个元素，返回的是空的伪数组的形式
+
+        // 5. elemant.getElemantsByTagName('标签名')  父元素必须是指定的单个元素
+        /*  var ol = document.getElementsByTagName('ol'); 
+            console.log(ol[0].getElementsByTagName('li')); */ // ol标签元素索引0的...
+        var ol = document.getElementById('ol')
+        console.log(ol.getElementsByTagName('li'));           // id名的...
+    </script>
+</body>
+
+</html>

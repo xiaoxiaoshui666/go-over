@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .q {
+            /* 加绝对定位，父元素没有相对定位，参考点在浏览器 */
+            position: absolute;
+            /* 先水平居中 */
+            /* 先走left浏览器的50%，父容器宽度的一半 */
+            left: 50%;
+            /* margin-left 为负值 则往左走 自己盒子宽度的一半 */
+            margin-left: -100px;
+            /* 再垂直居中 */
+            /* 先top浏览器的50%，父容器高度的一半 */
+            top: 50%;
+            /* margin-top 为负值 则往左走 自己盒子宽度的一半 */
+            margin-top: -100px;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="q"></div>
+</body>
+
+</html>

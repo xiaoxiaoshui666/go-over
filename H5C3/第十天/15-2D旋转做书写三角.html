@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 260px;
+            height: 35px;
+            border: 2px solid red;
+        }
+
+        div::after {
+            /* 伪元素必写 */
+            content: '';
+            /* 绝对定位，可以随意移动，可以改变伪元素大小（没加是行内元素不能改） */
+            position: absolute;
+            top: 11px;
+            right: 18px;
+            /* 边框的大小 */
+            width: 10px;
+            height: 10px;
+            /* 留下右边框和下边框 */
+            border-right: 2px solid red;
+            border-bottom: 2px solid red;
+            /* 旋转45度 */
+            transform: rotate(45deg);
+            transition: all .3s;
+        }
+
+        /* 鼠标经过div，里面的伪元素旋转 */
+        div:hover::after {
+            /* 已经旋转45度了，在再旋转180度这是45+180=225度 */
+            transform: rotate(225deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

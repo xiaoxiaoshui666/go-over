@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Marh对象随机数方法
+        // redom() 返回一个随机的小数   0 =< x < 1
+        // ()里面不跟参数
+        // 代码验证
+        console.log(Math.random());
+
+        // 取两个数的随机整数 并且包含着两个整数
+        //  return Math.floor(Math.random() * (max - min)) + min 公式记死
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min
+        }
+        console.log(getRandomInt(2, 10));
+        // 随机点名同理
+        var arr = ['亚托克斯', '阿卡丽', '艾尼维亚', '阿兹尔', '布里茨', '布兰德', '凯特琳', '布隆', '艾希', '阿利斯塔']
+        console.log(arr[getRandomInt(0, arr.length - 1)]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

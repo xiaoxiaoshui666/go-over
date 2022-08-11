@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body {
+            background-color: black;
+            color: white;
+        } */
+        input {
+            outline: none;
+            color: #999;
+            border: 1px solid #999;
+        }
+
+        .onfocus {
+            color: #333;
+            border: 1px solid pink;
+            box-shadow: 0 0 15px pink;
+        }
+
+        .onblur {
+            color: #999;
+            border: 1px solid #999;
+            box-shadow: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="texts" type="text" value="邮箱/ID/手机号">
+    <input id="passwords" type="text" value="密码">
+    <button>开关灯</button>
+    <script>
+        var ipt = document.getElementById('texts');
+        ipt.onfocus = function () {
+            if (this.value === '邮箱/ID/手机号') {
+                this.value = '';
+                this.className = 'onfocus';
+            }
+
+        }
+        ipt.onblur = function () {
+            if (this.value === '') {
+                this.value = '邮箱/ID/手机号'
+                this.className = 'onblur';
+
+            } else {
+                this.style.color = '#333';
+            }
+
+        }
+        var ipts = document.getElementById('passwords');
+        ipts.onfocus = function () {
+            if (this.value === '密码') {
+                this.value = '';
+                this.type = 'password';
+                this.className = 'onfocus';
+            }
+        }
+        ipts.onblur = function () {
+            if (this.value === '') {
+                this.value = '密码';
+                this.type = 'text';
+                this.className = 'onblur';
+            }
+        }
+        var btn = document.querySelector('button');
+        var body = document.querySelector('body');
+        var flag = 0;
+        btn.onclick = function () {
+            if (flag == 0) {
+                body.style.backgroundColor = 'black';
+                flag = 1;
+            } else {
+                body.style.backgroundColor = 'white';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

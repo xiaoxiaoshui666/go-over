@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 弹出prmpt输入框用户输入 并保存到变量里
+        var fruit = prompt('请输入一个水果');
+        // 2. 将这个变量作为switch括号的表达式
+        switch (fruit) {
+            // 3. case 后面的值写水果要加引号，因为必须是全等，必须还是字符串
+            case '苹果':
+                // 4. 匹配到之后弹出价格 执行break 退出switch语句
+                alert('苹果一个5块钱');
+                break;
+            case '橘子':
+                alert('橘子一个20块钱');
+                break;
+            case '西瓜':
+                alert('西瓜一个25块钱');
+                break;
+            case '香蕉':
+                alert('香蕉一个6块钱');
+                break;
+            // 5. 都没有则执行default
+            default:
+                alert('该水果已售完');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

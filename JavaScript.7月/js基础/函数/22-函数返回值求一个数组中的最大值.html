@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getArrMax(arr) {       // 接受的是一个数组
+            var max = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        getArrMax([5, 2, 99, 101, 67, 77]);  //     实参是一个数组所以用[]括起来
+
+        // getArrMax([5, 2, 99, 101, 67, 77]);
+        // 可以用一个变量来接收函数的返回结果，把调用函数用一个变量表示 ，这样输出就直接输出变量名就行了
+        var re = getArrMax([5, 2, 99, 101, 67, 77]);
+        console.log(re);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

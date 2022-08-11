@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <script>
+        // 1. 获取元素
+        var btns = document.getElementsByTagName('button');
+        // btns 得到的是伪数组  里面的每个元素 btns[i]
+        for (var i = 0; i < btns.length; i++) {         // 依次遍历每个btns
+            btns[i].onclick = function () {             // 注册事件 当点击btns时
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].style.backgroundColor = ''; // 先让每个btns清除颜色
+                }
+                this.style.backgroundColor = 'green';   // 再在this这个元素给样式属性
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li:nth-of-type(1) {
+            background-color: green;
+        }
+
+        ul li:last-of-type {
+            background-color: greenyellow;
+        }
+
+        ul li:nth-of-type(2) {
+            background-color: darkkhaki;
+        }
+
+        /* :nth-child会把所有的子元素都排上序号，他在执行的时候先看:nth-child(1)之后会去看前面的div但实际写的是span不匹配，所以不执行 */
+        section div:nth-child(1) {
+            background-color: yellow;
+        }
+
+        /* :nth-of-type会把指定的子元素排序号 */
+        /* 执行时先看 div指定的，之后再去看of-type(1)的第一个 */
+        section div:nth-of-type(1) {
+            background-color: plum;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>孩子1</li>
+        <li>孩子2</li>
+        <li>孩子3</li>
+    </ul>
+    <hr>
+    <section>
+        <span>别爱我</span>
+        <div>没结果</div>
+        <div>除非花手摇过我</div>
+    </section>
+</body>
+
+</html>

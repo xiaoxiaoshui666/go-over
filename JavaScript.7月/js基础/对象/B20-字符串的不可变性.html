@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 字符串的不可变性
+        var str = 'andy';
+        console.log(str);           // andy
+        // 当重新给字符串赋值，会重新在内存中开辟空间，常量andy不会别修改依然还在内存中
+        // 当重新给字符串赋值会重新在内存中开辟空间，这个特点就是字符串的不可变
+        str = 'red';
+        console.log(str);           // red  
+        // 我们字符串的不可所以不要大量的拼接字符串
+        var str = '';
+        for (var i = 1; i <= 100; i++) {
+            str += i;
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

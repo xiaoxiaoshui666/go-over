@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 变量的作用域： 根据作用域不同，变量也分为两种   全局变量 和 局部变量
+        // 1. 全局变量：  在全局作用域下的变量
+        // 注意： 在函数内部没有声明直接赋值的变量也属于全局变量
+        var num = 10;
+        console.log(num);           // 10
+
+        function fn() {
+            console.log(num);       // 10
+        }
+        fn();
+
+        // 2. 局部变量：在局部作用域下的变量  或者是在 函数内部下的变量
+        // 注意： 函数的形参也可以看作是局部变量
+        function fun() {
+            var num1 = 10;          // 10  但是只能在函数内部使用
+            num2 = 20;
+        }
+        fun();
+        /* console.log(num1);       // 报错    */
+        console.log(num2);          // 20
+
+        // 3. 从执行效率来看全局变量和局部变量
+        // (1) 全局变量只有浏览器关闭的时候才会销毁，比较占内存资源
+        // (2) 局部变量 当我们程序执行完毕就会销毁，比较节约内存资源 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

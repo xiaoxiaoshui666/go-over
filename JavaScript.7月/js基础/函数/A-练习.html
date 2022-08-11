@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 输入任意两个数字的任意算术运算(简单计算器)，弹出结果
+        function getSum(num1, operator, num2) {
+            switch (operator) {
+                case '+':
+                    return num1 + num2;
+                    break;
+                case '-':
+                    return num1 - num2;
+                    break;
+                case '*':
+                    return num1 * num2;
+                    break;
+                case '/':
+                    return num1 / num2;
+                    break;
+            }
+        }
+        var re = getSum(111, '*', 5);
+        console.log(re);
+
+        // 写函数输入任意两个数 弹出最大值
+        function getMax(frist, last) {
+            return frist > last ? frist : last;
+        }
+        getMax(10, 8);
+        console.log(getMax(10, 100));
+
+        // 输入任意三个不同的数 弹出最大值
+        function getMax(frist, center, last) {
+            if (frist > (center && last)) {
+                return frist;
+            } else if (center > (frist && last)) {
+                return center;
+            } else if (last > (frist && center)) {
+                return last;
+            }
+        }
+        console.log(getMax(10, 50, 210));
+
+        // 输入一个数判断是否为素数（只能被1和本身整除） 弹出结果
+        function getPrime() {
+            var num = parseInt(prompt('请输入一个数字：'));
+            if (num == 0) {
+                return 'false';
+            } else if (num == 1) {
+                return 'false';
+            } else {
+                for (var i = 2; i < num; i++) {
+                    if (num % i == 0) {
+                        return 'false';
+                    }
+                }
+            }
+            return 'true';
+        }
+        alert(getPrime());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

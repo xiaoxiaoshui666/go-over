@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 一共10行，每行的星星都少一个，因此需要双重for循环
+        // 外层的for控制行数，循环10次可以打印10行
+        // 内层for控制每行的星星个数
+        str = '';
+        // 外层循环控制行数
+        for (var i = 1; i <= 10; i++) {
+            // 里层循环打印的个数不一样，j若等于i，i会越来越大，则j初始化的变量就越来越大，则循环次数就越来越少
+            for (var j = i; j <= 10; j++) {
+                str += '◀';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = 1; j <= 11 - i; j++) {
+                str += '◀';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = 10; j >= i; j--) {
+                str += '◀';
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .qw {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            /* 50%就是宽度和高度的一半，等价于75px */
+            border-radius: 50%;
+        }
+
+        .qe {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            /* 圆角矩形设置为高度的一半 */
+            border-radius: 50px;
+        }
+
+        .qr {
+            width: 200px;
+            height: 260px;
+            background-color: red;
+            /* 分别对应是左上角，右上角，右下角，左下角 */
+            border-radius: 10px 20px 30px 40px;
+        }
+    </style>
+</head>
+
+<body>
+    1.圆形
+    <div class="qw"></div>
+    2.圆角矩形
+    <div class="qe"></div>
+    3.设置不同的圆角
+    <div class="qr"></div>
+</body>
+
+</html>

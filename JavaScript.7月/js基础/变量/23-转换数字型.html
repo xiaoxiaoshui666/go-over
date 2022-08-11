@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 转换为数字型
+        var age = prompt('您多大');
+        console.log(age);               //字符串型
+
+        /* // 1. parseInt(变量) 得到的是整数 */
+        console.log(parseInt(age));     //得到的是数字型
+        // 得到的是整数，不会四舍五入
+        console.log(parseInt('3.12'));              // 3 数字型
+        console.log(parseInt('3.92'));              // 3 数字型
+        // 会去掉后面的单位
+        console.log(parseInt('3px'));               // 3 数字型  
+        //且单位不能在前面，数字必须在前面
+        console.log(parseInt('rem3px'));            // NaN  数字型 
+
+        /* // 2. paeseFloat(变量)  得到的是小数 浮点数 */
+        console.log(parseFloat('3.12'));            // 3.12 数字型
+        console.log(parseFloat('3.95px'));          // 3.95 数字型   
+        console.log(parseFloat('rem3px'));          // NaN  数字型 
+
+        /* // 3. Number(变量) */
+        var str = '333';
+        console.log(Number(str));                   // 333 数字型
+        console.log(Number('222'));                 // 222 数字型
+
+        /* // 4. 算数运算  -  *  /  % */
+        console.log('20' - 10);                     // 10 数字型
+        console.log('30' - '10');                   // 20 数字型
+        console.log('30' * 2);                      // 60 数字型
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

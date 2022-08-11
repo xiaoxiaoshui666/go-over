@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.弹出输入框，并保存到变量
+        var year = prompt('请输入年份');
+        // 2.能被4整除且不能整除100的为闰年，或者能够被400整除的就是闰年
+        if (year % 4 == 0 && year % 100 !== 0 || year % 400 == 0) {
+            // 3.用if判断是否为闰年，是就执行if里面的输出语句
+            alert(year + '是闰年');
+            // 4.不是就执行else里面的输出语句
+        } else {
+            alert(year + '是平年');
+        }
+
+        // 接受用户姓名，是刘德华就中奖，否则就是没中奖
+        var myname = prompt('请输入您的姓名');
+        if (myname == '刘德华') {
+            alert('恭喜您中了五块钱大奖');
+        } else {
+            alert('谢谢惠顾');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

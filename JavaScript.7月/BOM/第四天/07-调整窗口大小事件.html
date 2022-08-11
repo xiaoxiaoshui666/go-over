@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 700px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 只要窗口大小发生像素变化，就会触发这个事件
+        /* window.addEventListener('resize', function () {
+            console.log('变变变');
+            console.log(window.innerWidth);  // window.innerWidth当前屏幕的宽度
+        }) */
+        // 我们利用这个事件完成响应式布局，
+        window.addEventListener('load', function () {
+            var div = document.querySelector('div');
+            window.addEventListener('resize', function () {
+                if (window.innerWidth <= 800) {
+                    div.style.display = 'none';
+                } else {
+                    div.style.display = 'block';
+                }
+                console.log(window.innerWidth);
+            })
+        })
+    </script>
+    <div>123</div>
+</body>
+
+</html>

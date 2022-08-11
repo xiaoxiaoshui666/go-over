@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 把旧数组里面不重复的元素选取出来放到新数组中，重复的元素值保留一个,放到新数组中去重
+        // 算法：遍历旧数组，然后那着旧数组元素去查询新数组，若该元素再续数组里面，没有出现过，就添加否则就不添加
+        // 怎么知道该元素是否存在？利用 新数组.indexOf(数组元素) , 若返回时-1就说明新数组里面没有该元素
+
+        // 封装一个函数 unique 独一无二的
+        function unique(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) == -1) {
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr;
+        }
+        var demo = unique(['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b']);
+        console.log(demo);
+
+        // 自己做的
+        var arr1 = ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'];
+        function unique1(arr1) {
+            var newArr1 = [];
+            for (var i = 0; i < arr1.length; i++) {
+                if (arr1.indexOf(arr1[i]) == i) {
+                    newArr1.push(arr1[i]);
+                }
+            }
+            return newArr1
+        }
+        var demo1 = unique1(['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b']);
+        console.log(demo1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

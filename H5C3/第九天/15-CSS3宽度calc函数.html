@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa {
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        .son {
+            /* width: 150px; */
+            /* width: calc(150px+30px); */
+            /* 100%的意思是son的宽和父亲一样宽，然减10px，就永远比父盒子小30px */
+            width: calc(100% - 30px);
+            height: 30px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 需求：子盒子宽度永远比父盒子小30像素 -->
+    <div class="fa">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

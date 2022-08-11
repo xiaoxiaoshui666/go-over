@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 用布尔值参与的逻辑运算  true && false  == false
+        // 2. 123 && 456 是值 或者是 表达式 参与逻辑运算 
+
+        /* 3. // 逻辑与 && 短路运算 */
+
+        // 如果表达式1 结果为真 则返回式2
+        console.log(123 && 456);       // 456  (左边123为真1，所以返回右边表达式的456)
+
+        // 如果表达式1 结果为假 则返回式1
+        console.log(0 && 456);         // 0    (左边0为假0，所以返回左边表达式的0)
+        console.log(0 && 1 + 2 && 456 * 22);      // 0 
+        console.log('' && 1 + 2 && 456 * 9482);   // ''
+        // 如果有空的或者否定为假 其余是真的 ———— 0  ''  null undefined NaN
+
+        /* 4. // 逻辑或 || 短路运算 */
+
+        // 如果表达式1 结果为真 则返回的是表达式1
+        console.log(123 || 456);                 // 123
+        console.log(99 || 0 || 2 / 2);           // 99
+
+        // 如果表达式1 结果为假 则返回的是表达式2
+        console.log(0 || 123 || 456 + 123);      // 123
+        console.log(0 || 0 || 456 + 123);        // 579
+
+        /* 如 ： */// 因为num=0 ，但123 || num++时 123为真，且又是逻辑或就直接返回123了，就没有执行num++所以num还是=0
+        var num = 0;
+        console.log(123 || num++);
+        console.log(num);                        // 0
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

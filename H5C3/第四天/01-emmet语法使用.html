@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- div*3  生成多个相同标签-->
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <!-- div>p>a  父子集-->
+    <div>
+        <p><a href="#"></a></p>
+    </div>
+
+    <!-- div+p 兄弟集 -->
+    <div></div>
+    <p></p>
+
+    <!-- div#one>P.two 生产直接带有类或者id名字-->
+    <div id="one">
+        <P class="two"></P>
+    </div>
+
+    <!-- div.three$*4 生成的div类名有顺序 -->
+    <div class="three1"></div>
+    <div class="three2"></div>
+    <div class="three3"></div>
+    <div class="three4"></div>
+
+    <!-- div{别爱我}#one>P{爱我没结果}.two  在生成标签内写内容可以在标签后加{}-->
+    <div id="one">
+        别爱我
+        <p class="two">爱我没结果</p>
+    </div>
+
+    <!-- div{快乐}#ong*3>P{快乐的类型}.two*4+a>div{$}*5  练习-->
+    <div id="one">
+        快乐
+        <p class="two">快乐的类型</p>
+        <p class="two">快乐的类型</p>
+        <p class="two">快乐的类型</p>
+        <p class="two">快乐的类型</p>
+        <a href="#">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </a>
+    </div>
+    <div id="one">
+        快乐
+        <p class="two">快乐的类型</p>
+        <p class="two">快乐的类型</p>
+        <p class="two">快乐的类型</p>
+        <p class="two">快乐的类型</p>
+        <a href="">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </a>
+    </div>
+    <div id="one">
+        快乐
+        <p class="two">快乐的类型</p>
+        <p class="two">快乐的类型</p>
+        <p class="two">快乐的类型</p>
+        <p class="two">快乐的类型</p>
+        <a href="">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </a>
+    </div>
+</body>
+
+</html>

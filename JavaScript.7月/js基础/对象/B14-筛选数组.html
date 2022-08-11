@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 工资数组[1500, 1200, 2000, 2100, 1800, 3000] 把超过2000 的删除,剩下的放到新数组里
+        var arr = [1500, 1200, 2000, 2100, 1800, 3000];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < 2000) {
+                // newArr[newArr.length] = arr[i];
+                // 把遍历的每个没超过2000的数组元素，一个一个追加到空数组里面
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(newArr);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

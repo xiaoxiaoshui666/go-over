@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="tm">提莫</button>
+    <button id="ys">亚索</button>
+    <img src="images/00.jpg" alt="" title="提莫队长">
+    <script>
+        // 修改元素属性   src
+        // 1.获取元素
+        var tm = document.getElementById('tm');
+        var ys = document.getElementById('ys');
+        var img = document.querySelector('img');
+        // 2. 注册事件
+        ys.onclick = function () {
+            img.src = 'images/11.jpg';
+            img.title = '快乐小风男';
+        }
+        tm.onclick = function () {
+            img.src = 'images/00.jpg';
+            img.title = '提莫队长';
+        }
+    </script>
+</body>
+
+</html>

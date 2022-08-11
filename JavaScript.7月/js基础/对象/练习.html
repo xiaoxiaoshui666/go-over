@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var playcomputer = {
+            color: 'blue',
+            weight: 20,
+            brand: '联想',
+            model: '小新2020',
+            effect: function () {
+                console.log('看电影');
+                console.log('听音乐');
+                console.log('打游戏');
+                console.log('敲代码啊');
+            }
+        }
+        console.log(playcomputer.color);
+        console.log(playcomputer['weight']);
+        for (var k in playcomputer) {
+            console.log(k);
+            console.log(playcomputer[k]);
+        }
+
+        var keying = new Object;
+        keying.width = 15;
+        keying.height = 16;
+        keying.backgarundcolor = 'blue';
+        keying.click = function () {
+            console.log('按压');
+        }
+        console.log(keying.width);
+        console.log(keying.height);
+        console.log(keying.backgarundcolor);
+        keying.click();
+
+        function Car(weight, color, brand) {
+            this.weight = weight;
+            this.color = color;
+            this.brand = brand;
+            this.action = function (manned, ofld, farming) {
+                console.log(manned);
+                console.log(ofld);
+                console.log(farming);
+            }
+        }
+        var bmw = new Car(20, 'white', '宝马');
+        console.log(typeof bmw);
+        console.log(bmw.weight);
+        console.log(bmw.color);
+        console.log(bmw['brand']);
+        bmw.action('拉人', '拉货', '耕田');
+        for (var k in bmw) {
+            console.log(k);
+            console.log(bmw[k]);
+        }
+
+        function reversal(arr) {
+            var newArr = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        }
+        reversal([2, 4, 6, 8, 10, 12]);
+        console.log(reversal([2, 4, 6, 8, 10, 12]));
+
+        function sort(arr) {
+            for (var i = 1; i <= arr.length - 1; i++) {
+                for (var j = 0; j <= arr.length - i - 1; j++) {
+                    if (arr[j] < arr[j + 1]) {
+                        var temp;
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr
+        }
+        console.log(sort([2, 5, 1, 55, 3, 100, 20]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

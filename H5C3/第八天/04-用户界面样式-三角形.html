@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .q {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+            margin: 100px auto;
+        }
+
+        .w {
+            position: relative;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            margin-left: -100px;
+            width: 200px;
+            height: 300px;
+            background-color: #fff;
+        }
+
+        .e {
+            position: absolute;
+            top: 10px;
+            left: 200px;
+            /* 宽高必须是0 */
+            width: 0;
+            height: 0;
+            /* 先设置四个边的宽的大小，和颜色为透明色 */
+            border: 8px solid transparent;
+            /* 在单独改需要的那个边的颜色 */
+            border-left-color: #fff;
+            /* 为了照顾兼容性 */
+            line-height: 0;
+            font-size: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="q">
+        <div class="w">
+            <div class="e"></div>
+        </div>
+    </div>
+</body>
+
+</html>

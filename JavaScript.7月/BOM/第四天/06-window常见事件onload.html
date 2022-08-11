@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // window.onload 窗口页面加载事件，当文档内容加载完时，才触发事件
+
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert(123);
+            })
+        })
+        // 
+        // DOMontentLoadaaad 比 load加载速度比快
+
+        // DOMontentLoadaaad
+        // load等页面内筒加载完毕，包含dom元素，图片 flach css等
+        // aomctions是(DOM);  DoM 假造完毕  不包含图片 不包含 flacg css 等都可以执行
+        //  区别
+        document.addEventListener('DOMcontentLoaded', function () {
+            alert(33);
+        })
+    </script>
+    <button>快乐</button>
+
+</body>
+
+</html>

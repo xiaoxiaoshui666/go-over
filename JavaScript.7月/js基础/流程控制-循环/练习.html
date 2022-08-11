@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum);
+        console.log(sum / 100);
+
+        var even = 0;
+        var odd = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                even += i;
+            } else {
+                odd += i;
+            }
+        }
+        console.log(even);
+        console.log(odd);
+
+        var seven = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 7 == 0) {
+                seven += i;
+            }
+        }
+        console.log(seven);
+
+        var str = '';
+        for (var i = 1; i <= 4; i++) {
+            for (var j = 1; j <= 5; j++) {
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        var str = '';
+        for (var i = 1; i <= 5; i++) {
+            for (var j = 1; j <= i; j++) {
+                //    \t 增加每个星星之间的间距
+                str += '☆' + '\t';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        var table = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                table += j + '×' + i + '=' + j * i + '\t';
+            }
+            table += '\n';
+        }
+        console.log(table);
+
+        var myname = prompt('请输入您的用户名');
+        var password = prompt('请输入您的密码');
+        while (myname != 'admin' && password != '123456') {
+            alert('请重新输入');
+            var myname = prompt('请输入您的用户名');
+            var password = prompt('请输入您的密码');
+        }
+        alert('登录成功');
+
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i == 3 || i % 10 == 3) {
+                continue;
+            }
+            sum += i;
+        }
+        console.log(sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

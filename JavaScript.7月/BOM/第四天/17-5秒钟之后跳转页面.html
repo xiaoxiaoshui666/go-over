@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            console.log(location.href);
+            // 如果赋值新的域名就是跳转链接的意思
+            location.href = 'http://www.taobao.cn';
+        })
+
+        var div = document.querySelector('div');
+        var timer = 5;
+        // 如果不想让刷新时出现空白的一秒钟就把if的所有的代码放在一个函数中，先调用
+        fn();
+        setInterval(fn, 1000);
+        function fn() {
+            if (timer == 0) {
+                location.href = 'http://www.taobao.cn';
+            } else {
+                div.innerHTML = '您将在' + timer + '之后自动跳转页面首页';
+                timer--;
+            }
+        }
+    </script>
+</body>
+
+</html>

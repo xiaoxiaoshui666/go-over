@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(isNaN(2));  //是数字返回就是false
+        console.log(isNaN('快乐'));  //不是数字返回就是true
+
+        // 例如
+        var tel = '风男';
+        var myname = isNaN(tel);
+        console.log(myname);    // true, 则风男不是个数字
+        var num = 12;
+        var Myname = isNaN(num);
+        console.log(Myname);    // false, 则12是数字
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

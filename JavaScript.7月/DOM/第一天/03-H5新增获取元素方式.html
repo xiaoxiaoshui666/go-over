@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">知否1</div>
+    <div class="box">知否2</div>
+    <div id="nav">
+        <ul>
+            <li>不知</li>
+            <li>等你</li>
+        </ul>
+    </div>
+    <script>
+        // 1. getElementByClassName 根据类名获得某个元素对象集合
+        var boxs = document.getElementsByClassName('box');
+        console.log(boxs);
+
+        // 2. querySelector 返回指定选择器的第一个元素对象 切记里面的选择器要加符号
+        var firstBox = document.querySelector('.box');
+        console.log(firstBox);
+
+        // 3. querySelectorAll()  返回指定选择器的第一个元素对象集合
+        var allBox = document.querySelectorAll('.box');
+        console.log(allBox);
+        var lis = document.querySelector('li');
+        console.log(lis);
+
+
+    </script>
+</body>
+
+</html>

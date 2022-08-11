@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .q {
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-right-color: red;
+        }
+
+        .w {
+            width: 0;
+            height: 0;
+            /* border-top: 200px solid transparent;
+            border-bottom: 0px solid skyblue;
+            border-right: 100px solid blue;
+            border-left: 0px solid orange; */
+            /* 1.只保留右边的边框颜色其余的为透明色 */
+            border-color: red skyblue wheat salmon;
+            /* 2.样式都是solid */
+            border-style: solid;
+            /* 上边框宽度要大，右边框宽度稍小，其余的边框该为0 */
+            border-width: 200px 100px 0 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="q"></div>
+    <div class="w"></div>
+</body>
+
+</html>

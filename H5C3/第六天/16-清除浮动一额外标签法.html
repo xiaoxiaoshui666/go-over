@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 700px;
+            background-color: aquamarine;
+        }
+
+        .yi {
+            float: left;
+            width: 300px;
+            height: 400px;
+            background-color: blue;
+        }
+
+        .er {
+            float: left;
+            width: 250px;
+            height: 300px;
+            background-color: cornflowerblue;
+        }
+
+        .san {
+            clear: both;
+            /* 新增 */
+        }
+
+        .nav {
+            width: 800px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="yi">1</div>
+        <div class="er">2</div>
+        <div class="san" <!-- 新增 必须是块元素-->3</div>
+    </div>
+    <div class="nav"></div>
+</body>
+
+</html>

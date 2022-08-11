@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>名字</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>快乐风男</td>
+                <td>JS</td>
+                <td>100</td>
+                <td><a href="javascript:;">删除</td>
+            </tr>
+            <tr>
+                <td>儿童劫</td>
+                <td>JS</td>
+                <td>88</td>
+                <td><a href="javascript:;">删除</td>
+            </tr>
+            <tr>
+                <td>娃娃鱼</td>
+                <td>JS</td>
+                <td>91</td>
+                <td><a href="javascript:;">删除</td>
+            </tr>
+            <tr>
+                <td>小学僧</td>
+                <td>JS</td>
+                <td>75</td>
+                <td><a href="javascript:;">删除</td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script>
+        // 1.准备好学生的数据
+        var dates = [{
+            name: '快乐风男',
+            subject: 'JS',
+            score: 100
+        }, {
+            name: '儿童劫',
+            subject: 'JS',
+            score: 88
+        }, {
+            name: '娃娃鱼',
+            subject: 'JS',
+            score: 91
+        }, {
+            name: '小学僧',
+            subject: 'JS',
+            score: 75
+        }];
+        // 2.往tbody 里面创建行  有几个人(通过数组的长度dates.length得到) 就创键几 tr
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < dates.length; i++) {  // 外foe循环管 行tr
+            // 创键 tr行
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            // 3.往行tr 里面创键单元格td 每个对象有几个属性(k) 就创键几个单元格td
+            for (var k in dates[i]) {             // 内for循环管 单元格td
+                var td = document.createElement('td');
+                // 4.把 对象dates[i] 里面的 属性值dates[i][k] 赋值给单元格
+                td.innerHTML = dates[i][k];
+                // 添加单元格
+                tr.appendChild(td);
+            }
+            // 4.创键有删除2个字的单元格
+            var td = document.createElement('td');
+            td.innerHTML = "<a href='#'>删除</a>";
+            tr.appendChild(td);
+        }
+        // 5.删除操作
+        var as = document.querySelectorAll('a');
+        for (var j = 0; j < as.length; j++) {
+            // 点击a 删除 当前a所在的行 nodr.removerChild(child)
+            as[j].onclick = function () {
+                // 在tbody的儿子里删除 this当前 a 的 父元素td 的 父元素tr
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>

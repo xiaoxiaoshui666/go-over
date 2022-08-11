@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            margin: 100px;
+        }
+
+        ul li {
+            width: 100px;
+            height: 35px;
+            float: left;
+            margin: 0 3px;
+            list-style: none;
+            /* 一会需要fa元素也要旋转就可以直接给他们的父元素li加透视  */
+            perspective: 500px;
+        }
+
+        .fa {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all .2s linear;
+        }
+
+        .fa:hover {
+            transform: rotateX(90deg);
+        }
+
+        .qian,
+        .hou {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            text-align: center;
+            line-height: 35px;
+            color: red;
+        }
+
+        .qian {
+            background-color: aqua;
+            z-index: 1;
+            /* 让第一个盒子沿z轴前移，这样还能使沿x轴旋转的中心线到两个盒子的距离相同 */
+            transform: translateZ(17.5px);
+        }
+
+        .hou {
+            background-color: skyblue;
+            /* 属性里有移动和其他样式的，要把移动放在最前面 */
+            transform: translateY(17.5px) rotateX(270deg);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="fa">
+                <div class="qian">IG</div>
+                <div class="hou">牛逼!</div>
+            </div>
+        </li>
+        <li>
+            <div class="fa">
+                <div class="qian">IG</div>
+                <div class="hou">牛逼!</div>
+            </div>
+        </li>
+        <li>
+            <div class="fa">
+                <div class="qian">IG</div>
+                <div class="hou">牛逼!</div>
+            </div>
+        </li>
+        <li>
+            <div class="fa">
+                <div class="qian">IG</div>
+                <div class="hou">牛逼!</div>
+            </div>
+        </li>
+        <li>
+            <div class="fa">
+                <div class="qian">IG</div>
+                <div class="hou">牛逼!</div>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

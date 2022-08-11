@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 0;
+            height: 120px;
+            line-height: 120px;
+            font-size: 100px;
+            /* 溢出的隐藏 */
+            overflow: hidden;
+            /* 让文字在一行内显示 */
+            white-space: normal;
+            background-color: skyblue;
+            /* steps 就是几步来完成我们的动画 */
+            animation: shui 5s steps(10) forwards;
+        }
+
+        @keyframes shui {
+            0% {}
+
+            100% {
+                width: 1000px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>别爱我爱我你会没结果</div>
+</body>
+
+</html>

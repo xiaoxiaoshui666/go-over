@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* -- 行内元素转换为快元素 -- */
+        span {
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+            display: block;
+        }
+
+        .we {
+            width: 200px;
+            height: 50px;
+            background-color: yellow;
+            display: block;
+        }
+
+        /* 块元素转换为行内元素 */
+        div {
+            /* width: 150px;(转为行内元素后不可调整) */
+            /* height: 100px;(转为行内元素后不可调整) */
+            background-color: sienna;
+            display: inline;
+        }
+
+        /* 行内元素转换为行内块元素 */
+        a {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            display: inline-block;
+        }
+
+        /* 块元素转换为行内块元素 */
+        .wr {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 行内元素转换为快元素 -->
+    <span>我是</span>
+    <span class="we">我是</span>
+    <span>我是</span>
+
+    <!-- 块元素转换为行内元素 -->
+    <div>niss</div>
+    <div>我是</div>
+    <div>我是</div>
+
+    <!-- 行内元素转换为行内块元素 -->
+    <a href="#">我是</a>
+    <a href="#">我是</a>
+    <a href="#">我是</a>
+
+    <!-- 块元素转换为行内块元素 -->
+    <div class="wr">我是</div>
+    <div class="wr">我是</div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var age = 21;       // 整数
+        var age = 22.432;   // 小数
+
+        // js有 二进制  八进制  十进制  十六进制
+        // 八进制前面加0  十六进制前面加0x
+
+        // 1.八进制 0~7 数字前面加0 表示八进制
+        var num1 = 010;  // 010 八进制 转换为 十进制 就是8
+        console.log(num1);
+        var num2 = 013;  // 012                    就是11
+        console.log(num2);
+
+        // 2.十六进制 0~9 a~f 数字前面加0x 表示十六进制 如：#ffffff
+        // (a是10 b是11 c是12...)v
+        var num3 = 0x9;  // 0x9 十六进制 转换为 十进制 就是9
+        console.log(num3);
+        var num4 = 0x1a;  // 0x1a 十六进制 转换为 十进制 就是26
+        console.log(num4);
+
+        // 3.数字型的最大值
+        console.log(Number.MAX_VALUE);
+
+        // 4.数字型的最小值
+        console.log(Number.MIN_VALUE);
+
+        // 5.无穷大
+        console.log(Number.MAX_VALUE * 3); //Infinity无穷大
+
+        // 6.无穷小
+        console.log(-Number.MAX_VALUE * 3); //-Infinity无穷小
+
+        // 7.非数字
+        console.log('快乐' - 100); //没法减就不是个数字 表示为NaN
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

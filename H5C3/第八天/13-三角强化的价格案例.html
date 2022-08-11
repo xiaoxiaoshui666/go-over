@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .q {
+            width: 160px;
+            height: 24px;
+            margin: 300px auto;
+            border: 1px solid red;
+            line-height: 24px;
+        }
+
+        .w {
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 24px;
+            background-color: red;
+            text-align: center;
+            font-weight: 700;
+            color: #fff;
+            margin-right: 8px;
+        }
+
+        .e {
+            /* 文字会环绕浮动所以不需要给浮动也可以 */
+            font-size: 12px;
+            color: gray;
+            text-decoration: line-through;
+
+        }
+
+        .w i {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 24px 10px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="q">
+        <span class="w">
+            ¥1650
+            <i></i>
+        </span>
+        <span class="e">¥5650</span>
+    </div>
+    <p></p>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 1. 获取元素
+        var div = document.querySelector('div');
+        // 2. 注册事件 处理程序
+        div.onclick = function () {
+            // div.style =  里面的属性用的是驼峰命名法
+            // 属于行内样式 权重高
+            this.style.backgroundColor = 'red';
+            this.style.height = '400px';
+            this.style.width = '400px';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>快乐小风男1号</li>
+        <li>快乐小风男2号</li>
+        <li>快乐小风男3号</li>
+        <li>快乐小风男4号</li>
+        <li>快乐小风男5号</li>
+    </ul>
+    <script>
+        // 事件委托的核心原理：给父节点添加监听器，利用事件冒泡影响每个子节点。
+        var ul = document.querySelector('ul');
+        // 如果点击li 时 利用冒泡也会触发 ul的监听事件
+        ul.addEventListener('click', function (e) {
+            // 排他思想 先去掉所有li的颜色
+            var li = ul.children;
+            for (var i = 0; i < li.length; i++) {
+                li[i].style.backgroundColor = '';
+            }
+            // e.target 这个可以得到当前点击的对象
+            e.target.style.backgroundColor = 'green';
+        })
+    </script>
+</body>
+
+</html>

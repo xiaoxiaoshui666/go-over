@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = 10;
+        num++;              // num = num + 1
+        console.log(num);                // 11
+
+        // 1.前置递增和后置递增如果单独使用效果是一样的
+
+        // 2.后置递增 口诀为  先返回原值，后自加
+        var age = 10
+        console.log(age++ + 10);         // 20  
+        // (先返回原值为10，去运算，所以这个的值为10+10=20， 然后在自加一，就是运算完了自己在加一所以这里的age现在就为10++=11了)
+        console.log(age);                // 11  
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

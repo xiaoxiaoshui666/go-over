@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            border: 10px solid skyblue;
+            padding: 15px;
+            background-color: springgreen;
+            /* 默认的盒子的大小，等于内容+内边距+边框 */
+            box-sizing: content-box;
+        }
+
+        p {
+            width: 300px;
+            height: 200px;
+            border: 10px solid skyblue;
+            padding: 15px;
+            background-color: springgreen;
+            /* css3 盒子模型，盒子的大小等于width:300px的大小(内边距和边框不影响width，值越大内容越小，且两个和不能超过盒子width的宽度) */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <p>abc</p>
+</body>
+
+</html>

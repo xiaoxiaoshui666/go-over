@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="begin">开启定时器</button>
+    <button class="stop">停止定时器</button>
+    <script>
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        // 在外面定义了一个全局变量，这样其他的函数就可以访问这个变量 ，
+        // 必须赋个值，不赋值返回的可能是找不到，且等于null说明要存的是个对象，且是个空对象
+        var timer = null;
+        begin.addEventListener('click', function () {
+            timer = setInterval(function () {
+                console.log('我e我e我eee');
+            }, 1000)
+        })
+        stop.addEventListener('click', function () {
+            clearTimeout(timer);   // 停止id为timer 的定时器
+        })
+
+        // 自己想的   // 写在函数变量里面就不与全局变量冲突了
+        /* stop.addEventListener('click', function () {
+            clearTimeout(timer);
+        })
+        begin.addEventListener('click', function () {
+            var timer = setInterval(function () {
+                console.log('我e我e我eee');
+            }, 1000)
+            stop.addEventListener('click', function () {
+                clearTimeout(timer);
+            })
+        }) */
+
+
+    </script>
+</body>
+
+</html>

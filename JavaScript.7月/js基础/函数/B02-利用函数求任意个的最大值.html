@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 求任意函数的最大值
+        function getMax() {
+            var max = arguments[0];
+            for (var i = 1; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        console.log(getMax(1, 2, 3, 4));
+        console.log(getMax(11, 222, 34, 4));
+        console.log(getMax(1, 213, 93, 234));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

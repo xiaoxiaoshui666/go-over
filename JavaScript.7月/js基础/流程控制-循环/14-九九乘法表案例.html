@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        str = '';
+        // 外循环控制的行数
+        for (var i = 1; i <= 9; i++) {
+            // 里层循环控制每行的个数  j 要永远 小于等于 i
+            for (var j = 1; j <= i; j++) {
+                // str += '▉';
+                str += j + '×' + i + '=' + j * i + '\t';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 10 - i; j <= 9; j++) {
+                str += '▉';
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

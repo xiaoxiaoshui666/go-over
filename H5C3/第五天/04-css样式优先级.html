@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color: yellow;
+            /* 通配符选择器0000 */
+        }
+
+        p {
+            color: green;
+            /* 标签选择器0001 */
+        }
+
+        .qw {
+            color: pink
+                /* 类选择器0010 */
+        }
+
+        #qe {
+            color: blue;
+            /* ID选择器0100 */
+        }
+
+        p {
+            color: red !important;
+            /* ！important∞无穷大 */
+        }
+    </style>
+</head>
+
+<body>
+    <div style="color: #ffddff;">
+        别爱我！
+        <!-- 继承性的权重是0000 -->
+        <p class="qw" id="qe" style="color: orange;" <!-- 行内选择器1000 -->
+            别爱我，没结果
+        </p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+/* 列表页面的css */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?3udxgz');
+    src:  url('../fonts/icomoon.eot?3udxgz#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?3udxgz') format('truetype'),
+      url('../fonts/icomoon.woff?3udxgz') format('woff'),
+      url('../fonts/icomoon.svg?3udxgz#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+/* logo秒杀strat */
+.sk {
+    position: absolute;
+    top: 40px;
+    left: 185px;
+    width: 70px;
+    height: 32px;
+    border-left: 1px solid #b1191a;
+    padding: 5px 0 0 14px;
+}
+/* logo秒杀end */
+
+/* nav模块start */
+.sk_list li {
+    float: left;
+    margin-right: 57px;
+    line-height: 45px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+}
+.sk_list li:first-child {
+    margin-left: 29px;
+}
+.red {
+    color: #b1191a;
+}
+.sk_im li {
+    float: left;
+    line-height: 45px;
+    font-size: 14px;
+    margin-right: 46px;
+}
+.sk_im li i {
+    font-family: 'icomoon';
+    padding-left: 5px;
+}
+/* nav模块end */
+
+/* sk-contsiner列表页主体内容start */
+.sk_bd ul {
+    width: 1212px;
+}
+.sk_goods {
+    float: left;
+    position: relative;
+    width: 288px;
+    height: 458px;
+    /* 原始li的边框如果不显示可以用透明边框表示 */
+    border: 1px solid transparent;
+    margin: 0 13px 15px 0;
+}
+/* 鼠标进过li透明边框变成了红色 */
+.sk_goods:hover {
+    border: 1px solid #e12228;
+}
+.sk_goods_title {
+    font-size: 14px;
+    padding: 10px;
+    color: #666;
+    font-weight: 400;
+}
+.sk_goods_price {
+    padding: 0 10px;
+    font-size: 14px;
+}
+.sk_goods_price i,
+.sk_goods_price em {
+    color: #e60012;
+}
+.sk_goods_price em {
+    font-size: 22px;
+}
+.sk_goods_progess {
+    padding: 0 10px;
+}
+.sk_goods_progess em,
+.sk_goods_progess i {
+    color: #e60012;
+}
+.bar {
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    height: 10px;
+    border: 1px solid #b1191a;
+    border-radius: 5px;
+    /* 让行内块元素与文字垂直居中 */
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.bar_in {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    height: 12px;
+    width: 53px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #e60012;
+    transition: all 1s;
+}
+.sk_goods:hover .bar_in {
+    width: 87%;
+}
+.sk_goods_buy {
+    /* 有定位不用转换块级元素 */
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    color: #fff;
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #b1191a;
+    text-align: center;  
+}
+.page {
+    /* 里面的文字内容  行内块元素  都可以居中对齐 */
+    text-align: center ;
+    margin: 30px 0;
+}
+.page_num a {
+    /* 只能转换行内块不能转换别的，而且行内块元素之间有小缝隙可以不能加margin */
+    display: inline-block;
+    height: 36px;
+    width: 36px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    line-height: 36px;
+}
+.page_num a:first-child,
+.page_num a:last-child {
+    width: 83px;
+}
+.page_num a:nth-child(4) {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #b1191a;
+}
+.page_num a:nth-child(8) {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.page_skip input {
+    width: 46px;
+    height: 36px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.page_skip input:focus {
+    width: 88px;
+    border: 1px solid dodgerblue;
+}
+.page_skip button {
+    width: 54px;
+    height: 36px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+}
+
+.sk_goods:hover .sk_item {
+    border: 1px solid #e60012;
+    border-bottom: 0;
+    margin: 0;
+}
+.sk_rd {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    margin-right: -610px;
+    transform: translateX(100%);
+}
+.sk_rd li {
+    width: 68px;
+    height: 68px;
+
+    text-align: center;
+    background-color: #b1191a;
+    font-family: 'icomoon';
+    color: #fff;
+}
+.sk_rd_top {
+    font-size: 16px;
+    margin-bottom: 1px;
+}
+.sk_rd_top span {
+    display: inline-block;
+    padding-top: 10px;
+}
+.sk_rd_shouji {
+    line-height: 68px;
+    font-size: 40px;
+
+}
+/* sk-contsiner列表页主体内容end */

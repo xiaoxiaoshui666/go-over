@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .fa {
+            position: relative;
+        }
+
+        .b {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+
+        .q {
+            background-color: green;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .w {
+            background-color: yellow;
+            top: 50px;
+            left: 50px;
+            z-index: auto;
+        }
+
+        .e {
+            background-color: orange;
+            left: 100px;
+            top: 100px;
+            z-index: 1;
+            /* 若值一样则按书写顺序写，后来居上,atuo和0值一样 */
+            /* 只有定位才用z-index属性 */
+            /* 数值可以是正整数，负数或者0，默认位atuo，数值越大，元素越上 */
+            /* 数值后面不加单位 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fa">
+        <div class="q b">别爱我</div>
+        <div class="w b">没结果</div>
+        <div class="e b">除非花手摇过我</div>
+    </div>
+</body>
+
+</html>

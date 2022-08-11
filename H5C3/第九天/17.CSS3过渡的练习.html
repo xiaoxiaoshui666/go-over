@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .q {
+            width: 55px;
+            height: 55px;
+            background-color: #ff6700;
+            margin: 200px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .w {
+            position: absolute;
+            left: -55px;
+            top: 0;
+            transition: all .2s;
+        }
+
+        .q:hover .w {
+            left: 0px;
+        }
+
+        .a {
+            width: 55px;
+            height: 55px;
+            float: left;
+        }
+
+        .t {
+            background: url(media/mi-home.png) #ff6700 no-repeat center;
+        }
+
+        .r {
+            background: url(media/mi-logo.png) #ff6700 no-repeat center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="q">
+        <div class="w">
+            <div class="t a"></div>
+            <div class="r a"></div>
+        </div>
+    </div>
+</body>
+
+</html>

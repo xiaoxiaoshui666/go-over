@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用构造函数创建对象
+        // 创键四大天王的对象      相同的属性： 名字  年龄  性别  相同的方法： 唱歌
+
+        function Star(uname, age, sex) {
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (sang) {
+                console.log(sang);
+            }
+        }
+
+        var ldh = new Star('刘德华', 18, '男');      // 调用函数返回的是一个对象
+        console.log(typeof ldh);      //  ojbect
+        console.log(ldh.name);        //  刘德华
+        console.log(ldh['age']);      //  18
+        ldh.sing('17岁');
+
+        var zxy = new Star('郭富城', 19, '女');
+        console.log(zxy.name);        //  郭富城
+        zxy.sing('情人');
+
+
+        // 构造函数名字首字母要大写
+        // 构造函数不需要return 就可以返回结果
+        // 调用构造函数必须使用new
+        // 只要new Star()（new 构造函数名()）调用函数就创键了一个对象 ldh {}
+        // s属性和方法前面必须添加  this
+
+        // 练习
+        function Hero(uname, type, blood) {
+            this.name = uname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function (attack) {
+                console.log(attack);
+            }
+        }
+        var lp = new Hero('廉颇', '力量型', 500);
+        console.log(lp.name);
+        console.log(lp.type);
+        console.log(lp['blood']);
+        lp.attack('近战')
+
+        var hy = new Hero('后羿', '射手型', 100);
+        console.log(hy.name);
+        console.log(hy.type);
+        console.log(hy['blood']);
+        hy.attack('远程');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

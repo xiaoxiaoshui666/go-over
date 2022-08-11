@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 同步：多个程序按顺序依次排队执行，
+        // 异步：执行顺序不同
+        // JS 允许创键多个线程，于是出现了同步和异步
+        // 问题1
+        /* console.log(1);
+        setTimeout(function () {
+            console.log(3);
+        }, 8000);
+        console.log(2); */
+
+        // 同步任务：在主线程上执行，形成一个执行栈
+        // 异步任务：是通过回调函数实现的   将回调函数添加到任务队列（也加消息队列）中
+        // 异步任务有三种：
+        /* 1. 普通事件：如 click，resize
+           2. 资源加载：如load，error
+           3. 定时器，如setInterval，setTimeout */
+        // 问题2
+        /* console.log(1);
+        setTimeout(function () {
+            console.log(3);
+        }, 0);
+        console.log(2);
+ */
+        // 执行机制：
+        /* 1. 先执行执行栈中的同步任务
+           2. 异步任务（回调函数）放入任务队列中
+           3. 一旦执行栈中的所有同步任务执行完毕，系统就会按次序读取任务队列中的异步任  务，于是别读取的异步任务结束等待状态。进入执行栈，开始执行 */
+
+        // 理解：先把主线程的异步任务回调函数分离到任务队列中，先执行执行栈，等主线程的执行栈程序执行完毕了在看看任务队列中有没有异步任务，有的话就在调回到同步任务接着执行
+        console.log(1);
+        document.onclick = function () {
+            console.log('0000');
+        }
+        console.log(2);
+        setTimeout(function () {
+            console.log(3);
+        }, 3000);
+    </script>
+</body>
+
+</html>

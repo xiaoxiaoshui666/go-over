@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: red;
+            /* 这个行高是10*1.5就是15px */
+            font: 10px/1.5 'Microsoft YaHei';
+        }
+
+        h6 {
+            /* 子元素继承了父元素body的行高1.5 */
+            /* 这个1.5是当前元素文字font-size的1.5倍 所以h6的行高14*1.5为21px */
+            font-size: 14px;
+        }
+
+        li {
+            /* li没有文字大小，这会继承父亲ul的文字大小 body是10px，则所有li也为10px */
+            color: rgb(211, 54, 130);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- p标签会继承div的样式 如文字，颜色等 -->
+        <p>别爱我，没结果</p>
+    </div>
+    <h6>别爱我，没结果</h6>
+    <ul>
+        <li>别爱我，没结果</li>
+    </ul>
+</body>
+
+</html>

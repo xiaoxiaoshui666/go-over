@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[value] {
+            color: skyblue;
+        }
+
+        input[type=password] {
+            color: orange;
+        }
+
+        /* 首先选择是div然后具有class属性，并且属性值必须是qw开头的这些元素 */
+        div[class^=qw] {
+            color: red;
+        }
+
+        /* 首先选择是section然后具有class属性，并且属性值必须是date结尾的这些元素 */
+        section[class$=date] {
+            color: green;
+        }
+
+        /* 首先选择是div然后具有class属性，并且属性值必须是含有icon的这些元素 */
+        div[class*=icon] {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.利用属性选择器就可以不用类选择器或者id选择器了 -->
+    <input type="text" value="别爱我">
+    <input type="text">
+    <hr>
+    <!-- 2.属性选择器还可以选择属性=值的某些元素，重点掌握！！！ -->
+    <input type="text" name="">
+    <input type="password" name="" id="">
+    <hr>
+    <!-- 3.属性选择器可以选择属性值开头的某些元素 -->
+    <div class="qwr">别爱我</div>
+    <div class="qwddf">别爱我</div>
+    <div class="qhse">别爱我</div>
+    <div class="qwssda">别爱我</div>
+    <div class="qwe">别爱我</div>
+    <div>别爱我</div>
+    <hr>
+    <!-- 4.属性选择器可以选择属性值结尾的某些元素 -->
+    <section class="icon1-date">别爱我</section>
+    <section class="icon2-date">别爱我</section>
+    <section class="icon3-ico">别爱我</section>
+    <hr>
+    <!-- 5.属性选择器可以选择含有属性值的某些元素 -->
+    <div class="icon-date">别爱我</div>
+    <div class="mate-icon">别爱我</div>
+    <div class="maiconda">别爱我</div>
+</body>
+
+</html>

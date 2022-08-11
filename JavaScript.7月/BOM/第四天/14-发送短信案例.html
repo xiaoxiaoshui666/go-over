@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    手机号码： <input typr="number"> <button>发送</button>
+    <script>
+        // 1. 按钮点击，会禁用disblad 为 true
+        // 2. 同时按钮里面的内容给会变化，注意button 里面的内容通过innerHTML修改
+        // 3. 里面的秒数在变化，则需要用定时器
+        // 4. 定义一个变量，在定时器里面，不断递减
+        // 5. 若变量为0 说明到时间，需要定制定时器，且复原按钮初始状态
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        var time = 10;
+        btn.addEventListener('click', function () {
+            this.disabled = true;
+            // 因为值不断发送变化所以需要一个定时器
+            var timer = setInterval(function () {
+                // 不能一直是定时器所以加判断条件若时间到了某个数停止定时器
+                if (time == 0) {
+                    clearTimeout(timer);
+                    // 复原按钮可以点击   //  不能用this定时器里的全局对象是window，所以this指向window
+                    btn.disabled = false;
+                    // 复原按钮
+                    btn.innerHTML = '发送';
+                    // 倒计时结束时要为下次倒计时准备，不能一直减重新赋值为原值；
+                    time = 10;
+                    // 若时间没有到，就赋值还剩多少秒
+                } else {
+                    btn.innerHTML = '请在' + time + '秒后输入';
+                    // 吧值不断的减减，做到倒计时的效果
+                    time--;
+                }
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

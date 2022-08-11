@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa {
+            width: 300px;
+            height: 120px;
+            background-color: skyblue;
+            /* 1.transform()里面可以用% */
+            /* 2.若是%，则移动的距离是盒子自身的宽高来对比的 */
+            /* 这里的50%就是150px因为盒子宽300px */
+            transform: translateX(50%);
+        }
+
+        .ma {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: tomato;
+            margin: 50px auto;
+        }
+
+        p {
+            /* 先绝对定位 */
+            position: absolute;
+            /* 在距离父盒子宽高的一半 */
+            top: 50%;
+            left: 50%;
+            /* 盒子再往上和往左移动自身高度和宽度的一半 */
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 150px;
+            background-color: green;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fa"></div>
+    <div class="ma">
+        <p></p>
+    </div>
+</body>
+
+</html>

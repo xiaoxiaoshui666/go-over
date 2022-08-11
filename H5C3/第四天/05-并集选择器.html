@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 熊大和熊二改为粉色 */
+        div,
+        P {
+            color: seagreen;
+        }
+
+        /* 熊大和熊二和小猪一家改为粉色 */
+        div,
+        p,
+        ul>li {
+            color: yellow;
+        }
+
+        div,
+        .qwr>a,
+        ul li {
+            color: aqua;
+        }
+
+        /* 约定的语法规范，我们并集选择器喜欢竖着写 */
+        /* 一定要注意 最后一个选择器 不需要加逗号 */
+    </style>
+</head>
+
+<body>
+    <div>熊大</div>
+    <p>熊二</p>
+    <div class="qwr">
+        <a href="">光头强</a>
+        <p><a href="">光头强</a></p>
+    </div>
+
+    <ul class="pig">
+        <li>小猪佩奇</li>
+        <li>猪爸爸</li>
+        <li>猪妈妈</li>
+    </ul>
+</body>
+
+</html>

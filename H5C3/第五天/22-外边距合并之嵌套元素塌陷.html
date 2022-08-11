@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 500px;
+            background-color: blue;
+            margin-top: 100px;
+            /* border-top: 1px solid red;①给父元素定义上边框 */
+            /* padding-top: 1px;②可以给父边距元素定义上内边距 */
+            overflow: hidden;
+            /* ③可以给父元素添加overflow: hidden; */
+        }
+
+        p {
+            width: 100px;
+            height: 200px;
+            background-color: chartreuse;
+            /* 嵌套块元素垂直外边距的塌陷 */
+            margin-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>

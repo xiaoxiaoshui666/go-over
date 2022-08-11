@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 250px;
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        div:first-child {
+            background-color: pink;
+            /* 不会影响其他的元素的位置 */
+            /* x在x轴上移动，y在y轴上移动，中间用逗号分隔 */
+            transform: translate(150px, 200px);
+
+            /* 若只在x轴上移动 */
+            /* transform: translateX(200px) */
+
+            /* 若只在y轴上移动 */
+            /* transform: translateY(200px) */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

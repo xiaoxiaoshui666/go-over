@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: silver;
+        }
+
+        body {
+            height: 6000px;
+        }
+
+        div {
+            /* 粘性定位兼容性差，IE不支持所以不常用 */
+            position: sticky;
+            /* 鼠标滚动时盒子距离浏览器上沿10px时则变成固定定位 */
+            top: 10px;
+            width: 1200px;
+            height: 100px;
+            background-color: pink;
+            margin: 300px auto 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>别爱我，没结果</div>
+</body>
+
+</html>

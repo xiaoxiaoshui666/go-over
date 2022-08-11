@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>删除</button>
+    <ul>
+        <li>快乐1</li>
+        <li>快乐2</li>
+        <li>快乐3</li>
+        <li>快乐4</li>
+    </ul>
+    <script>
+        // node.removeChild(child)
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+        btn.onclick = function () {
+            if (ul.children.length == 0) {
+                // 若ul的孩子的长度为0则按钮不能点击
+                this.disabled = true;
+            } else {
+                // 在ul里面子元素里 删除 ul的子元素的第1个 
+                ul.removeChild(ul.children[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

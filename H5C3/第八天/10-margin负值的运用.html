@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            width: 800px;
+            height: 300px;
+            background-color: red;
+            margin: 100px auto;
+        }
+
+        li {
+            float: left;
+            width: 150px;
+            height: 200px;
+            list-style: none;
+            border: 2px solid blue;
+            /* 使li和li之间的边框不叠加 */
+            /* 原理：每个li都加了-2px，浏览器是按顺序渲染li的，第一个li先左移了-2px的距离，然后中级就有个2px的距离，但接着第二个li先浮动就贴在了第一个li的边上又执行-2margin就要左移了2px所以第二个li的左边框就压住了第一个li的右边框上了，就合并了 */
+            margin-left: -2px;
+        }
+
+        ul li:first-child {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    </div>
+</body>
+
+</html>

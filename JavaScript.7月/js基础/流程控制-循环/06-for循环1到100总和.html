@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 求 1~100之间所有整数的累加和
+
+        // 需要循环 100次，需要for循环的计数器i
+        // 需要一个存储结果的变量sum，但是初始值为0
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            // 算法：1+2+3+4+...
+            // 首先   sum=0, i=1,    sum=1=0+1,
+            // 循环   sum=1, i++=2,  sum=3=1+2 ，
+            // 再循环 sum=3, i++=3,  sum=6=3+3，
+            // 再循环 sum=6, i++=4,  sum=10=6+4
+            // ...
+            // sum += sum + i;可简写为
+            sum += i;
+        }
+        console.log(sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

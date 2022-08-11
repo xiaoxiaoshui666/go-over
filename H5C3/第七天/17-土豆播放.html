@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tudou {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: skyblue;
+            margin: 100px auto;
+        }
+
+        .tudou img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+        }
+
+        /* 当鼠标经过了 土豆这个盒子，就会让里面的遮罩层显示出来 */
+        .tudou:hover .mask {
+            /* 不是转化成块元素而是显示元素 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tudou">
+        <img src="images/tudou.jpg" alt="">
+        <a href="https://www.baidu.com">
+            <div class="mask"></div>
+        </a>
+    </div>
+
+</body>
+
+</html>

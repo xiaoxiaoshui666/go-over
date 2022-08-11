@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 按照从大到小判断的思路
+        // 2. 弹出prompt输入框，获取分数并保留表量里面中
+        var score = prompt('您的成绩为');
+        // 3. 使用多个分支 if else if 语句分别判断输出不同的值
+        if (score >= 90) {
+            alert('您的成绩为A级');
+            //因为第一个条件已经筛选走了大于等于90分的，所以下面的值一定是小于90分的，所以不用写多余的
+        } else if (score >= 80) {
+            alert('您的成绩为B级');
+        } else if (score >= 70) {
+            alert('您的成绩为C级');
+        } else if (score >= 60) {
+            alert('您的成绩为D级');
+        } else {
+            alert('您的成绩为E级');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

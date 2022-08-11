@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min
+        }
+        var num = getRandomInt(1, 10);
+        alert('猜数字游戏开始');
+        while (true) {
+            // 用户输入框prompt 要写在循环里面 这样还能再if错误之间接着循环弹出来
+            var mynum = prompt('请输入1~10之间的数字：');
+            if (num < mynum) {
+                alert('您的数字大了，继续猜猜');
+            } else if (num > mynum) {
+                alert('您的数字小了，继续猜猜');
+            } else {
+                alert('恭喜你猜对了');
+                // 退出整个循环
+                break;
+            }
+        } */
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min
+        }
+        var num = getRandomInt(1, 50);
+        alert('猜数字游戏开始');
+        var count = 0
+        for (var i = 1; i <= 10; i++) {
+            var mynum = prompt('请输入1~10之间的数字：');
+            if (num < mynum) {
+                alert('您的数字大了，继续猜猜');
+                count++
+            } else if (num > mynum) {
+                alert('您的数字小了，继续猜猜');
+                count++
+            } else if (num == mynum) {
+                alert('恭喜你猜对了' + '!' + '\n您用了' + i + '次就答对了');
+                break;
+            } else {
+                alert('您输入有误');
+            }
+        }
+        if (count === 10) {
+            alert('您的10次已经用完了');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

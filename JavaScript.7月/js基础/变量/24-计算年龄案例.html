@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 弹出输入框（promt）
+        var year = (prompt('请输入您的出生年份'));
+
+        // 2. 把用户输入的值用变量保存，再用今年的年份减去变量值，就是现在的年纪
+        // 取过来的是字符串型但这里是减法自动转换 为数字型 有隐式转换
+        var age = 2020 - year;
+
+        // 3. 弹出警示框（alert）
+        alert('您的年龄' + age + '岁了');
+
+        // 取过来的是字符串型但是  parseInt（） 转换为了数字型
+        var day = 23 + parseInt(year);
+        alert('今年为' + day + '年');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

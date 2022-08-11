@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a = 10;
+        ++a;                    // ++a=10+1=11
+        var b = ++a + 2;        // ++a=11+1=12  + 2 
+        console.log(b);         // 14
+        console.log(a);         // 12
+
+        var c = 10;
+        c++;                    // c++=10+1=11
+        var d = c++ + 2;        // c++=原值11  +  2
+        console.log(d);         // 13
+        console.log(c);         // 12
+
+        var e = 10;
+        var f = e++ + ++e;      // e++=原值10  +  (此时的e为e++=11)++e=11+1=12  
+        console.log(f);         // 22
+        console.log(e);         // 12
+        // 先表达式返回原值 后面变量在自加1
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        span {
+            /* 行内元素添加绝对定位或者固定定位，可以直接设置高度和宽度 */
+            position: absolute;
+            top: 300px;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        div {
+            /* 块元素添加绝对定位或者相对定位，若不给高度或者宽度，默认大小是子盒子内容的大小 */
+            position: absolute;
+            background-color: blue;
+        }
+
+        p {
+            width: 100px;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>12345678</span>
+    <div>
+        <p></p>
+    </div>
+</body </html>

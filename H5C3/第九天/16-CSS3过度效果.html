@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+            font-size: 20px;
+            /* transition: 变化的属性 花费的时间 运动轨迹 何时开始; */
+            /* transition: width .5s ease 0s; */
+            /* 如果想写多个属性用逗号分隔, */
+            /* transition: width .5s, height .5s; */
+
+            /* 如果想要所有的属性都变化过度，写一个all就可以了 */
+            transition: all .5s .5s;
+        }
+
+        div:hover {
+            width: 400px;
+            height: 200px;
+            background-color: pink;
+            font-size: 12px
+        }
+    </style>
+</head>
+
+<body>
+    <div>别爱我</div>
+</body>
+
+</html>

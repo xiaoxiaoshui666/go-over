@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 返回数组元素引号方法
+        var arr = ['red', 'green', 'blue', 'pink', 'orange', 'blue'];
+
+        // indexOf(数组元素)  作用就是返回该数组元素的索引号
+        console.log(arr.indexOf('blue'));       // 2
+        console.log(arr.indexOf('while'));      // -1
+        // 如果有多个同样的数组元素，则它从前往后找，只返回第一个满足条件的元素的索引号
+        // 如果数组中没有该元素它找不到，则返回的是 -1
+
+        // lastIndexOf(数组元素) 
+        console.log(arr.lastIndexOf('blue'));    // 5
+        console.log(arr.lastIndexOf('cyan'));    // -1
+        // 如果有多个同样的数组元素，则它从后往前找，只返回最后面满足条件的元素的索引号
+        // 如果数组中没有该元素它找不到，则返回的是 -1
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

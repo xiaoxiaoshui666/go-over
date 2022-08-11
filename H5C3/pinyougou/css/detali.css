@@ -1,0 +1,648 @@
+/* 详情页的样式文件 */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?3udxgz');
+    src:  url('../fonts/icomoon.eot?3udxgz#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?3udxgz') format('truetype'),
+      url('../fonts/icomoon.woff?3udxgz') format('woff'),
+      url('../fonts/icomoon.svg?3udxgz#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+/* 详情页面内容部分start */
+/* 面包屑模块 */
+.de_container {
+    margin-top: 20px;
+}
+.crumb_wrap {
+    height: 25px;
+}
+.crumb_wrap a {
+    margin-right: 12px;
+}
+/* 产品介绍 */
+.preview_wrep {
+    width: 400px;
+    height: 590px;
+}
+.preview_img {
+    position: relative;
+    height: 398px;
+    border: 1px solid #ededed;
+}
+.mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-color: #FEDE4F;
+    opacity: .5;
+    border: 1px solid #333;   
+    cursor: move; 
+}
+.big {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 410px;
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #333;  
+    overflow: hidden;
+    z-index: 999;
+}
+.big img {
+    position: absolute;
+}
+.preview_list {
+    position: relative;
+    margin-top: 62px;
+    height: 60px;
+}
+.arrow_prev,
+.arrow_next  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 32px;
+}
+.arrow_prev {
+    left: 0;
+    background: url(../upload/disabled-prev.png) no-repeat;
+}
+.arrow_next {
+    right: 0;
+    background: url(../upload/disabled-next.png) no-repeat;
+}
+.list_item {
+    width: 320px;
+    height: 60px;
+    margin: 0 auto;
+}
+.list_item li {
+    float: left;
+    width: 56px;
+    height: 56px;
+    margin: 0 2px;
+    border: 2px solid transparent;
+}
+.list_item li:nth-child(2) {
+    border: 2px solid #c81623;
+}
+.list_item li:hover {
+    border: 2px solid #c81623;
+}
+.preview_wrep p {
+    margin-top: 25px;
+}
+.share {
+    margin-left: 30px;
+}
+.compare {
+    margin-left: 46px;
+}
+.preview_wrep p i {
+    font-family: 'icomoon';
+    color: #d54f58;
+}
+.itemibfo_wrep {
+    width: 718px;
+}
+.sku_name {
+    font-size: 16px;
+    height: 30px;
+    font-weight: 700;
+    color: #333;
+}
+.news {
+    color: #e12228;
+    height: 32px;
+}
+.summary dt,
+.summary dd {
+    float: left;
+}
+.summary dl {
+    overflow: hidden;
+}
+.summary dt  {
+    line-height: 36px;
+    width: 48px;
+    padding: 0 14px 0 8px;
+}
+.summary_price,
+.summary_promotion {
+    position: relative;
+    background-color: #fee9eb;
+}
+.price {
+    font-size: 24px;
+    color: #e12228;
+}
+.price span {
+    font-size: 12px;
+}
+.summary_price a {
+    color: #c81623;
+}
+.remark {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+.remark span {
+    color: #1474af;
+}
+.summary_promotion {
+    padding-bottom: 10px;
+}
+.summary_promotion dt {
+    line-height: 34px;
+}
+.summary_promotion dd {
+    line-height: 34px;
+    width: 546px;
+}
+.summary_promotion em {
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    background-color: #c81623;
+    color: #fff;
+    text-align: center;
+    line-height: 22px;
+    margin-right: 8px;
+}
+.summary_support dt,
+.summary_support dd {
+    line-height: 40px;
+}
+.summary_stock {
+    border-bottom: 1px solid #ededed;
+}
+.summary_stock dt,
+.summary_stock dd {
+    line-height: 26px;
+}
+.summary_stock dd {
+    width: 430px;
+}
+.summary_stock i {
+    font-family: 'icomoon';
+    padding: 0 6px;
+}
+.summary_stock em {
+    margin-left: 14px;
+}
+.summary_stock del {
+    text-decoration: none;
+    margin-left: 10px;
+}
+.summary_stock span {
+    font-weight: 700;
+}
+.choose_color {
+    margin-top: 15px;
+}
+.choose_color dt,
+.choose_color dd {
+    line-height: 42px;
+}
+.choose a {
+    display: inline-block;
+    border: 1px solid #ededed;
+    background-color: #f7f7f7;
+    color: #333;
+    margin-right: 8px;
+}
+.choose_color dd a {
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+.summary .redborder {
+    border: 1px solid #c81623;
+}
+.choose a:hover {
+    border: 1px solid #c81623;
+}
+.choose{
+    line-height: 34px;
+    margin-top: 7px;
+}
+.choose_version dd a {
+    padding: 0 15px;
+}
+.choose_type dd a {
+    padding: 0 18px;
+}
+.choose_manner dd a {
+    padding: 0 14px;
+}
+.bo {
+    margin-left: 5px;
+    height: 48px;
+    width: 312px;
+    border-bottom: 1px solid #ededed;
+}
+.choose_btns {
+    margin-top: 6px;
+}
+.choose_amount,
+.addshopcar {
+    float: left;
+    height: 46px;
+}
+.choose_amount {
+    position: relative;
+    width: 50px;
+    height: 46px;
+    margin-right: 10px;
+}
+.choose_amount input {
+    width: 32px;
+    height: 44px;
+    border: 1px solid #ccc;
+    text-align: center;
+    color: #333;
+}
+.add,
+.reduce {
+    position: absolute;
+    right: 0;
+    width: 15px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+}
+.add {
+    top: 0;
+}
+.reduce {
+    bottom: 0;
+    /* 鼠标样式：禁止鼠标点击 */
+    cursor: not-allowed;
+}
+.addshopcar {
+    width: 142px;
+    background-color: #c81623;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.addshopcar:hover {
+    background-color: #c81622c7;
+    color: #fff;
+}
+/* 详情页面内容部分end  */
+
+/* 产品细节模块start */
+.aside {
+    width: 208px;
+    border: 1px solid #ddd;
+    margin-right: 11px;
+}
+/* 把背景颜色，底边框，都给li 方便调整 */
+.tab_ist li {
+    float: left;
+    height: 33px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f1f1f1;
+    text-align: center;
+    line-height: 33px;
+}
+.frist_tab {
+    width: 104px;
+}
+.second_tab {
+    width: 103px;
+    border-left: 1px solid #ddd;
+}
+/* 鼠标点击li变化样式 */
+.tab_ist .current {
+    background-color: #fff;
+    border-bottom: 1px solid transparent;
+}
+.tab_ist .current a {
+    color: #c81623;
+}
+.tab_con_list {
+    padding: 0 11px 0 12px;
+}
+.tab_con_list ul {
+    float: left;
+}
+.tab_con_list ul li {
+    padding-left: 8px;
+    border-bottom: 1px dashed #ddd;
+    width: 84px;
+    height: 29px;
+    line-height: 29px;
+}
+.tab_con_list ul li:first-child {
+    border-bottom: 2px dashed #ccc;
+}
+.tab_con_list ul li:last-child {
+    border: 0;
+}
+.tab_con dl {
+    padding: 0 9px;
+}
+.tab_con dl dt {
+    height: 37px;
+    line-height: 37px;
+    font-size: 14px;
+    margin: 0 3px;
+    border-bottom: 1px solid #ddd;
+}
+.tab_con dd {
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+.tab_con dl dd:last-of-type {
+    height: 1010px;
+    border: 0;
+}
+/* 单行文字溢出显示为省略号 */
+.tab_con dd h5 {
+    font-weight: 400;
+    /* 强制文字一行显示 */
+    white-space: nowrap;
+    /* 溢出部分隐藏 */
+    overflow: hidden;
+    /* 文字省略号代替超出部分 */
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: #333;
+}
+.aside_price {
+    font-weight: 700;
+    margin-top: 8px;
+}
+.tab_con .aside_car {
+    display: block;
+    margin: 0 auto 20px;
+    width: 88px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.detail {
+    width: 979px;
+}
+.collocation {
+    width: 977px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+} 
+.collocation_title {
+    height: 39px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f1f1f1;
+}
+.collocation_title h5 {
+    width: 87px;
+    height: 39px;
+    background-color: #c81623;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    line-height: 39px;
+    font-size: 14px;
+}
+.collocation_list_hd {
+    float: left;
+    width: 807px;
+    height: 261px;
+    border-right: 1px solid #ddd;
+}
+.collocation_list_hd .contents {
+    padding-left: 16px;
+    margin-bottom: 18px;
+    height: 32px;
+    line-height: 32px;
+}
+.collocation_list_hd .contents a {
+    margin-right: 42px;
+    color: #999;
+}
+.substance {
+    position: relative;
+}
+.main {
+    float: left;
+    margin-right: 48px;
+    margin-left: 16px;
+    width: 132px;
+}
+.main img{
+    border: 1px solid #c81623;
+}
+.main i {
+    display: block;
+    line-height: 25px;
+    text-align: center;
+    color: #e12228;
+}
+.accessories li {
+    float: left;
+    margin: 0 24px 39px 0;
+    width: 130px;
+    height: 170px;
+}
+.accessories li:last-child {
+    margin-right: 0;
+}
+.accessories li p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+}
+.accessories li input {
+    width: 11px;
+    height: 11px;
+    border: 1px solid #ccc;
+}
+.accessories li i {
+    color: #e12228;
+}
+.substance em {
+    position: absolute;
+    top: 42px;
+    left: 168px;
+    color: #333;
+    font-size: 16px;
+}
+.substance .button {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    width: 18px;
+    height: 50px;
+    font-family: 'icomoon';
+    color: #fff;
+    background-color: #ddd;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+}
+.collocation_list_bd {
+    position: relative;
+    float: left;
+    width: 155px;
+    height: 261px;
+    padding-left: 14px;
+} 
+.collocation_list_bd h5 {
+    margin: 44px 0 14px 0;
+    font-weight: 400;
+    font-size: 12px;
+}
+.collocation_list_bd p {
+    color: #333;
+    height: 24px;
+}
+.collocation_list_bd i{
+    color: #e12228;
+}
+.collocation_list_bd em {
+    color: #e12228;
+    font-size: 24px;
+}
+.collocation_list_shopcar {
+    display: block;
+    width: 142px;
+    height: 46px;
+    background-color: #c81623;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    font-size: 18px;
+    margin-top: 28px;
+}
+.collocation_list_shopcar:hover {
+    background-color: #c81622c7;
+    color: #fff;
+}
+.collocation_list_bd .xiaoyu {
+    position: absolute;
+    right: -23px;
+    top: 11px;
+    width: 20px;
+    height: 37px;
+    line-height: 37px;
+    border: 1px solid #eee;
+    border-bottom: 1px solid #e4393c;
+    background-color: #f1f1f1;
+    font-family: 'icomoon';
+}
+
+.detail_taby_list {
+    width: 977px;
+    height: 39px;
+    border: 1px solid #ddd;
+    background-color: #f1f1f1;
+}
+.detail_taby_list ul li {
+    float: left;
+    padding: 0 18px;
+    height: 39px;
+    line-height: 39px;
+    cursor: pointer;
+}
+.detail_taby_list .present {
+    background-color: #c81623;
+    color: #fff;
+}
+.item {
+    width: 979px;
+}
+.item_info {
+    position: relative;
+    padding: 22px 0 18px 20px;
+    border-bottom: 1px solid #ddd;
+}
+.item_info li {
+    line-height: 21px;
+    color: #333;
+} 
+.item_info p {
+    position: absolute;
+    right: 8px;
+    bottom: 18px;
+    font-weight: 700;
+    font-family: 'icomoon';
+}
+/* 产品细节模块end */
+
+/* alsolike猜你喜欢start */
+.alsolike {
+    margin: 16px 0 20px;
+    border: 1px solid #ddd;
+}
+.alsolike h3 {
+    height: 39px;
+    line-height: 39px;
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    background-color: #f1f1f1;   
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+.alsolike ul {
+    padding-left: 76px;
+    height: 296px;
+}
+.alsolike ul li {
+    float: left;
+    width: 134px;
+    height: 230px;
+    margin: 34px 52px 32px 0;
+}
+/* 怎么让段落两行显示 */
+.alsolike ul li h5{
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #333;
+    /* 文本溢出隐藏 */
+    overflow: hidden;
+    /* 溢出部分省略号表示 */
+    text-overflow: ellipsis;
+    /* 必须结合的属性，将对象作为弹性伸缩盒子模式显示 */
+    display: -webkit-box;
+    /* 必须结合的属性，设置伸缩盒子对象的子元素的排列方式 */
+    -webkit-box-orient: vertical;
+    /* 文本需要显示2行 */
+    -webkit-line-clamp: 2;
+}
+.alsolike ul li i {
+    font-weight: 700;
+    color: #cc0000;
+    
+}
+.alsolike ul li p {
+    padding-top: 28px;
+    color: #999;
+}
+.alsolike li p em {
+    color: #005aa8; 
+}
+/* alsolike猜你喜欢end  */

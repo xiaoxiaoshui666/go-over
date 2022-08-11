@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ditu p:first-child {
+            position: absolute;
+            top: 100px;
+            right: 8px;
+            color: #fff;
+        }
+
+        .ditu p:nth-of-type(2) {
+            position: absolute;
+            top: 288px;
+            right: 118px;
+            color: #fff;
+        }
+
+        .ditu p:nth-of-type(3) {
+            position: absolute;
+            top: 120px;
+            right: 200px;
+            color: #fff;
+        }
+
+        @keyframes move {
+            0% {}
+
+            70% {
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 80px;
+                height: 80px;
+                opacity: 0;
+            }
+        }
+
+        .ditu {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background: url(images/wangzhe.jpg) no-repeat;
+            margin: 100px auto;
+        }
+
+        .cetui {
+            position: absolute;
+            top: 125px;
+            right: 120px;
+        }
+
+        .red {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+
+        .dotted {
+            background-color: red;
+        }
+
+        div[class*=pulse] {
+            /* 保证小波纹中心与父盒子实心圆心在一起，才可以实现匀称发散 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 给的盒子阴影 */
+            box-shadow: 0 0 12px red;
+            animation: move 1.4s linear infinite;
+        }
+
+        .ditu .pulse2 {
+            animation-delay: .4s;
+        }
+
+        .ditu .pulse3 {
+            animation-delay: .8s;
+        }
+
+        .jingong {
+            position: absolute;
+            top: 144px;
+            left: 81px;
+        }
+
+        .jingong div[class*=pulse] {
+            box-shadow: 0 0 12px yellow;
+        }
+
+        .jingong .dotted {
+            background-color: yellow;
+        }
+
+        .zhuyi {
+            position: absolute;
+            top: 313px;
+            left: 195px;
+        }
+
+        .zhuyi div[class*=pulse] {
+            box-shadow: 0 0 12px blue;
+        }
+
+        .zhuyi .dotted {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ditu">
+        <p>撤退别打主宰</p>
+        <p>发起进攻</p>
+        <p>注意保护后排</p>
+        <div class="cetui">
+            <div class="red dotted"></div>
+            <div class="red pulse1"></div>
+            <div class="red pulse2"></div>
+            <div class="red pulse3"></div>
+        </div>
+        <div class="jingong">
+            <div class="red dotted"></div>
+            <div class="red pulse1"></div>
+            <div class="red pulse2"></div>
+            <div class="red pulse3"></div>
+        </div>
+        <div class="zhuyi">
+            <div class="red dotted"></div>
+            <div class="red pulse1"></div>
+            <div class="red pulse2"></div>
+            <div class="red pulse3"></div>
+        </div>
+</body>
+
+</html>

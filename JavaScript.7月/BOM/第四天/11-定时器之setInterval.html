@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // serInterval
+        // 语法规范：window.setInterval(调用函数,延迟间隔时间)
+        // 每隔两秒输出一次起床上班
+        setInterval(function () {
+            console.log('起床上班');
+        }, 2000);
+
+        // 区别：
+        // setTimeout 延迟时间到了，就去调用这个回调函数，只能调用一次就结束定时器
+        // setInterval 每个这个延迟时间，就去调用这个回调函数，会调用很多次，重复调用这个函数
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 遍历对象
+        var obj = {
+            name: '快乐风男',
+            age: 22,
+            sex: '男',
+        }
+        console.log(obj.name);          //  这三个等于 console.log(obj[k])
+        console.log(obj.age);
+        console.log(obj.sex);
+        console.log(obj);
+
+        for (var k in obj) {      //  k  值  变量
+            console.log(k);       // 属性名
+            console.log(obj[k]);  // 属性值  //  这里的k不带'' 不要混淆
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

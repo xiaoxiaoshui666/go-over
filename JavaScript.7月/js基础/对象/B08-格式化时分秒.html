@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 格式化时分秒
+        var date = new Date;
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+
+        // 封装一个函数返回当前的时分秒 格式 22:22:22
+        function getTime() {
+            var time = new Date;
+            var h = time.getHours();
+            // 当显示的数小于10时是个数像让个数前面加0 可以用if 但三元表达式简单一些
+            // 最终的结果还有重新赋值给变量上才有效
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTime());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

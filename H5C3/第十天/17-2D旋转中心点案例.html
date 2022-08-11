@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 子盒子溢出父盒子部分隐藏 */
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            /* 向左外边距1px，就可以取消边框重合 */
+            margin-left: -1px;
+            float: left;
+        }
+
+        div::after {
+            /* 伪元素是行内元素，要转换为块元素才能设置大小 */
+            display: block;
+            content: '快乐亚索';
+            width: 100%;
+            height: 100%;
+            background-color: skyblue;
+            transform: rotate(90deg);
+            /* 已左下角为旋转点 */
+            transform-origin: left bottom;
+            transition: all .1s;
+        }
+
+        /* 鼠标进过div，里面的伪元素复原 */
+        div:hover::after {
+            transform: rotate(0)
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

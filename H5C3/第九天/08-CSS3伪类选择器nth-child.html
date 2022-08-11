@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.把所有的偶数even的元素选出来 */
+        ul li:nth-child(even) {
+            background-color: pink;
+        }
+
+        /* 2.把所有的奇数odd的元素选出来 */
+        ul li:nth-child(odd) {
+            background-color: violet;
+        }
+
+        /* 3.nth-child(n) 从0开始每次加1，往后面计算，为n就是全选（这里面必须是n，不能是其他的字母） */
+        ol li:nth-child(n) {
+            background-color: red;
+        }
+
+        /* dl dd:nth-child(2n) 从0开始每次加2，相当于偶数，nth-child(even) */
+
+        /* dl dd:nth-child(2n+1) 从1开始每次加2，相当于奇数，nth-child(odd) */
+
+        /* dl dd:nth-child(5n) 从0开始每次加5： 5,10,15,20,25... */
+
+        /* dl dd:nth-child(n+6) 从6开始每次加1: 6,7,8,9,10,12,13... */
+
+        /* dl dd:nth-child(-n+5) 从5开始每次加-1: 5,4,3,2,1,0,-1,-2,-3... */
+
+        /* dl dd:nth-child(3n-4) 从-4开始每次加3： -4，-1,2,5,8,11,14... */
+
+        /* nth-child(3n+4) 从4开始每次加3，往后面计算  4,7,10,13,16...*/
+        /* 4，4+3=7，7+3=10，10+3=13 */
+        dl dd:nth-child(3n+4) {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是老1</li>
+        <li>我是老2</li>
+        <li>我是老3</li>
+        <li>我是老4</li>
+        <li>我是老5</li>
+        <li>我是老6</li>
+        <li>我是老7</li>
+        <li>我是老8</li>
+    </ul>
+    <hr>
+    <ol>
+        <li>我是老1</li>
+        <li>我是老2</li>
+        <li>我是老3</li>
+        <li>我是老4</li>
+        <li>我是老5</li>
+    </ol>
+    <hr>
+    <dl>
+        <dd>我是第1</dd>
+        <dd>我是第2</dd>
+        <dd>我是第3</dd>
+        <dd>我是第4</dd>
+        <dd>我是第5</dd>
+        <dd>我是第6</dd>
+        <dd>我是第7</dd>
+        <dd>我是第8</dd>
+        <dd>我是第9</dd>
+        <dd>我是第10</dd>
+        <dd>我是第11</dd>
+        <dd>我是第12</dd>
+        <dd>我是第13</dd>
+        <dd>我是第14</dd>
+    </dl>
+
+</body>
+
+</html>

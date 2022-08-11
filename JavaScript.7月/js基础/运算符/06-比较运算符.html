@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // false (错)      true  (对)
+        console.log(3 >= 4);            // false 
+        console.log(2 <= 4);            // true  
+        console.log(3 == 5);            // false
+        console.log('快乐' == '亚索');   // false
+
+        // 1. == 会默认转换数据类型  会把字符串型自动转换为数字型
+        console.log(4 == 4);            // true
+        console.log(4 == '4');          // true
+
+        // 不等于为 !==  
+        console.log(4 !== 4);            // false
+        console.log(4 !== '4');          // true
+
+
+        // 2. ===、!== 程序里面有全等 要求值和数据类型 一模一样
+        console.log(5 === 5);            // true
+        console.log(5 === '5');          // false
+
+        // 3. =  ==  ===区别
+        // =  赋值 把右边给左边
+        // ==  判断  判断两边的值是否相等（有隐式转换）
+        // ===  全等  判断两边的值和数据类型是否完全相同
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

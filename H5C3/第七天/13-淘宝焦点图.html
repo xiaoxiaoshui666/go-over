@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .tb-promo {
+            position: relative;
+            margin: 100px auto;
+            width: 520px;
+            height: 280px;
+            background-color: blue;
+        }
+
+        .tb-promo img {
+            /* 防止盒子被撑大 */
+            width: 520px;
+            height: 280px;
+        }
+
+        /* 并集选择器可以集体声明相同的样式 */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            background-color: rgba(0, 0, 0, .3);
+            color: #fff;
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .prev {
+            left: 0;
+            /* 绝对定位的盒子垂直居中 */
+            /* top: 50%; */
+            /* margin-top: -15px; */
+            /* 加了绝对定位的盒子可以直接设置高度和宽度 */
+            /* width: 20px;
+            height: 30px; */
+            /* border-radius: 0 15px 15px 0; */
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .next {
+            right: 0;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+
+        .promo-nav {
+            position: absolute;
+            left: 50%;
+            margin-left: -35px;
+            bottom: 15px;
+            width: 70px;
+            height: 14px;
+            background-color: rgba(255, 255, 255, .4);
+            border-radius: 7px;
+        }
+
+        .promo-nav li {
+            list-style: none;
+            float: left;
+            width: 8px;
+            height: 8px;
+            margin: 3px;
+            /* 直径的一半则为圆形 */
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        /* 不要忘记权重问题 */
+        .promo-nav .orange {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <img src="images/img.jpg" alt="">
+        <!-- 左侧按钮箭头 -->
+        <a href="#" class="prev"> &lt; </a>
+        <!-- 右侧按钮箭头 -->
+        <a href="#" class="next"> &gt; </a>
+        <ul class="promo-nav">
+            <li class="orange"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>

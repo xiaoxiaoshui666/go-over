@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 前面两种创建对象的方式一次只能创建一个对象
+        // 如果我们想创建多个对象，但这些对象很多的属性和方法是大量相同的 我们一次只能创键一个对象我们只能复制
+        // 因此我们可以利用函数的方法 重复这些相同的代码 我们把这个函数称为 构造函数
+        // 又因为这个函数不一样 里面封装的不是普通代码，而是对象
+        // 构造函数  就是我们对象里面一些相同的属性和方法抽象出来封装导函数里面
+        var ldh = {
+            uname: '刘德华',
+            age: 18,
+            sex: '男',
+            fn: function () {
+                console.log('唱歌');
+            }
+        }
+        var gfc = new Object();
+        gfc.uname = '郭富城';
+        gfc.age = 18;
+        gfc.fn = function () {
+            console.log('唱歌');
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

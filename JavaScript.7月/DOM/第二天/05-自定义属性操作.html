@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo" index="1" class="nav"></div>
+    <script>
+        // 1. 获取元素的属性值
+        // (1) element.属性
+        var div = document.querySelector('div');
+        console.log(div.id); demo                   // demo
+        console.log(div.className);                 // nav
+        // (2) element.getAttribute('属性')        get得到获取  attribute 属性的意思 
+        // 程序员自己添加的属性，称为自定义属性 index   
+        console.log(div.getAttribute('id'));        // demo
+        console.log(div.getAttribute('index'));     // 1
+        console.log(div.getAttribute('class'));     // nav
+
+        // 2. 设置元素属性值
+        // (1) element.属性 = '值';
+        div.id = 'test';     // 设置内置属性值
+        div.className = 'navs'
+        // (2) element.setAttribute('属性','值');   set设置  attribute 属性的意思
+        div.setAttribute('index', 2);
+        div.setAttribute('class', 'footer');  // class 比较特殊 这里面写的就是class不是className
+
+        // 3. 移除属性
+        // element.removeAttribute('属性')   remove 移除的意思
+        div.removeAttribute('index');   // 就移除了这个属性
+    </script>
+</body>
+
+</html>
